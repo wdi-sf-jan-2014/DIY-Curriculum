@@ -3,8 +3,7 @@ before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     course = Course.find(params[:course_id])
-    @sections = Course.all
-    @created_courses = createdCourses
+    @sections = course.sections
   end
 
   def show
@@ -18,7 +17,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     section.course_id = course.id
     section.save
 
-    redirect_to course_sections_path
+    redirect_to course_sections_path(course)
   end
 
   def edit
