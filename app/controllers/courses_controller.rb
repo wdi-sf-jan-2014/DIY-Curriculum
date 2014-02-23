@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   include CoursesHelper
 
   def index
-    @created_courses = createdCourses(current_user) 
+    @created_courses = createdCourses
   end
 
   def show
