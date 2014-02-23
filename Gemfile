@@ -60,3 +60,5 @@ gem 'handlebars_assets'
 # to deploy correctly to heroku
 gem 'rails_12factor', group: :production
 
+gem 'foundation-rails'
+
