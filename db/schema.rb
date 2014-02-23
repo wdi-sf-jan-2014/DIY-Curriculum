@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140223034239) do
   create_table "categories", force: true do |t|
     t.string   "name"
     t.string   "img"
-    t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140223034239) do
     t.text     "text"
     t.integer  "commentable_id"
     t.string   "commentable_type"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140223034239) do
   create_table "courses", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
