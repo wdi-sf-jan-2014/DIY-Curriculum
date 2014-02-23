@@ -1,13 +1,23 @@
 class CoursesController < ApplicationController
-before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show]
 
-include CoursesHelper
+  include CoursesHelper
 
-def index
-  @created_courses = createdCourses(current_user) 
-end
+  def index
+    @created_courses = createdCourses(current_user) 
+  end
 
+  def show
+    @course = Course.find(params[:id])
+  end
 
+  def edit
+  end
 
+  def update
+  end
+
+  def delete
+  end
 
 end

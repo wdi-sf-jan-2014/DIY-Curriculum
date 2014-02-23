@@ -3,5 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Diyc::Application.l
-oad_tasks
+Diyc::Application.load_tasks
