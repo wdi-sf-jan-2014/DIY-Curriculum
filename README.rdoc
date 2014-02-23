@@ -1,4 +1,10 @@
 == DIY Currriculum
 
 
+<<<<<<< HEAD
+Yut@ka wuz HeAR
+
+STE changes here
+=======
 But Jerome took over! 
+>>>>>>> 14b80d8a05b3bba2f669102b09f9af1b5a9273e9
