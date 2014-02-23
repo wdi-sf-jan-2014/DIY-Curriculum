@@ -2,7 +2,11 @@ Diyc::Application.routes.draw do
   devise_for :users
   root to: "courses#index"
 
-  resources :courses
+  resources :courses do
+    resources :sections do
+      resources :content
+    end
+  end
   
 end
 
