@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
 
   def index
     @categories = Category.all
+    @all_courses = Course.all
     @created_courses = createdCourses
   end
 
@@ -12,7 +13,16 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
-  def new
+  def create
+    new_course = params.require(:course).permit(:title, :description, :category_id)
+    course = Course.create(new_course)
+    course.user_id = current_user.id
+    course.save
+
+    #redirect_to the sections index where you can create sections
+    # redirect_to sections_path
+
+    redirect_to root_path
   end
 
   def edit
@@ -25,3 +35,4 @@ class CoursesController < ApplicationController
   end
 
 end
+
