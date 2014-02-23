@@ -1,0 +1,37 @@
+<div class="page-title"> Courses Index </div>
+
+
+<div class="row">
+  <div class="small-9 small-centered columns">
+    <div class="row">
+
+      <div class="small-2 columns created">
+        Created
+      </div>
+      <div class="small-2 columns enrolled">
+        Enrolled
+      </div>
+      <div class="small-4 columns add-course">
+        <a href="#" data-reveal-id="new-course">New</a>
+        <%= render "new"%>
+      </div>
+
+    </div>   
+  </div>
+</div>
+
+<% @all_courses.each do |course| %>
+  <div class="row">
+    <div class="small-9 small-centered columns">
+      <h3><%= course.title %></h3>
+      <p><%= course.description %></p>
+    </div>
+  </div>
+<% end %>
+
+
+<!-- -- 
+Created Courses (view @created)
+-- Enrolled Courses (view @enrolled)
+-- Add new Course [only shows up for user owner] -- opens up modal
+ -->
