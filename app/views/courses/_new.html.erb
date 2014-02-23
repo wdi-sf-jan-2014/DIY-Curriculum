@@ -1,7 +1,7 @@
 <div id="new-course" class="reveal-modal" data-reveal>
   <%= form_for :course do |c| %>
-    <%= c.text_field :title, placeholder: "resource" %>
-    <%= c.text_area :description, placeholder: "describe how you used this resource" %>
+    <%= c.text_field :title, placeholder: "Course title" %>
+    <%= c.text_area :description, placeholder: "what is this course about?" %>
     <%= c.submit "create", class: "button large" %>
   <% end %>
   <a class="close-reveal-modal">&#215;</a>
