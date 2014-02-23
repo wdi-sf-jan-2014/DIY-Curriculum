@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
     @categories = Category.all
     @all_courses = Course.all
     @created_courses = createdCourses
+    @enrolled_courses = enrolledCourses
   end
 
   def show
