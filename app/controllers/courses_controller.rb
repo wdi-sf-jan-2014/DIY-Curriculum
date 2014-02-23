@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   include CoursesHelper
 
   def index
+    @categories = Category.all
     @created_courses = createdCourses
   end
 
