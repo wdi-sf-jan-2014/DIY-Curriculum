@@ -11,6 +11,9 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
+  def new
+  end
+
   def edit
   end
 
