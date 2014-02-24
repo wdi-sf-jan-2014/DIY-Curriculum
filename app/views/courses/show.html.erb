@@ -1,7 +1,33 @@
-This is the Courses Homepage
+<!-- This is the Courses Homepage
 
--- course title (edit)
--- course description (edit)
--- Sections (click to go to view sections)
+ -course title (edit)
+ -course description (edit)
+ -Sections (click to go to view sections)
 
-Course at a Glance [reviews//views//enrollments]
+Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
+
+<div class="page-title"> <%= @course.title %> </div>
+
+<div class="row">
+  <div class="small-9 small-centered columns">
+    <p>Created by: <%= @course.user_id %></p>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="small-4 small columns">
+    <% @course.sections.each do |s| %>
+          <h3><%= s.title %></h3>
+    <% end %>
+   </div>
+
+  <div class="small-4 small columns">
+    <h3>Course at a Glance</h3>
+    <h4>Category: <%= @course.category.name %></h4>
+    <h4># of Sections: <%= @course.sections.count %></h4>
+  </div>
+</div>
+
+<div class="row">
+  Needs to add reviews
+</div>
