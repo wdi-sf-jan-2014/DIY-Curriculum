@@ -1,11 +1,11 @@
 Diyc::Application.routes.draw do
-  root to: "courses#browse_all"
+  root to: "sites#index"
   devise_for :users
   
   get "/browse", to: "courses#browse_all"
   resources :courses do
     resources :sections do
-      resources :content
+      resources :contents
     end
   end
   
