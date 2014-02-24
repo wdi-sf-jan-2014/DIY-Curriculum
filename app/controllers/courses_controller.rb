@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     allCategories
     @created_courses = createdCourses
     @enrolled_courses = enrolledCourses
+    respond_to do |f|
+      f.html
+      f.json { render :json => @created_courses }
+    end
   end
 
   # browse all available courses
@@ -29,7 +33,7 @@ class CoursesController < ApplicationController
     course.save
 
     #redirect_to the sections index where you can create sections
-    redirect_to course_sections_path(course)
+    redirect_to new_course_section_path(course)
   end
 
   def edit
