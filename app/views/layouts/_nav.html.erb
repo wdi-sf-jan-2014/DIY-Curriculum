@@ -7,6 +7,13 @@
         </li> -->
     </ul>
     <section class="top-bar-section">
+      <% if signed_in? %>
+      <ul class="left">
+        <li class="divider"></li>
+        <li><%= link_to "Courses", courses_path%></li>        
+      </ul>
+      <%end%>
+
     <ul class="right">
         <li class="divider"></li>
     <% if !signed_in? %>    
@@ -14,11 +21,11 @@
         <ul class="dropdown">
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>  
             <li><label>email</label></li>
-            <li><div><%= f.email_field :email, :autofocus => true %></div></li>
+            <li><%= f.email_field :email, :autofocus => true %></li>
             <li><label>password</label></li>
-            <li><div><%= f.password_field :password %></div></li>
+            <li><%= f.password_field :password %></li>
             <% if devise_mapping.rememberable? -%>
-              <li><div><%= f.check_box :remember_me %> <%= f.label :remember_me %></li></div>
+              <li><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
             <% end -%>
             <li><div><%= f.submit "Sign in" %></div></li>
         <%end%>
