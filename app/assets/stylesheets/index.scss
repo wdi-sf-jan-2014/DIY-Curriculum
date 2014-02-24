@@ -9,9 +9,44 @@ text-align: center;
   margin-right:auto;
 }
 
-#first_line {
+.line {
 border: solid 1.5px black;
 width: 80%;
 margin-left:auto;
 margin-right:auto;
+}
+
+.box {
+display: inline-block;
+padding: 30px;
+width: 150px;
+height: 150px;
+margin-left: 40px;
+margin-right: 40px;
+background: lightgrey;
+}
+
+.box_text {
+display: none;
+}
+
+.box:hover .box_text {
+display: inline-block;
+}
+
+.box:hover img {
+display: none;
+}
+
+.box:hover{
+background:lightblue;
+}
+
+#boxes_holder{
+ text-align:center;
+}
+
+#featured{
+  text-align:center;
+  margin:40px;
 }
