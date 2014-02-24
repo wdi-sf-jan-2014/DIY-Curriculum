@@ -8,14 +8,27 @@ $(function(){
 
     var newSection = {};
 
-    newSection.name = $("#section_name").val();
+    newSection.title = $("#section_title").val();
     console.log(newSection);
 
-    $.post("/sections.json")
-
-
+    $.post("/courses/"+ Number(window.location.href.split("/courses/")[1].split("/sections/new")[0]) +"/sections.json", {section: newSection}).done(function(data){
+      console.log(data);
+      var sectionHTML = HandlebarsTemplates.section(data);
+      $("#sections").append(sectionHTML)
+    })
   });
 
+
+  $.ajax({
+    url: "/courses/"+ Number(window.location.href.split("/courses/")[1].split("/sections/new")[0]) +"/sections.json",
+    type: "GET",
+  }).done(function(data){
+    console.log(data)
+    $(data).each(function(index,section){
+      var sectionHTML = HandlebarsTemplates.section(section);
+      $("#sections").append(sectionHTML);
+    })
+  })
 
 
 });
