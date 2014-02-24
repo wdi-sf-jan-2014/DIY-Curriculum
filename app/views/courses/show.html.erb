@@ -6,9 +6,14 @@
 
 Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
 
-<div class="page-title">   
-  <a href="#" data-reveal-id="edit-course"><%= @course.title %></a>
-  <%= render "edit"%>
+<div class="row">
+  <div class="small-9 small-centered columns">
+    <a href="#" data-reveal-id="edit-course">
+      <h3 class="page-title" ><%= @course.title %><h3>
+      <p><%= @course.description%><p>
+    </a>
+    <%= render "edit"%>
+  </div>
 </div>
 
 <div class="row">
