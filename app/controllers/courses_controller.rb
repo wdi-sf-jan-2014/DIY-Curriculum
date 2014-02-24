@@ -25,9 +25,14 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    @course = Course.find(params[:id])
   end
 
   def update
+    updated_info = params.require(:course).permit(:title, :description)
+    course = Course.find(params[:id])
+    course.update_attributes(updated_info)
+    redirect_to course_path
   end
 
   def delete
