@@ -1,0 +1,17 @@
+<div class="large-9 medium-8 columns">
+    <div class="content">
+      <nav>
+        <ul>
+          <% @contents.each do |content| %>
+            <li>
+              <%= content.source_url %>
+              <%= content.text %>
+            </li>
+          <% end %>
+          <li>
+             <%= render "contents/new"%>
+          </li>
+        </ul>
+    </div>
+  </div> 
+</div>

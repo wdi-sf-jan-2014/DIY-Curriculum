@@ -14,4 +14,8 @@ def enrolledCourses
 
 end
 
+def allCategories
+  @categories = Category.all
+end
+
 end
