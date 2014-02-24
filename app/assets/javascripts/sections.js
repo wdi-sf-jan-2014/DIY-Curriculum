@@ -11,7 +11,7 @@ $(function(){
     newSection.name = $("#section_name").val();
     console.log(newSection);
 
-
+    $.post("/sections.json")
 
 
   });

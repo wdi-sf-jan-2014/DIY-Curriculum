@@ -4,6 +4,10 @@ before_filter :authenticate_user!, except: [:index, :show]
   def index
     course = Course.find(params[:course_id])
     @sections = course.sections
+    respond_to do |f|
+      f.html
+      f.json { render :json => @sections }
+    end
   end
 
   def show
@@ -12,7 +16,7 @@ before_filter :authenticate_user!, except: [:index, :show]
 
   def new
     course = Course.find(params[:course_id])
-    @sections = course.sections.all.sort
+    @sections = course.sections
     respond_to do |f|
       f.html
       f.json { render :json => @sections }
