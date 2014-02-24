@@ -5,7 +5,6 @@ class CreateCourses < ActiveRecord::Migration
       t.text :description
       t.references :category
       t.references :user
-
       t.timestamps
     end
   end
