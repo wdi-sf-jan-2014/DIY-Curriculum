@@ -24,6 +24,8 @@ class CoursesController < ApplicationController
     new_course = params.require(:course).permit(:title, :description, :category_id)
     course = Course.create(new_course)
     course.user_id = current_user.id
+    course.category_id = params[:course]["categories"].to_i
+    
     course.save
 
     #redirect_to the sections index where you can create sections
