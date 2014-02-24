@@ -17,13 +17,17 @@
             <li><div><%= f.email_field :email, :autofocus => true %></div></li>
             <li><label>password</label></li>
             <li><div><%= f.password_field :password %></div></li>
+            <% if devise_mapping.rememberable? -%>
+              <li><div><%= f.check_box :remember_me %> <%= f.label :remember_me %></li></div>
+            <% end -%>
+            <li><div><%= f.submit "Sign in" %></div></li>
         <%end%>
         </ul>
     </li>
     <%end%>
     <% if signed_in? %>
         <li class="divider"></li>
-        <li><%= link_to "Signout", destroy_user_session_path %></li>
+        <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
     <%else%>    
         <li class="divider"></li>
         <li><%= link_to "Signup", new_user_registration_path %></li>
