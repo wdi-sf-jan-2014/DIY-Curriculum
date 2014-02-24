@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
     course.save
 
     #redirect_to the sections index where you can create sections
-    redirect_to course_sections_path(course)
+    redirect_to new_course_section_path(course)
   end
 
   def edit
