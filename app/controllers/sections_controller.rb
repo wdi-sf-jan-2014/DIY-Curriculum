@@ -10,6 +10,15 @@ before_filter :authenticate_user!, except: [:index, :show]
     @section = Section.find(params[:id])
   end
 
+  def new
+    course = Course.find(params[:course_id])
+    @sections = course.sections.all.sort
+    respond_to do |f|
+      f.html
+      f.json { render :json => @sections }
+    end
+  end
+
   def create
     new_section = params.require(:section).permit(:title)
     section = Section.create(new_section)
