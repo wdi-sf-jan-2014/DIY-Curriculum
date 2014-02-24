@@ -1,5 +1,5 @@
 Diyc::Application.routes.draw do
-  root to: "sites#index"
+  root to: "courses#browse_all"
   devise_for :users
   
   get "/browse", to: "courses#browse_all"
