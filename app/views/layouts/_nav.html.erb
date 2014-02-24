@@ -1,0 +1,33 @@
+<nav class = "top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+             <h1><a href="#">+</a></h1>
+        </li>
+<!--         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        </li> -->
+    </ul>
+    <section class="top-bar-section">
+    <ul class="right">
+        <li class="divider"></li>
+    <% if !signed_in? %>    
+    <li class="has-dropdown"><a href="#">Signin</a>
+        <ul class="dropdown">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>  
+            <li><label>email</label></li>
+            <li><div><%= f.email_field :email, :autofocus => true %></div></li>
+            <li><label>password</label></li>
+            <li><div><%= f.password_field :password %></div></li>
+        <%end%>
+        </ul>
+    </li>
+    <%end%>
+    <% if signed_in? %>
+        <li class="divider"></li>
+        <li><%= link_to "Signout", destroy_user_session_path %></li>
+    <%else%>    
+        <li class="divider"></li>
+        <li><%= link_to "Signup", new_user_registration_path %></li>
+    <%end%>
+    </ul>
+    </section>
+</nav>
