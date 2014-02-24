@@ -2,18 +2,15 @@ class SectionsController < ApplicationController
 before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-<<<<<<< HEAD
+
     @course = Course.find(params[:course_id])
     @category = Category.find(@course.category_id)
     @sections = @course.sections
-=======
-    course = Course.find(params[:course_id])
-    @sections = course.sections
     respond_to do |f|
       f.html
       f.json { render :json => @sections }
     end
->>>>>>> master
+    
   end
 
   def show
