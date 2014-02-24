@@ -19,6 +19,8 @@ class CoursesController < ApplicationController
   def show
     allCategories
     @course = Course.find(params[:id])
+    @user = User.find(@course.user_id)
+    binding.pry
   end
 
   def create
