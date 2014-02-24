@@ -3,8 +3,10 @@
 <% @all_courses.each do |course| %>
   <div class="row">
     <div class="small-9 small-centered columns">
-      <h3><%= course.title %></h3>
-      <p><%= course.description %></p>
+      <a href="/courses/<%= course.id%>">
+        <h3><%= course.title %></h3>
+        <p><%= course.description %></p>
+      </a>
     </div>
   </div>
 <% end %>
