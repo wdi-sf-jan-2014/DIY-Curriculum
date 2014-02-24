@@ -18,5 +18,6 @@
 /* Add imports of custom sass/scss files here */
 @import "courses";
 @import "sections";
+@import "index";
 
 
