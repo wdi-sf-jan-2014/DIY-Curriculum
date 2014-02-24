@@ -3,11 +3,17 @@ class CoursesController < ApplicationController
 
   include CoursesHelper
 
+  # my courses
   def index
     @categories = Category.all
-    @all_courses = Course.all
     @created_courses = createdCourses
     @enrolled_courses = enrolledCourses
+  end
+
+  # browse all available courses
+  def browse_all
+    @categories = Category.all
+    @all_courses = Course.all
   end
 
   def show
