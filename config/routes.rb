@@ -5,7 +5,7 @@ Diyc::Application.routes.draw do
   get "/browse", to: "courses#browse_all"
   resources :courses do
     resources :sections do
-      resources :content
+      resources :contents
     end
   end
   

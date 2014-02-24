@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     allCategories
     @created_courses = createdCourses
     @enrolled_courses = enrolledCourses
+    respond_to do |f|
+      f.html
+      f.json { render :json => @created_courses }
+    end
   end
 
   # browse all available courses
