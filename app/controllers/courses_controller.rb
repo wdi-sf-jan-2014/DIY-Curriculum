@@ -20,7 +20,6 @@ class CoursesController < ApplicationController
     allCategories
     @course = Course.find(params[:id])
     @user = User.find(@course.user_id)
-    binding.pry
   end
 
   def create
