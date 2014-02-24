@@ -2,6 +2,7 @@
   <%= form_for @course, url: course_path do |c| %>
     <%= c.text_field :title %>
     <%= c.text_area :description %>
+    <%= c.select :category_id, options_from_collection_for_select(@categories, "id", "name"), prompt: "Categories" %>
     <%= c.submit class: "button large" %>
   <% end %>
   <a class="close-reveal-modal">&#215;</a>

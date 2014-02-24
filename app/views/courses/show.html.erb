@@ -6,31 +6,46 @@
 
 Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
 
-<div class="page-title">   
-  <a href="#" data-reveal-id="edit-course"><%= @course.title %></a>
-  <%= render "edit"%>
+<div class="row">
+  <div class="small-9 small-centered columns">
+    <a href="#" data-reveal-id="edit-course">
+      <h3 class="page-title" ><%= @course.title %><h3>
+      <p><%= @course.description%><p>
+    </a>
+    <%= render "edit"%>
+  </div>
 </div>
 
 <div class="row">
   <div class="small-9 small-centered columns">
-    <p>Created by: <%= @course.user_id %></p>
+    <p>Created by: <%= @user.name %></p>
   </div>
 </div>
   
 <div class="row">
-  <div class="small-4 small columns">
-    <% @course.sections.each do |s| %>
-          <h3><%= s.title %></h3>
-    <% end %>
-   </div>
+  <div class="small-9 small-centered columns">
 
-  <div class="small-4 small columns">
-    <h3>Course at a Glance</h3>
-    <h4>Category: <%= @course.category.name %></h4>
-    <h4># of Sections: <%= @course.sections.count %></h4>
+    <div class="row">    
+      <div class="small-4 small columns">
+        <h3>Sections<h3>
+        <% @course.sections.each do |s| %>
+              <h5><%= s.title %></h5>
+        <% end %>
+      </div>
+
+      <div class="small-5 small columns">
+        <h3>Course at a Glance</h3>
+        <h4>Category: <%= @course.category.name %></h4>
+        <h4># of Sections: <%= @course.sections.count %></h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-9 columns">
+      ---------------------------</br>
+      Needs to add reviews
+      </div>
+    </div>
+
   </div>
-</div>
-
-<div class="row">
-  Needs to add reviews
 </div>

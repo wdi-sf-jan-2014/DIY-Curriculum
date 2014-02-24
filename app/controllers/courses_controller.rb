@@ -5,19 +5,21 @@ class CoursesController < ApplicationController
 
   # my courses
   def index
-    @categories = Category.all
+    allCategories
     @created_courses = createdCourses
     @enrolled_courses = enrolledCourses
   end
 
   # browse all available courses
   def browse_all
-    @categories = Category.all
+    allCategories
     @all_courses = Course.all
   end
 
   def show
+    allCategories
     @course = Course.find(params[:id])
+    @user = User.find(@course.user_id)
   end
 
   def create
