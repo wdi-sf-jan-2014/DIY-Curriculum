@@ -1,3 +1,37 @@
-.sidebar  {
-  background: #fafafa;
+body {
+  background: #efece6;
 }
+
+body, html {
+  height: 100%;
+ }
+
+.content-view {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.sidebar-column {
+  height:100%;
+
+}
+
+.sidebar  {
+  background: white;
+  padding: 8px;
+  height: 100%;
+}
+
+.row {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.sidebar-course-title {
+  margin-bottom: -5px;
+}
+

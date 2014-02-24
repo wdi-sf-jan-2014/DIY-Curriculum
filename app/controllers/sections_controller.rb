@@ -2,11 +2,14 @@ class SectionsController < ApplicationController
 before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    course = Course.find(params[:course_id])
-    @sections = course.sections
+    @course = Course.find(params[:course_id])
+    @category = Category.find(@course.category_id)
+    @sections = @course.sections
   end
 
   def show
+    @course = Course.find(params[:course_id])
+    @category = Category.find(@course.category_id)
     @section = Section.find(params[:id])
   end
 
