@@ -10,12 +10,15 @@
       </h5>
     </div>
     <ul class="side-nav">
-      <li >
-       <div id="sections"></div>
-      </li>
-      <li>
-         <%= render "form"%>
-      </li>
+      <% @sections.each do |section| %>
+        <li >
+          <div class="section">
+            <a href="/courses/<%=@course.id%>/sections/<%=section.id%>">
+              <%= section.title %>
+            </a>
+          <div>
+        </li>
+      <% end %>
     </ul>
 
   </div>
