@@ -3,6 +3,7 @@
 <div class="small-9 columns content-column">
   <div class="content">
     <a href="#" data-reveal-id="edit-section"><%= @section.title %></a>
+    <%= render 'edit_section_form' %>
     <div id="addContent">
     </div>
     <div id="contents">
@@ -11,10 +12,3 @@
 </div>
 
 
-<div id="edit-section" class="reveal-modal" data-reveal>
-    <%= form_for @section, url: course_section_path, method: :post do |s| %>
-      <%= s.text_field :title, placeholder: "Section Name" %>
-      <%= s.submit %>
-    <%end%>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
