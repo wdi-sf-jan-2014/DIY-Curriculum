@@ -1,5 +1,11 @@
 $(function(){
 
+  // show new content form
+  // in SECTIONS edit view
+  var content_path = {content_path: gon.content_path};
+  var contentFormHTML = HandlebarsTemplates.contents_form(content_path);
+  $("#addContent").append(contentFormHTML);
+
   // listen for submit on #addContent
   $("#new-content form").on("submit", function(event){
     event.preventDefault();
