@@ -1,0 +1,15 @@
+<div class="small-9 columns content-column">
+  <div class="show-contents">
+    <ul class="content-ul">
+      <% @contents.each do |content| %>
+        <li >
+          <div class="show-content">
+              <%= content.source_url %>
+              <%= content.text %>
+          <div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
