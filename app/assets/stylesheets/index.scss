@@ -71,11 +71,8 @@ text-decoration: none;
 list-style-type: none;
 }
 
-div.row > div:nth-child(2) {
+.middle-column {
 border-left: 2px solid;
 border-right: 2px solid;
 }
 
-.row{
-margin-bottom: 30px;
-}

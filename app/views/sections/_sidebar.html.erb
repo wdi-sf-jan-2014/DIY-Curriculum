@@ -1,0 +1,24 @@
+<div class="small-4 columns sidebar-column">
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+      <h3 class="sidebar-course-title">
+        <%=@course.title%>
+      </h3>
+      <h5 class="sidebar-cagetory-title">
+        <%=@category.name%>
+      </h5>
+    </div>
+    <nav>
+      <ul class="side-nav">
+        <li >
+         <div id="sections"></div>
+        </li>
+        <li>
+           <%= render "form"%>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</div>

@@ -1,11 +1,4 @@
-    <div id="sections">
-    </div>
-
-
-    <div id="addSection">
-        <%= form_for :section, url: course_sections_path(format: :json), method: :post do |s| %>
-          <%= s.text_field :title, placeholder: "Section Name" %>
-          <%= s.submit %>
-        <%end%>
-    </div>
-
+<div class="row content-view">
+  <%= render 'sidebar' %>
+  <%= render 'content' %>
+</div>

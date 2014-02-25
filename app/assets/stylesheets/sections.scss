@@ -1,3 +1,61 @@
+body {
+  background: #efece6;
+  font-weight: 300;
+}
+
+body, html {
+  margin:0;
+  padding:0;
+  height:100%;
+ }
+
+.content-view {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.sidebar-column {
+  height: 100%;
+  padding: 0 5px 0 20px;
+
+}
+
 .sidebar  {
-  background: #fafafa;
+  background: white;
+  height: 100%;
+  overflow: auto;
+
+}
+
+.sidebar-title  {
+  padding: 16px 32px 16px 32px;
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.sidebar-course-title {
+  margin-bottom: -5px;
+}
+
+.section {
+  border-top: .07rem solid;
+  border-color: lightGray;
+
+}
+
+.section a {
+  padding: 24px 12px 24px 32px;
+  font-size: 1.5em;
+
+}
+
+.side-nav li a {
+  color: black
 }
