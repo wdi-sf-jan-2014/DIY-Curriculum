@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
   end
 
   def update
-    updated_info = params.require(:course).permit(:title, :description)
+    updated_info = params.require(:course).permit(:title, :description, :category_id)
     course = Course.find(params[:id])
     course.update_attributes(updated_info)
     redirect_to course_path
