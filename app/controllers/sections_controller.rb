@@ -4,9 +4,10 @@ before_filter :authenticate_user!, except: [:index, :show]
   def index
     course = Course.find(params[:course_id])
     @sections = course.sections
+    # todo: pass json as :json => {"sections" => @sections}
     respond_to do |f|
       f.html
-      f.json { render :json => @sections }
+      f.json { render :json => @sections  }
     end
   end
 
