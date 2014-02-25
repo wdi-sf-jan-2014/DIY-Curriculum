@@ -12,7 +12,7 @@
           <dd><a href="#enrolled">
             Enrolled
           </a></dd>
-        <div class="small-12 columns add-course">
+        <div class="add-course">
           <a href="#" data-reveal-id="new-course">New</a>
           <%= render "new"%>
         </div>
@@ -35,6 +35,18 @@
       </div>
     <% end %>
   </div>
+  <div class="content active" id="enrolled">
+  <% @enrolled_courses.each do |course| %>
+    <div class="row">
+      <div class="small-10 medium-8 large-6 small-centered columns">
+        <a href="/courses/<%= course.id%>">
+          <h3><%= course.title %></h3>
+          <p><%= course.description %></p>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>
  
 
