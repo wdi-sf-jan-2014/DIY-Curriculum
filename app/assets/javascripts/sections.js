@@ -18,7 +18,7 @@ $(function(){
     })
   });
 
-
+   // get request to show all sections in that course
   $.ajax({
     url: "/courses/"+ Number(window.location.href.split("/courses/")[1].split("/sections/new")[0]) +"/sections.json",
     type: "GET",
