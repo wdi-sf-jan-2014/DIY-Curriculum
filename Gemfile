@@ -62,3 +62,6 @@ gem 'rails_12factor', group: :production
 
 gem 'foundation-rails'
 
+# to allow path variables for forms
+gem "gon", "~> 5.0.4"
+
