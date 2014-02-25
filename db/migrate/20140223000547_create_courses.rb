@@ -3,9 +3,9 @@ class CreateCourses < ActiveRecord::Migration
     create_table :courses do |t|
       t.string :title
       t.text :description
-      t.string :author_id
+      t.integer :author_id
       t.references :category
-      # t.references :user
+      t.references :user
       t.timestamps
     end
   end
