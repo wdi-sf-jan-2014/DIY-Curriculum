@@ -1,6 +1,5 @@
 <div id="count_to"></div>
 
-  <ol id="sortable">
     <!-- a blank array for pushing each word count number into -->
     <% array = []%>
     <% content = @all_content.each do |f| %>
@@ -18,7 +17,6 @@
       <button class="content_button">+</button>
       <div id="content", style="display: none"><%= raw(result['content']) %></div>
     <% end %>
-  </ol>
 
 <div id="count_from">
   <h2><%=@section.title%></h2>

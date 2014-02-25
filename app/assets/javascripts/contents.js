@@ -83,10 +83,10 @@ $("#count_to").append($("#count_from"));
 
 // end content
 
-$(function() {  
-    $( "#sortable" ).sortable({   
-        placeholder: "ui-sortable-placeholder"   
-    });  
-}); 
+// $(function() {  
+//     $( "#sortable" ).sortable({   
+//         placeholder: "ui-sortable-placeholder"   
+//     });  
+// }); 
 
 
