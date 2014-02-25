@@ -45,6 +45,8 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
   def edit
+    @course = Course.find(params[:course_id])
+    @category = Category.find(@course.category_id)
     @section = Section.find(params[:id])
     course_params = params[:course_id]
     gon.content_path = "/courses/#{course_params}/sections/#{@section.id}/contents.json"
