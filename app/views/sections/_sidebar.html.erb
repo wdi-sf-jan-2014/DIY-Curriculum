@@ -1,21 +1,23 @@
 <div class="small-4 columns sidebar-column">
   <div class="sidebar">
+
     <h3 class="sidebar-course-title">
       <%=@course.title%>
     </h3>
     <h5 class="sidebar-cagetory-title">
       <%=@category.name%>
     </h5>
+
     <nav>
       <ul class="side-nav">
-        <% @sections.each do |section| %>
-          <li>
-            <%= section.title %>
-          </li>
-        <% end %>
         <li>
-           <%= render "new"%>
+         <div id="sections"></div>
+        </li>
+        <li>
+           <%= render "form"%>
         </li>
       </ul>
+    </nav>
+
   </div>
 </div>
