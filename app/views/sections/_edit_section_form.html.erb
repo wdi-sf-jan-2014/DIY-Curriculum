@@ -1,5 +1,5 @@
 <div id="edit-section" class="reveal-modal" data-reveal>
-    <%= form_for @section, url: course_section_path, method: :post do |s| %>
+    <%= form_for @section, url: course_section_path, method: :patch do |s| %>
       <%= s.text_field :title, placeholder: "Section Name" %>
       <%= s.submit %>
     <%end%>
