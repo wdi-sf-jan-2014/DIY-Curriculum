@@ -1,7 +1,13 @@
 $(function(){
 
+  // show new content form
+  // in SECTIONS edit view
+  var content_path = {content_path: gon.content_path};
+  var contentFormHTML = HandlebarsTemplates.contents_form(content_path);
+  $("#addContent").append(contentFormHTML);
+
   // listen for submit on #addContent
-  $("#new-content form").on("submit", function(event){
+  $("#addContent form").on("submit", function(event){
     event.preventDefault();
 
     // create newContent using
@@ -15,9 +21,9 @@ $(function(){
     // log the newContent in console
     console.log(newContent);
 
-    // Grab url from form's action
-    // specifically from #new-content form
-    $.post($("#new-content form").attr("action"), {content: newContent}).done(function(data){
+    // Get url path from gon variable
+    // in sections controller
+    $.post(gon.content_path, {content: newContent}).done(function(data){
         console.log(data);
 
       // Append this content
@@ -28,8 +34,9 @@ $(function(){
 
 
   // Display all content(s) on the page
-  // WHAT'S THE URL? 
-  $.get($("#new-content form").attr("action")).done(function(data){
+  // Get url path from gon variable
+  // in sections controller
+  $.get(gon.content_path).done(function(data){
     $(data).each(function(index, contentItem){
       var contentHTML = HandlebarsTemplates.contents(contentItem);
       $("#contents").append(contentHTML);
