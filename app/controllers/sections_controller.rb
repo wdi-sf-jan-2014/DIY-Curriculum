@@ -37,7 +37,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     course = Course.find(params[:course_id])
     @section.course_id = course.id
     @section.save
-
+    
     respond_to do |f|
       f.json { render :json => @section }
     end
