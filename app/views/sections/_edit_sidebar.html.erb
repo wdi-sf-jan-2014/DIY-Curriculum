@@ -1,0 +1,28 @@
+<div class="small-3 columns sidebar-column">
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+      <h3 class="sidebar-course-title">
+        <%=@course.title%>
+      </h3>
+      <h5 class="sidebar-cagetory-title">
+        <%=@category.name%>
+      </h5>
+    </div>
+    <ul class="side-nav">
+      <% @sections.each do |section| %>
+      <li >
+        <div class="section">
+          <a href="/courses/<%=@course.id%>/sections/<%=section.id%>/edit">
+            <%= section.title %>
+          </a>
+        <div>
+      </li>
+      <% end %>
+      <li>
+         <%= render "form"%>
+      </li>
+    </ul>
+
+  </div>
+</div>

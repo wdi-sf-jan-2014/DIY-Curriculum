@@ -50,6 +50,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     @course = Course.find(params[:course_id])
     @category = Category.find(@course.category_id)
     @section = Section.find(params[:id])
+    @sections = @course.sections
     course_params = params[:course_id]
     gon.content_path = "/courses/#{course_params}/sections/#{@section.id}/contents.json"
   end
