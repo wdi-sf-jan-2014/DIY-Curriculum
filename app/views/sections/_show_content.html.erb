@@ -1,15 +1,32 @@
 <div class="small-9 columns content-column">
   <div class="show-contents">
-    <ul class="content-ul">
-      <% @contents.each do |content| %>
-        <li >
-          <div class="show-content">
-              <%= content.source_url %>
-              <%= content.text %>
-          <div>
-        </li>
-      <% end %>
-    </ul>
+<div id="count_to"></div>
+
+    <!-- a blank array for pushing each word count number into -->
+    <% array = []%>
+    <% content = @contents.each do |f| %>
+      <li id="content_list"><div id="content_comment"><%= f.text %></div></li>
+      <% url = f.source_url 
+          response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=a9378813ac7dc9ee366dfe45ee8f1a205cdce9e6")      
+          result = JSON.parse(response.body)%>
+      <div id="content_title"><%= result['title'] %></div>
+      <div class="author"><%= result['author'] %></div> 
+      <div id="link"><a href="<%=result['url']%>"><%= result['domain']%></a></div>
+      <div class="count"><%= count_each = result['word_count'] %></div>
+      <div id="excerpt"><%= raw(result['excerpt']) %></div>
+      <!-- pushing the count into the blank array -->
+      <% array << count_each %>
+      <button class="content_button">+</button>
+      <div id="content", style="display: none"><%= raw(result['content']) %></div>
+    <% end %>
+
+<div id="count_from">
+<!--   <h2><%#=@section.title%></h2> -->
+  <% total_words = array.sum { |e| e.to_i } %>
+  <h4>section word count: <%= total_words %></h4>
+  <% wpm = (total_words / 200) %>
+  <h4>aprox reading time: <%= wpm %> minutes</h4>
+</div>
   </div>
 
 </div>
