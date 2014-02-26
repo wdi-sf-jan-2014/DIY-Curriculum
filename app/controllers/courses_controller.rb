@@ -31,10 +31,20 @@ class CoursesController < ApplicationController
     course = Course.create(new_course)
     course.user_id = current_user.id
     course.author_id = current_user.id
+    # course.guid = SecureRandom.urlsafe_base64(10)
     course.save
 
     #redirect_to the sections index where you can create sections
     redirect_to new_course_section_path(course)
+  end
+
+  def enroll
+    @course = Course.find(params[:id])
+    new_course = params.require(:course).permit(:title, :description, :category_id, :author_id, :guid)
+    course = Course.create(new_course)
+    course.user_id = current_user.id
+    course.save
+
   end
 
   def edit

@@ -4,6 +4,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :author_id
+      # t.string :guid
       t.references :category
       t.references :user
       t.timestamps
