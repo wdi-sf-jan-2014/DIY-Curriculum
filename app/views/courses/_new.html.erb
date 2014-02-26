@@ -1,5 +1,17 @@
+<script>
+function validateForm()
+{
+var c_title=$("#new-course form #course_title").val();
+if (c_title==null || c_title=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+}
+</script>
 <div id="new-course" class="reveal-modal" data-reveal>
-  <%= form_for :course, url: courses_path do |c| %>
+  <%= form_for :course, url: courses_path, :html => { :onsubmit => "return validateForm()" } do |c| %>
+
     <%= c.text_field :title, placeholder: "Course title" %>
     <%= c.text_area :description, placeholder: "what is this course about?" %>
     <%= c.select :category_id, options_from_collection_for_select(@categories, "id", "name"), prompt: "Categories" %>
