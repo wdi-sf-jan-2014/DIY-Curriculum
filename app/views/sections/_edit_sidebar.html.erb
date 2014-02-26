@@ -9,16 +9,10 @@
         <%=@category.name%>
       </h5>
     </div>
-    <ul class="side-nav">
-      <% @sections.each do |section| %>
+    <ul class="side-nav"> 
       <li >
-        <div class="section">
-          <a href="/courses/<%=@course.id%>/sections/<%=section.id%>/edit">
-            <%= section.title %>
-          </a>
-        <div>
+       <div id="sections"></div>
       </li>
-      <% end %>
       <li>
          <%= render "form"%>
       </li>
