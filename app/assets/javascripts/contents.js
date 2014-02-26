@@ -1,5 +1,10 @@
 if($("#addContent").length > 0) {
   $(function(){
+    $.ajaxSetup({
+        headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
 
     // show new content form
     // in SECTIONS edit view
@@ -24,13 +29,27 @@ if($("#addContent").length > 0) {
 
       // Get url path from gon variable
       // in sections controller
+
+    // $("#edit_content_form").submit(function(){
+    //   updated_content = {id: this.dataset.id};
+    //   updated_content.source_url = $("#update_content_source_url").val();
+    //   updated_content.text = $("#update_content_text").val();
+    //   $.ajax({
+    //     url: gon.content_path,
+    //     type: "PATCH",
+    //     data: {content: updated_content}
+    //   }).sucess(function(){alert("Success")});
+
+    // })      
       
-      $.post(gon.content_path, {content: newContent}).done(function(data){
-          console.log(data);
+
+    $.post(gon.content_path, {content: newContent}).done(function(data){
+        console.log(data);
 
         // Append this content
         var contentHTML = HandlebarsTemplates.contents(data);
         $("#contents").append(contentHTML);
+        $(document).foundation();
       });
     });// <-- end of submit #addContent function
 
@@ -40,10 +59,13 @@ if($("#addContent").length > 0) {
     // in sections controller
     $.get(gon.content_path).done(function(data){
       $(data).each(function(index, contentItem){
+        contentItem.content_path = gon.content_path;
         var contentHTML = HandlebarsTemplates.contents(contentItem);
         $("#contents").append(contentHTML);
       });
+      $(document).foundation();
     });
+
 
 
   });
