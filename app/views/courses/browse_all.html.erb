@@ -1,7 +1,39 @@
 <h1 class="page-title">Browse Courses by Category<h1>
 <h3 id="cat_name_to">* * * * *</h3>
 
-<div class="row_browse">
+
+<div class="all_cats_holder">
+  <div class="all_cats">
+  <% @a.each do |f| %>
+    <div class= "cat_holder">
+      <div class="cat_image"><%= image_tag(f.img)%></div>
+      <div class="cat_name"><%= f.name %></div>
+    </div>
+    <%end%>
+  </div>  
+</div>
+<div class="all_cats_holder">
+  <div class="all_cats">
+  <% @b.each do |f| %>
+    <div class= "cat_holder">
+      <div class="cat_image"><%= image_tag(f.img)%></div>
+      <div class="cat_name"><%= f.name %></div>
+    </div>
+    <%end%>
+  </div>  
+</div>
+<div class="all_cats_holder">
+  <div class="all_cats">
+  <% @c.each do |f| %>
+    <div class= "cat_holder">
+      <div class="cat_image"><%= image_tag(f.img)%></div>
+      <div class="cat_name"><%= f.name %></div>
+    </div>
+    <%end%>
+  </div>  
+</div>
+
+<!-- <div class="row_browse">
   <div class="small-4 columns">
   <% @a.each do |f| %>
     <div class= "cat_holder">
@@ -26,7 +58,7 @@
   </div>
     <%end%>
   </div>
-</div>
+</div> -->
 
 <% @all_courses.each do |course| %>
   <div class="row">
@@ -38,6 +70,7 @@
     </div>
   </div>
 <% end %>
+
 
 <style>
 .row_browse {
@@ -59,8 +92,12 @@ margin-top: -10px;
 margin-bottom: 25px;
 }
 
+.all_cats > div{
+margin: 5px 5px 0 5px;
+}
+
 .cat_image img {
-width:80px;
+width:90px;
 background: lightgrey;
 margin-bottom: 5px;
 padding:10px;
@@ -72,6 +109,17 @@ background:lightblue;
 
 .cat_name{
 display: none;
+}
+
+.all_cats {
+text-align: center;
+display: inline-flex;
+margin-left: 10%;
+margin-right: 10%;
+}
+
+.all_cats_holder {
+text-align: center;
 }
 
 </style>
