@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
 before_filter :authenticate_user!
+skip_before_filter :verify_authenticity_token
 
 def index
   section = Section.find(params[:section_id])
@@ -27,9 +28,7 @@ def update
   updated_content = params.require(:content).permit(:source_url, :text)
   @section = Section.find(params[:section_id])
   @content = @section.contents.find(params[:id])
-  respond_to do |f|
-    f.json { render :json => @content }
-  end
+  redirect_to edit_course_section_path(@course,@section)
 end
 
 end

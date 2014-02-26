@@ -29,10 +29,21 @@ if($("#addContent").length > 0) {
 
       // Get url path from gon variable
       // in sections controller
-      
+
+    // $("#edit_content_form").submit(function(){
+    //   updated_content = {id: this.dataset.id};
+    //   updated_content.source_url = $("#update_content_source_url").val();
+    //   updated_content.text = $("#update_content_text").val();
+    //   $.ajax({
+    //     url: gon.content_path,
+    //     type: "PATCH",
+    //     data: {content: updated_content}
+    //   }).sucess(function(){alert("Success")});
+
+    // })      
       
 
-      $.post(gon.content_path, {content: newContent}).done(function(data){
+    $.post(gon.content_path, {content: newContent}).done(function(data){
         console.log(data);
 
         // Append this content
@@ -55,17 +66,7 @@ if($("#addContent").length > 0) {
       $(document).foundation();
     });
 
-    // $("#edit_content_form").submit(function(){
-    //   updated_content = {id: this.dataset.id};
-    //   updated_content.source_url = $("#update_content_source_url").val();
-    //   updated_content.text = $("#update_content_text").val();
-    //   $.ajax({
-    //     url: gon.content_path,
-    //     type: "PATCH",
-    //     data: {content: updated_content}
-    //   });
 
-    // })
 
   });
 } // <-- end of entire function
