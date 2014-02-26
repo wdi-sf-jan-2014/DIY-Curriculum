@@ -6,10 +6,10 @@ def createdCourses
 end
 
 def enrolledCourses
-  enrolled_courses_ids = Enrollment.where(:user_id => current_user.id)
+  enrollment_ids = Enrollment.where(:user_id => current_user.id)
   @enrolled_courses = []
-  enrolled_courses_ids.each do |course|
-    course = Course.find(course.id)
+  enrollment_ids.each do |enrollment|
+    course = Course.find(enrollment.course_id)
     if course.author_id != current_user.id
       @enrolled_courses << Course.find(course.id)
     end

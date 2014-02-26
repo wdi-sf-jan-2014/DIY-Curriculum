@@ -8,7 +8,6 @@ class CoursesController < ApplicationController
     allCategories
     createdCourses
     enrolledCourses
-
     respond_to do |f|
       f.html
       f.json { render :json => @created_courses }
@@ -25,6 +24,14 @@ class CoursesController < ApplicationController
     allCategories
     @course = Course.find(params[:id])
     @user = User.find(@course.author_id)
+
+    if current_user.courses.where(:id => @course.id) == []
+      @enrolled = false
+    else
+      @enrolled = true
+    end
+
+
   end
 
   def create
@@ -47,6 +54,20 @@ class CoursesController < ApplicationController
     course = Course.find(params[:id])
     course.update_attributes(updated_info)
     redirect_to course_path
+  end
+
+  def enroll
+    course = Course.find(params[:id])
+    current_user.courses << course
+    binding.pry
+    render :json => { result: "enrolled"}
+  end
+
+  def unenroll
+    course = Course.find(params[:id])
+    current_user.courses.delete(course)
+    binding.pry
+    render :json => { result: "unenrolled"}
   end
 
   def delete
