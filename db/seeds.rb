@@ -20,6 +20,6 @@ category9 = Category.create(name: "economics")
 
 category10 = Category.create(name: "programming")
 category11 = Category.create(name: "music")
-category12 = Category.create(name: "politics")
+category12 = Category.create(name: "undecided")
 
 content1 = Content.create(text: "first comment", source_url: "http://www.slate.com/articles/technology/bitwise/2014/02/apple_security_bug_a_critical_flaw_was_extraordinarily_simple.html")
