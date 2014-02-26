@@ -29,18 +29,6 @@ if($("#addContent").length > 0) {
 
       // Get url path from gon variable
       // in sections controller
-
-    // $("#edit_content_form").submit(function(){
-    //   updated_content = {id: this.dataset.id};
-    //   updated_content.source_url = $("#update_content_source_url").val();
-    //   updated_content.text = $("#update_content_text").val();
-    //   $.ajax({
-    //     url: gon.content_path,
-    //     type: "PATCH",
-    //     data: {content: updated_content}
-    //   }).sucess(function(){alert("Success")});
-
-    // })      
       
 
     $.post(gon.content_path, {content: newContent}).done(function(data){
@@ -64,9 +52,24 @@ if($("#addContent").length > 0) {
         contentItem.content_path = gon.content_path;
         var contentHTML = HandlebarsTemplates.contents(contentItem);
         $("#contents").append(contentHTML);
+        $(document).foundation();
+        $("#edit_content_form_"+contentItem.id).submit(function(){
+        event.preventDefault();
+        var updated_content = {id: contentItem.id};
+        updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
+        updated_content.text = $("#update_content_text_"+contentItem.id).val();
+        $.ajax({
+          url: gon.edit_content_path + updated_content.id+".json",
+          type: "PATCH",
+          data: {content: updated_content}
+        }).done(window.reload);
       });
-      $(document).foundation();
+      
+
+
     });
+    });
+
 
 
 

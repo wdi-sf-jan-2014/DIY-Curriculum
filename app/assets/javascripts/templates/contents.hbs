@@ -3,9 +3,9 @@
   <div>{{text}}</div>
   <a href="#" data-reveal-id="edit-content-{{id}}">edit</a>
   <div id="edit-content-{{id}}" class="reveal-modal" data-reveal>
-    <form id="edit_content_form" action="{{content_path}}" method="post">
-      <input id="update_content_source_url" name="content[source_url]" placeholder="Resource link" type="text">
-      <textarea id="update_content_text" name="content[text]" placeholder="How did you use this resource?"></textarea>
+    <form id="edit_content_form_{{id}}" action="{{edit_content_path}}" method="post">
+      <input id="update_content_source_url_{{id}}" name="content[source_url]" placeholder="Resource link" type="text">
+      <textarea id="update_content_text_{{id}}" name="content[text]" placeholder="How did you use this resource?"></textarea>
       <input id="update_content_button" class="button large" name="commit" type="submit" value="update">
     </form>
     <a class="close-reveal-modal">&#215;</a>

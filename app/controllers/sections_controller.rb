@@ -53,6 +53,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     @sections = @course.sections
     course_params = params[:course_id]
     gon.content_path = "/courses/#{course_params}/sections/#{@section.id}/contents.json"
+    gon.edit_content_path = "/courses/#{course_params}/sections/#{@section.id}/contents/"
   end
 
   def update

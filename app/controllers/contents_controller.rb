@@ -21,12 +21,23 @@ def index
   end
 end
 
+def show
+  @content = Content.find(params[:id])
+  respond_to do |f|
+    f.json { render :json => @content}
+  end
+end
+
 
 def update
   updated_content = params.require(:content).permit(:source_url, :text)
   @section = Section.find(params[:section_id])
   @content = @section.contents.find(params[:id])
-  redirect_to edit_course_section_path(@course,@section)
+  @content.update_attributes(updated_content)
+  respond_to do |f|
+    f.json { render :json => @content}
+  end
+  # redirect_to edit_course_section_path(@course,@section)
 end
 
 
