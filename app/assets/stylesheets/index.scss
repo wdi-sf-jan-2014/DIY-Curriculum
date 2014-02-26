@@ -1,7 +1,3 @@
-#tag_line{
-margin-top: 50px;
-text-align: center;
-}
 
 #index_graphic{
   width:80%; 
@@ -16,39 +12,6 @@ margin-left:auto;
 margin-right:auto;
 }
 
-.box {
-display: inline-block;
-padding: 30px;
-width: 150px;
-height: 150px;
-margin-left: 40px;
-margin-right: 40px;
-background: lightgrey;
-}
-
-#boxes_holder{
-text-align:center;
-margin-bottom: 40px;
-}
-
-.box_text {
-text-align: center;
-position:absolute;
-margin-top:20px;
-opacity: 0;
-}
-
-.box:hover .box_text {
-opacity: 1;
-}
-
-.box:hover img {
-opacity:0;
-}
-
-.box:hover{
-background:lightblue;
-}
 
 #featured{
 text-align:center;
