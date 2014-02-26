@@ -1,10 +1,11 @@
 <script>
 function validateForm()
 {
-var c_title=$("#new-course form #course_title").val();
-if (c_title==null || c_title=="")
+var c_title=$("#new-course form #course_title");
+if (c_title.val()==null || c_title.val()=="")
   {
-  alert("First name must be filled out");
+  c_title.val("Please fill in Course Name");
+  document.getElementById("course_title").style.color = "red";
   return false;
   }
 }
