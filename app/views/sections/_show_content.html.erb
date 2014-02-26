@@ -5,7 +5,7 @@
     <!-- a blank array for pushing each word count number into -->
     <% array = []%>
     <ol>
-      <% content = @results.each do |result| %>
+      <% content = @contents.each do |result| %>
         <li id="content_list"><div id="content_comment"><%= result["text"] %></div></li>
         <div id="content_title"><%= result['title'] %></div>
         <div class="author"><%= result['author'] %></div> 

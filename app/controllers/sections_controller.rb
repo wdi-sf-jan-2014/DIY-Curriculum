@@ -20,14 +20,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     @category = Category.find(@course.category_id)
     @sections = @course.sections
     @section = Section.find(params[:id])
-    # ReadabilityWorker.perform_async(@section.id)
     @contents = @section.contents
-    @results = []
-    @contents.each do |content|
-      url = content.source_url
-      response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=2e371692e3f7e9fd04045befb46b38364db35326")      
-      @results << JSON.parse(response.body)
-    end
   end
 
   def new
