@@ -20,7 +20,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     @category = Category.find(@course.category_id)
     @sections = @course.sections
     @section = Section.find(params[:id])
-
+    # ReadabilityWorker.perform_async(@section.id)
     @contents = @section.contents
     @results = []
     @contents.each do |content|
