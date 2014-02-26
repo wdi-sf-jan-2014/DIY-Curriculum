@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-
+//= require jquery_ujs
 //= require foundation
 //= require handlebars.runtime
 //= require_tree ./templates

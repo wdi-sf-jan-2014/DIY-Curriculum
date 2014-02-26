@@ -27,7 +27,7 @@ before_filter :authenticate_user!, except: [:index, :show]
       url = content.source_url
       response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=2e371692e3f7e9fd04045befb46b38364db35326")      
       @results << JSON.parse(response.body)
-      @results[0]["text"] = content.text
+      binding.pry
     end
   end
 
