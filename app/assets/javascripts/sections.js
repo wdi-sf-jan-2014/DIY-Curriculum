@@ -14,6 +14,7 @@ $(function(){
         return false;
     }
     if (input_section.value !== "" || input_section.value !== null ) {
+      input_section.style.color = "black";
       submitNewSection(input_section);
     }
   }
