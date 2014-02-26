@@ -5,10 +5,11 @@
     <!-- a blank array for pushing each word count number into -->
     <% array = []%>
     <ol>
-      <% content = @contents.each do |f| %>
+      <% @contents.each do |f| %>
         <li id="content_list"><div id="content_comment"><%= f.text %></div></li>
+<!--  -->
         <% url = f.source_url 
-            response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=a9378813ac7dc9ee366dfe45ee8f1a205cdce9e6")      
+            response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=2e371692e3f7e9fd04045befb46b38364db35326")      
             result = JSON.parse(response.body)%>
         <div id="content_title"><%= result['title'] %></div>
         <div class="author"><%= result['author'] %></div> 
