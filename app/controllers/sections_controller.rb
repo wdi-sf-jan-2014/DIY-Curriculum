@@ -56,6 +56,11 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
   def update
+    updated_info = params.require(:section).permit(:title)
+    @course = Course.find(params[:course_id])
+    @section = @course.sections.find(params[:id])
+    @section.update_attributes(updated_info)
+    redirect_to edit_course_section_path(@course,@section)
   end
 
   def delete

@@ -12,6 +12,11 @@ Diyc::Application.routes.draw do
       resources :contents
     end
   end
+
+  resources :courses do
+    resources :comments
+  end
+
   
 end
 

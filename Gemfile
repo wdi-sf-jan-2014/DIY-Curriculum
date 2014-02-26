@@ -6,6 +6,11 @@ gem 'rails', '4.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'typhoeus'
+
+# with jquery UI, makes DOM elements sortable
+gem "acts_as_list"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
