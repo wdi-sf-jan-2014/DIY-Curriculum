@@ -21,6 +21,16 @@ before_filter :authenticate_user!, except: [:index, :show]
     @sections = @course.sections
     @section = Section.find(params[:id])
     @contents = @section.contents
+    @results = []
+    # @contents.each do |f|
+      url = @contents[0].source_url
+      response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=2e371692e3f7e9fd04045befb46b38364db35326")      
+      @results << JSON.parse(response.body)
+      binding.pry
+      @results[0]["text"] = @contents[0].text
+
+
+    # end
   end
 
   def new
