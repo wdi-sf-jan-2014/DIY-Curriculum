@@ -16,6 +16,9 @@ end
 def index
   @section = Section.find(params[:section_id])
   @all_content = @section.contents.all
+  respond_to do |f|
+    f.json{ render :json => @all_content}
+  end
 end
 
 
