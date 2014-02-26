@@ -1,6 +1,10 @@
 Diyc::Application.routes.draw do
   root to: "sites#index"
+
   devise_for :users
+  
+  get "/courses/:id/enroll", to: "courses#enroll"
+  get "/courses/:id/unenroll", to: "courses#unenroll"
   
   get "/browse", to: "courses#browse_all"
   resources :courses do

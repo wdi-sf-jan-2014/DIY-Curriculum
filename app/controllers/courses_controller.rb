@@ -6,8 +6,8 @@ class CoursesController < ApplicationController
   # my courses
   def index
     allCategories
-    @created_courses = createdCourses
-    @enrolled_courses = enrolledCourses
+    createdCourses
+    enrolledCourses
     respond_to do |f|
       f.html
       f.json { render :json => @created_courses }
@@ -23,13 +23,22 @@ class CoursesController < ApplicationController
   def show
     allCategories
     @course = Course.find(params[:id])
-    @user = User.find(@course.user_id)
+    @user = User.find(@course.author_id)
+
+    if current_user.courses.where(:id => @course.id) == []
+      @enrolled = false
+    else
+      @enrolled = true
+    end
+
+
   end
 
   def create
     new_course = params.require(:course).permit(:title, :description, :category_id)
     course = Course.create(new_course)
-    course.user_id = current_user.id
+    current_user.courses << course
+    course.author_id = current_user.id
     course.save
 
     #redirect_to the sections index where you can create sections
@@ -45,6 +54,18 @@ class CoursesController < ApplicationController
     course = Course.find(params[:id])
     course.update_attributes(updated_info)
     redirect_to course_path
+  end
+
+  def enroll
+    course = Course.find(params[:id])
+    current_user.courses << course
+    render :json => { result: "enrolled"}
+  end
+
+  def unenroll
+    course = Course.find(params[:id])
+    current_user.courses.delete(course)
+    render :json => { result: "unenrolled"}
   end
 
   def delete

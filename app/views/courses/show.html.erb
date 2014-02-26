@@ -13,6 +13,17 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
       <p><%= @course.description%><p>
     </a>
     <%= render "edit"%>
+
+      <% if @enrolled %>
+      <div id="toggles">
+        <button id="unenroll">Unenroll</button>
+        <button id="enroll" class="hidden">Enroll</button>
+      <% else %>
+      <div id="toggles">
+        <button id="enroll">Enroll</button>
+        <button id="unenroll" class="hidden">Unenroll</button>
+      </div>
+      <% end %>
   </div>
 </div>
 
