@@ -6,7 +6,15 @@ def createdCourses
 end
 
 def enrolledCourses
-  @enrolled_courses = Enrollment.where(:user_id => current_user.id)
+  enrolled_courses_ids = Enrollment.where(:user_id => current_user.id)
+  @enrolled_courses = []
+  enrolled_courses_ids.each do |course|
+    course = Course.find(course.id)
+    if course.author_id != current_user.id
+      @enrolled_courses << Course.find(course.id)
+    end
+  end
+  return @enrolled_courses
 
 end
 

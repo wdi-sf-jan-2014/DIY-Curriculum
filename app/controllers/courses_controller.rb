@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
   def show
     allCategories
     @course = Course.find(params[:id])
-    @user = User.find(@course.user_id)
+    @user = User.find(@course.author_id)
   end
 
   def create
