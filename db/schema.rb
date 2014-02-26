@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226003814) do
+ActiveRecord::Schema.define(version: 20140226184116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20140226003814) do
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "res_title"
+    t.string   "res_author"
+    t.string   "res_domain"
+    t.integer  "res_word_count"
+    t.text     "res_excerpt"
+    t.text     "res_content"
   end
 
   create_table "courses", force: true do |t|

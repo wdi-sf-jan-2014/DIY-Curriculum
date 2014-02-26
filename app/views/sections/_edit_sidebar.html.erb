@@ -3,11 +3,9 @@
 
     <div class="sidebar-title">
       <h3 class="sidebar-course-title">
+      <div class="course_cat_img"><%= image_tag(@category.img)%></div>
         <%=@course.title%>
       </h3>
-      <h5 class="sidebar-cagetory-title">
-        <%=@category.name%>
-      </h5>
     </div>
     <ul class="side-nav"> 
       <li >
@@ -20,3 +18,12 @@
 
   </div>
 </div>
+
+
+<style>
+
+.course_cat_img img{
+width:60px;
+margin-bottom: 10px; 
+}
+</style>

@@ -3,26 +3,21 @@ before_filter :authenticate_user!
 skip_before_filter :verify_authenticity_token
 
 def create
-  new_content = params.require(:content).permit(:source_url, :text)
+  new_content = params.require(:content).permit(:source_url, :text, :res_title, :res_author, :res_domain, :res_word_count, :res_excerpt, :res_content)
   section = Section.find(params[:section_id])
   @content = section.contents.create(new_content)
-
-  # if @content.source_url.include? "youtube.com" 
-  #   url = @content.source_url
-  #   last = url.length
-  #   first = last - 11
-  #   embed_code = url[("#{first}".to_i)..("#{last}".to_i)].to_s
-  #   @video_url = "http://www.youtube.com/embed/" + embed_code
-  # end
+  ReadabilityWorker.perform_async(@content.id)    
   respond_to do |f|
     f.json { render :json => @content}
   end
 end
 
-
 def index
   @section = Section.find(params[:section_id])
   @all_content = @section.contents.all
+  respond_to do |f|
+    f.json{ render :json => @all_content}
+  end
 end
 
 

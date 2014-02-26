@@ -5,20 +5,17 @@
     <!-- a blank array for pushing each word count number into -->
     <% array = []%>
     <ol>
-      <% @contents.each do |f| %>
-        <li id="content_list"><div id="content_comment"><%= f.text %></div></li>
-        <% url = f.source_url 
-            response = Typhoeus.get("https://www.readability.com/api/content/v1/parser?url=#{url}/&token=2e371692e3f7e9fd04045befb46b38364db35326")      
-            result = JSON.parse(response.body)%>
-        <div id="content_title"><%= result['title'] %></div>
-        <div class="author"><%= result['author'] %></div> 
-        <div id="link"><a href="<%=result['url']%>"><%= result['domain']%></a></div>
-        <div class="count"><%= count_each = result['word_count'] %></div>
-        <div id="excerpt"><%= raw(result['excerpt']) %></div>
+      <% content = @contents.each do |content| %>
+        <li id="content_list"><div id="content_comment"><%= content.text %></div></li>
+        <div id="content_title"><%= content.res_title %></div>
+        <div class="author"><%= content.res_author %></div> 
+        <div id="link"><a href="<%=content.source_url%>"><%= content.res_domain %></a></div>
+        <div class="count"><%= count_each = content.res_word_count %></div>
+        <div id="excerpt"><%= raw(content.res_excerpt) %></div>
         <!-- pushing the count into the blank array -->
         <% array << count_each %>
         <button class="content_button">+</button>
-        <div id="content", style="display: none"><%= raw(result['content']) %></div>
+        <div id="content", style="display: none"><%= raw(content.res_content) %></div>
       <% end %>
     </ol>
     <!-- the count_from gets appended to count_to -->
