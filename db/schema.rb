@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20140226003814) do
     t.text     "description"
     t.integer  "author_id"
     t.integer  "category_id"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,7 +64,6 @@ ActiveRecord::Schema.define(version: 20140226003814) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
   end
 
   create_table "users", force: true do |t|

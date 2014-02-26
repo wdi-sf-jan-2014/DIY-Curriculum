@@ -12,9 +12,11 @@
           </h5>
         </div>
         <div class="small-12 medium-3 column">
-          <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>">
-             <i class="fi-check"></i>
-          </a>
+          <% if @section %>
+            <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>">
+               <i class="fi-check"></i>
+            </a>
+          <% end %>
         </div>
       </div>
     </div>

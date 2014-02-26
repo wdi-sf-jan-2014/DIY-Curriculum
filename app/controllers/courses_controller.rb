@@ -23,8 +23,7 @@ class CoursesController < ApplicationController
   def show
     allCategories
     @course = Course.find(params[:id])
-    @user = User.find(@course.author_id)
-
+    @author = User.find(@course.author_id)
     if current_user.courses.where(:id => @course.id) == []
       @enrolled = false
     elsif current_user.id = @course.author_id
@@ -32,8 +31,6 @@ class CoursesController < ApplicationController
     else
       @enrolled = true
     end
-
-
   end
 
   def create
