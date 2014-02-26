@@ -59,14 +59,12 @@ class CoursesController < ApplicationController
   def enroll
     course = Course.find(params[:id])
     current_user.courses << course
-    binding.pry
     render :json => { result: "enrolled"}
   end
 
   def unenroll
     course = Course.find(params[:id])
     current_user.courses.delete(course)
-    binding.pry
     render :json => { result: "unenrolled"}
   end
 
