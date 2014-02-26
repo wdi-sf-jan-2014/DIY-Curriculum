@@ -2,12 +2,21 @@
   <div class="sidebar">
 
     <div class="sidebar-title">
-      <h3 class="sidebar-course-title">
-        <%=@course.title%>
-      </h3>
-      <h5 class="sidebar-cagetory-title">
-        <%=@category.name%>
-      </h5>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="sidebar-course-title">
+            <%=@course.title%>
+          </h3>
+          <h5 class="sidebar-cagetory-title">
+            <%=@category.name%>
+          </h5>
+        </div>
+        <div class="small-12 medium-3 column">
+          <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>">
+             <i class="fi-check"></i>
+          </a>
+        </div>
+      </div>
     </div>
     <ul class="side-nav"> 
       <li >
