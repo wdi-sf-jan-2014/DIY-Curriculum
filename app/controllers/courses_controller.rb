@@ -27,6 +27,8 @@ class CoursesController < ApplicationController
 
     if current_user.courses.where(:id => @course.id) == []
       @enrolled = false
+    elsif current_user.id = @course.author_id
+      @ownCourse = true
     else
       @enrolled = true
     end
