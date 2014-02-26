@@ -26,11 +26,12 @@ class CoursesController < ApplicationController
     @author = User.find(@course.author_id)
     if current_user.courses.where(:id => @course.id) == []
       @enrolled = false
-    elsif current_user.id = @course.author_id
+    elsif current_user.id == @course.author_id
       @ownCourse = true
     else
       @enrolled = true
     end
+    binding.pry
   end
 
   def create
