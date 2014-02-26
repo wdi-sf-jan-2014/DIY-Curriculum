@@ -6,12 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-category1 = Category.create(name: "Art")
-category2 = Category.create(name: "Business")
-category3 = Category.create(name: "Computer Science")
-category4 = Category.create(name: "Philosophy")
-category5 = Category.create(name: "Design")
-category6 = Category.create(name: "Cooking")
-category7 = Category.create(name: "Natural Sciences")
-category8 = Category.create(name: "Geology")
-category9 = Category.create(name: "Robotics")
+category1 = Category.create(name: "art")
+category2 = Category.create(name: "education")
+category3 = Category.create(name: "science")
+
+category4 = Category.create(name: "philosophy")
+category5 = Category.create(name: "cooking")
+category6 = Category.create(name: "history")
+
+category7 = Category.create(name: "writing")
+category8 = Category.create(name: "mathmatics")
+category9 = Category.create(name: "economics")
+
+category10 = Category.create(name: "programming")
+category11 = Category.create(name: "music")
+category12 = Category.create(name: "politics")
+
+content1 = Content.create(text: "first comment", source_url: "http://www.slate.com/articles/technology/bitwise/2014/02/apple_security_bug_a_critical_flaw_was_extraordinarily_simple.html")

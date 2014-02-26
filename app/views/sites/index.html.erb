@@ -1,10 +1,47 @@
 <h1 id="tag_line">beautifully organize online resources<br>
 to create DIY curricula</h1>
 
-<div id="index_graphic">
-<%= image_tag("diy_display_example.png")%>
+<div class="partial_button">
+<%= image_tag("pens-pencils_128.png")%>
 </div>
 
+
+<div id="index_partial">
+<%= render 'index_content' %>
+</div>
+
+
+<style>
+
+.partial_botton{
+text-align: center;
+margin-right: auto;
+margin-left: auto;
+}
+
+
+</style>
+
+
+<script>
+$(".partial_button").click(function(){
+  $(this).next('#index_partial').toggle('medium');
+  //   if ($(this).text() === "+") {
+  //     $(this).text("-");
+  //   }
+  //   else 
+  //     $(this).text("+");
+   }
+);
+</script>
+
+
+
+
+
+
+
+<!-- 
 <hr class="line">
 
 <h3 id="featured">featured curricula:</h3>
@@ -55,4 +92,4 @@ to create DIY curricula</h1>
   </div>
 </div>
 
-<hr class="line">
+<hr class="line"> -->

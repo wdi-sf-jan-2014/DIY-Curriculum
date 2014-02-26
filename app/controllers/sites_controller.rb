@@ -2,6 +2,7 @@ class SitesController < ApplicationController
   def index
   all_cats = Category.all 
   @all_cats_alpha = all_cats.sort_by!{ |f| f.name.downcase } 
+  @contents = Content.all
   cats = @all_cats_alpha
   div = cats.length/3
   div_two = div * 2
