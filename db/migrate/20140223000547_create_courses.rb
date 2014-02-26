@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration
       t.integer :author_id
       # t.string :guid
       t.references :category
-      t.references :user
+      # t.references :user
       t.timestamps
     end
   end
