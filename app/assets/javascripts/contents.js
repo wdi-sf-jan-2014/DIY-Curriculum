@@ -48,6 +48,8 @@ if($("#addContent").length > 0) {
 
         // Append this content
         var contentHTML = HandlebarsTemplates.contents(data);
+        $("#content_source_url").val(""); //empties value
+        $("#content_text").val("");
         $("#contents").append(contentHTML);
         $(document).foundation();
       });
