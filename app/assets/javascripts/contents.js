@@ -49,3 +49,44 @@ if($("#addContent").length > 0) {
   });
 } // <-- end of entire function
 
+
+// begin content 
+
+$(".content_button").click(function(){
+  $(this).next('#content').toggle('medium');
+    if ($(this).text() === "+") {
+      $(this).text("-");
+    }
+    else 
+      $(this).text("+");
+  }
+);
+
+$( ".author" ).each(function() {
+  if ( $(this).text() !== "" ) {
+    $(this).prepend("by ");
+  }
+});
+
+var total = 0;
+$('.count').each(function(){
+   total += parseInt($(this).val());
+});
+
+$( ".count" ).each(function() {
+  if ( $(this).text() !== "" ) {
+    $(this).append(" words");
+  }
+});
+
+$("#count_to").append($("#count_from"));
+
+// end content
+
+// $(function() {  
+//     $( "#sortable" ).sortable({   
+//         placeholder: "ui-sortable-placeholder"   
+//     });  
+// }); 
+
+
