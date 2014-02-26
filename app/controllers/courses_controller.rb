@@ -6,8 +6,9 @@ class CoursesController < ApplicationController
   # my courses
   def index
     allCategories
-    @created_courses = createdCourses
-    @enrolled_courses = enrolledCourses
+    createdCourses
+    enrolledCourses
+
     respond_to do |f|
       f.html
       f.json { render :json => @created_courses }
@@ -29,22 +30,12 @@ class CoursesController < ApplicationController
   def create
     new_course = params.require(:course).permit(:title, :description, :category_id)
     course = Course.create(new_course)
-    course.user_id = current_user.id
+    current_user.courses << course
     course.author_id = current_user.id
-    # course.guid = SecureRandom.urlsafe_base64(10)
     course.save
 
     #redirect_to the sections index where you can create sections
     redirect_to new_course_section_path(course)
-  end
-
-  def enroll
-    @course = Course.find(params[:id])
-    new_course = params.require(:course).permit(:title, :description, :category_id, :author_id, :guid)
-    course = Course.create(new_course)
-    course.user_id = current_user.id
-    course.save
-
   end
 
   def edit
