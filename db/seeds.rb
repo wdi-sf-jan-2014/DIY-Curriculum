@@ -6,20 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-category1 = Category.create(name: "art")
-category2 = Category.create(name: "education")
-category3 = Category.create(name: "science")
+category1 = Category.create(name: "art", img: "art.png")
+category2 = Category.create(name: "education", img: "education.png")
+category3 = Category.create(name: "science", img: "science.png")
 
-category4 = Category.create(name: "philosophy")
-category5 = Category.create(name: "cooking")
-category6 = Category.create(name: "history")
+category4 = Category.create(name: "philosophy", img: "philosophy.png")
+category5 = Category.create(name: "cooking", img: "cooking.png")
+category6 = Category.create(name: "history", img: "history.png")
 
-category7 = Category.create(name: "writing")
-category8 = Category.create(name: "mathmatics")
-category9 = Category.create(name: "economics")
+category7 = Category.create(name: "writing", img: "writing.png")
+category8 = Category.create(name: "mathmatics", img: "mathmatics.png")
+category9 = Category.create(name: "economics", img: "economics.png")
 
-category10 = Category.create(name: "programming")
-category11 = Category.create(name: "music")
-category12 = Category.create(name: "undecided")
+category10 = Category.create(name: "programming", img: "programming.png")
+category11 = Category.create(name: "music", img: "music.png")
+category12 = Category.create(name: "undecided", img: "owl_128.png")
 
 content1 = Content.create(text: "first comment", source_url: "http://www.slate.com/articles/technology/bitwise/2014/02/apple_security_bug_a_critical_flaw_was_extraordinarily_simple.html")

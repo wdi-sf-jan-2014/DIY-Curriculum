@@ -1,4 +1,32 @@
-<h1 class="page-title">Browse Courses<h1>
+<h1 class="page-title">Browse Courses by Category<h1>
+<h3 id="cat_name_to">* * * * *</h3>
+
+<div class="row_browse">
+  <div class="small-4 columns">
+  <% @a.each do |f| %>
+    <div class= "cat_holder">
+      <div class="cat_image"><%= image_tag(f.img)%></div>
+      <div class="cat_name"><%= f.name %></div>
+    </div>
+    <%end%>
+  </div>
+  <div class="small-4 columns middle-column">
+  <% @b.each do |f| %>
+  <div class= "cat_holder">
+    <div class="cat_image"><%= image_tag(f.img)%></div>
+    <div class="cat_name"><%= f.name %></div>
+  </div>
+  <%end%>
+  </div>
+    <div class="small-4 columns">
+   <% @c.each do |f| %>
+  <div class= "cat_holder">
+    <div class="cat_image"><%= image_tag(f.img)%></div>
+    <div class="cat_name"><%= f.name %></div>
+  </div>
+    <%end%>
+  </div>
+</div>
 
 <% @all_courses.each do |course| %>
   <div class="row">
@@ -10,3 +38,53 @@
     </div>
   </div>
 <% end %>
+
+<style>
+.row_browse {
+width: 80%;
+margin-left: auto;
+margin-right: auto; 
+max-width: initial; 
+}
+
+.large-8 columns,
+.small-9 small-centered columns,
+.cat_image, 
+#cat_name_to{
+text-align: center;
+}
+
+#cat_name_to{
+margin-top: -10px;
+margin-bottom: 25px;
+}
+
+.cat_image img {
+width:80px;
+background: lightgrey;
+margin-bottom: 5px;
+padding:10px;
+}
+
+.cat_image img:hover{
+background:lightblue;
+}
+
+.cat_name{
+display: none;
+}
+
+</style>
+
+<script>
+
+$(".cat_holder")
+  .mouseover(function() {
+    var this_text = $(this).text();
+  $( "#cat_name_to" ).text(this_text);
+    })
+  .mouseout(function() {
+  $( "#cat_name_to" ).text( "* * * * *" );
+});
+
+</script>
