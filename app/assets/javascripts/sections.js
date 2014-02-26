@@ -3,6 +3,7 @@ $(function(){
     event.preventDefault();
     validateForm();
   });
+
   function validateForm()
   {
     var input_section = document.getElementById("section_title");
@@ -13,7 +14,10 @@ $(function(){
         return false;
     }
     if (input_section.value !== "" || input_section.value !== null ) {
-
+      submitNewSection(input_section);
+    }
+  }
+  var submitNewSection = function(input_section) {
       var newSection = {};
 
       newSection.title = input_section.value;
@@ -25,8 +29,8 @@ $(function(){
         $("#section_title").val("");
         $("#sections").append(sectionHTML);
       });
-    }
-  }
+   }; 
+  
 
 
    // get request to show all sections in that course
