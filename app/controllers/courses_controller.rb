@@ -31,7 +31,6 @@ class CoursesController < ApplicationController
     else
       @enrolled = true
     end
-    binding.pry
   end
 
   def create

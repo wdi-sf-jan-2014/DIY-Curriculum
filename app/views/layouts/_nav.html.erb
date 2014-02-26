@@ -1,7 +1,7 @@
 <nav class = "top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-             <h1><a href="#">+</a></h1>
+             <h1><a href="#"><i class="fi-pencil"></i></a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
         </li>
@@ -10,7 +10,12 @@
       <% if signed_in? %>
       <ul class="left">
         <li class="divider"></li>
-        <li><%= link_to "Courses", courses_path%></li>        
+        <li>
+            <%= link_to courses_path do%> 
+                <i class="fi-book"></i>
+                <span class="courses-nav">Courses<span>
+            <% end %>    
+        </li> 
       </ul>
       <%end%>
 
@@ -33,7 +38,6 @@
     </li>
     <%end%>
     <% if signed_in? %>
-        <li class="divider"></li>
         <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
     <%else%>    
         <li class="divider"></li>
