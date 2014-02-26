@@ -1,9 +1,27 @@
-<h1 id="tag_line">beautifully organize online resources<br>
-to create DIY curricula</h1>
+<h1 id="tag_line">create beautiful DIY lesson plans<br>
+with online resources</h1>
 
-<div class="partial_button">
+<!-- <div class="partial_button">
 <%= image_tag("pens-pencils_128.png")%>
+</div> -->
+
+<hr class="line">
+
+<div id="boxes_holder">
+  <div class="partial_button">
+    <span class="box_text">intro to<br>chemistry</span>
+    <%= image_tag("lab-flask_128.png")%>
 </div>
+  <div class="box">
+    <span class="box_text">create your<br>first<br>Rails app</span>
+    <%= image_tag("laptop_128.png")%>
+  </div>
+  <div class="box">
+    <span class="box_text">landscape<br>drawing</span>
+    <%= image_tag("pens-pencils_128.png")%>
+  </div>
+</div>
+
 
 
 <div id="index_partial">
@@ -13,18 +31,21 @@ to create DIY curricula</h1>
 
 <style>
 
-.partial_botton{
-text-align: center;
-margin-right: auto;
-margin-left: auto;
+#boxes_holder > div.partial_button {
+display: inline-block;
+padding: 30px;
+width: 150px;
+height: 150px;
+margin-left: 40px;
+margin-right: 40px;
+background: lightgrey;
 }
-
 
 </style>
 
 
 <script>
-$(".partial_button").click(function(){
+$("#boxes_holder").click(function(){
   $(this).next('#index_partial').toggle('medium');
   //   if ($(this).text() === "+") {
   //     $(this).text("-");
