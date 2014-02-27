@@ -35,7 +35,7 @@ content1 = Content.create(text: "first comment", source_url: "http://www.slate.c
 ###################Users Creation###########################
 
 jerome = User.create(name: "Jerome Allouche", email: "jeromeallouche01@gmail.com", password: "jerome123", password_confirmation: "jerome123")
-stephanie = User.create(name: "Stephanie Daffara", email: "stephanie@daffara.com", password: "stephanie123", password_confirmation: "stephanie123")
+stephanie = User.create(name: "Stephanie Daffara", email: "ste.daff@gmail.com", password: "stephanie123", password_confirmation: "stephanie123")
 nina = User.create(name: "Nina Pacifico", email: "nina@pacifico.com", password: "nina123", password_confirmation: "nina123")
 yutaka = User.create(name: "Yutaka Houlette", email: "yutaka@houlette.com", password: "yutaka123", password_confirmation: "yutaka123")
 
@@ -50,6 +50,12 @@ jerome_course = Course.create( title: "WDI through Videos",
                                                       mainly through youtube videos.",
                                         author_id: jerome.id,
                                         category_id: 10,
+                                      )
+
+stephanie_course = Course.create( title: "Painting",
+                                        description: "Odd Future jean shorts YOLO lo-fi, occaecat tattooed retro Tonx. Laborum polaroid put a bird on it, authentic quinoa est duis locavore Austin you probably haven't heard of them. American Apparel Bushwick tote bag pickled. Authentic synth enim asymmetrical. Synth ea food truck, Brooklyn flexitarian pariatur 90's gluten-free paleo. Vice Etsy yr Pitchfork, dolore mixtape master cleanse disrupt sunt. Chambray actually fanny pack Vice anim Portland, nulla umami sint culpa Brooklyn Neutra aliquip.",
+                                        author_id: stephanie.id,
+                                        category_id: 1,
                                       )
 
 # ______________________ = Course.create( title: "_________________",
@@ -82,6 +88,14 @@ section19 = jerome_course.sections.create(  title: "Rails TDD Intro"  )
 section20= jerome_course.sections.create(  title: "Advanced ActiveRecord and to_json"  )
 section21= jerome_course.sections.create(  title: "JavaScript BDD"  )
 
+section22 = stephanie_course.sections.create(  title: "Different paint brushes"  )
+section23 = stephanie_course.sections.create(  title: "Use a canvas"  )
+section24 = stephanie_course.sections.create(  title: "Oil vs Acrylics"  )
+section25 = stephanie_course.sections.create(  title: "Naked people"  )
+section26 = stephanie_course.sections.create(  title: "Dripping"  )
+section27 = stephanie_course.sections.create(  title: "Prepare your Canvas"  )
+section28= stephanie_course.sections.create(  title: "Advanced Techniques"  )
+section29= stephanie_course.sections.create(  title: "Colors"  )
 
 # ___________= ______________.sections.create(  title: "_______________"  )
 

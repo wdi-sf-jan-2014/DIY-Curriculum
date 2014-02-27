@@ -20,6 +20,7 @@ body, html {
 
 .top-bar {
   background: #fff;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
 }
 
 .top-bar ul li a  {
@@ -49,7 +50,7 @@ body, html {
 
 .fi-magnifying-glass {
   font-size: 20px;
- 
+
 }
 
 body > nav > section > ul.right > li.browse > a{

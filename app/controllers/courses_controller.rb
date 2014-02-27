@@ -33,10 +33,10 @@ class CoursesController < ApplicationController
     allCategories
     @course = Course.find(params[:id])
     @author = User.find(@course.author_id)
-    if current_user.courses.where(:id => @course.id) == []
-      @enrolled = false
-    elsif current_user.id == @course.author_id
+    if current_user.id == @course.author_id 
       @ownCourse = true
+    elsif current_user.courses.where(:id => @course.id) == []
+      @enrolled = false
     else
       @enrolled = true
     end
