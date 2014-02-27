@@ -12,7 +12,6 @@ def create
   end
 end
 
-
 def index
   @section = Section.find(params[:section_id])
   @all_content = @section.contents.all

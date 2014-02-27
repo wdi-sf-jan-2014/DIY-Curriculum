@@ -7,6 +7,7 @@
 #  course_id  :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  position   :integer
 #
 
 class Section < ActiveRecord::Base
