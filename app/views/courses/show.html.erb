@@ -10,6 +10,9 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
   <div class="small-9 small-centered columns">
     <a href="#" data-reveal-id="edit-course">
       <h3 class="page-title" ><%= @course.title %><h3>
+      <div class="course_cat_img"><%= image_tag(@course.category.img)%></div>
+      <p><%= @course.description%><p>
+
     </a>
       <p><%= @course.description%><p>
     <%= render "edit"%>
@@ -49,7 +52,7 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
 
       <div class="small-5 small columns">
         <h3>Course at a Glance</h3>
-        <h4>Category: <%= @course.category.name %></h4>
+        <h4>Category: <%= @course.category.name %></h4> 
         <h4># of Sections: <%= @course.sections.count %></h4>
       </div>
     </div>
@@ -63,3 +66,13 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
 
   </div>
 </div>
+
+<style>
+.course_cat_img{
+text-align: center;  
+}
+
+.course_cat_img img{
+width:70px; 
+}
+</style>

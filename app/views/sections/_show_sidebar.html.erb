@@ -5,11 +5,9 @@
       <div class="row">
         <div class="small-12 medium-9 columns">
           <h3 class="sidebar-course-title">
+            <div class="course_cat_img"><%= image_tag(@category.img)%></div>
             <%=@course.title%>
           </h3>
-          <h5 class="sidebar-cagetory-title">
-            <%=@category.name%>
-          </h5>
         </div>
         <div class="small-12 medium-3 column">
           <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>/edit">
@@ -32,3 +30,11 @@
 
   </div>
 </div>
+
+<style>
+
+.course_cat_img img{
+width:60px;
+margin-bottom: 10px; 
+}
+</style>
