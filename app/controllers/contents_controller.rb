@@ -17,7 +17,7 @@ def index
   @section = Section.find(params[:section_id])
   @all_content = @section.contents.all
   respond_to do |f|
-    f.json{ render :json => @all_content}
+    f.json{ render :json => @all_content.as_json(methods: :course_id)}
   end
 end
 

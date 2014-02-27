@@ -43,46 +43,62 @@ if($("#addContent").length > 0) {
       });
     });// <-- end of submit #addContent function
 
+    var contentItems;
+    var currentContentItemId;
 
     // Display all content(s) on the page
     // Get url path from gon variable
     // in sections controller
     $.get(gon.content_path).done(function(data){
+      contentItems = data;
       $(data).each(function(index, contentItem){
         contentItem.content_path = gon.content_path;
         contentItem.edit_content_path = gon.edit_content_path;
         var contentHTML = HandlebarsTemplates.contents(contentItem);
-      
+
         $("#contents").append(contentHTML);
-        $(document).foundation();
+      });
 
-        var editContentFormPlease = $("#edit_content_form_"+contentItem.id)
-        
-        console.log(editContentFormPlease);
-        $("#edit_content_form_"+contentItem.id).submit(function(){
+      $(".content a.edit_link").click(function() {
+        // display the modal
+        $("#edit-content").foundation("reveal", "open");
+        // keep track of the id of the content item that was clicked
+        currentContentItemId = $(this).data("id");
+        console.log(currentContentItemId, contentItems);
 
+        for (var i=0; i < contentItems.length; i++) {
+          if (contentItems[i].id === currentContentItemId) {
+
+            $("#source_url").val(contentItems[i].source_url);
+            $("#source_text").val(contentItems[i].text);
+          }
+        }
+        $("#edit_content_form").submit(function(event){
           event.preventDefault();
-          var updated_content = {id: contentItem.id};
-          updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
-          updated_content.text = $("#update_content_text_"+contentItem.id).val();
-          $.ajax({  
-            url: gon.edit_content_path + updated_content.id+".json",
-            type: "PATCH",
-            data: {content: updated_content}
-          }).done(window.reload);
+          
+
         });
-
-
-
+        
+        // in the modal set the action to the item being edited
+        // populate form with the attributes of the content item
+        // that is related to the id of the item that was clicked
       });
     });
 
-
-
-
-});
-} // <-- end of entire function
-
+  //   $("#edit_content_form").submit(function(){
+  //     event.preventDefault();
+  //     var updated_content = {id: contentItem.id};
+  //     updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
+  //     updated_content.text = $("#update_content_text_"+contentItem.id).val();
+  //     $.ajax({  
+  //       url: gon.edit_content_path + updated_content.id+".json",
+  //       type: "PATCH",
+  //       data: {content: updated_content}
+  //     }).done(window.reload);
+  //   });
+  // });
+}); // <-- end of entire function
+}
 
 // begin content 
 

@@ -8,6 +8,18 @@
     <%= render 'edit_section_form' %>
     <div id="addContent">
     </div>
+    <div id="edit-content" class="reveal-modal" data-reveal>
+      <form id="edit_content_form" 
+        action="<%= 
+          course_section_content_path(':course_id', ':section_id', ':id', format: :json)
+          %>"
+        method="post">
+        <input id="source_url" name="content[source_url]" placeholder="Resource link" type="text">
+        <textarea id="source_text" name="content[text]" placeholder="How did you use this resource?"></textarea>
+        <input id="update_content_button" class="button large" name="commit" type="submit" value="update">
+      </form>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
     <div id="contents">
     </div> 
   </div>
