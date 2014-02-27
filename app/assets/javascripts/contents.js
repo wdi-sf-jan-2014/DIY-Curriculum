@@ -6,11 +6,16 @@ if($("#addContent").length > 0) {
       }
     });
 
-    // show new content form
-    // in SECTIONS edit view
+    // SHOW new content form
     var content_path = {content_path: gon.content_path};
     var contentFormHTML = HandlebarsTemplates.contents_form(content_path);
     $("#addContent").append(contentFormHTML);
+
+    // SHOW contents
+    // ADD content
+    // EDIT content
+    // DELETE content
+
 
     // listen for submit on #addContent
     $("#addContent form").on("submit", function(event){
@@ -29,7 +34,6 @@ if($("#addContent").length > 0) {
 
       // Get url path from gon variable
       // in sections controller
-      
 
       $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
         console.log(data);
@@ -43,6 +47,7 @@ if($("#addContent").length > 0) {
       });
     });// <-- end of submit #addContent function
 
+    // starts the edit function
     var contentItems;
     var currentContentItemId;
 
@@ -142,7 +147,7 @@ if($("#addContent").length > 0) {
     });
 
 }); // <-- end of entire function
-}
+} // end of if #addContent selector
 
 // begin content 
 
