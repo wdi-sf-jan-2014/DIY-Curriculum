@@ -1,6 +1,7 @@
 <h1 class="page-title">Browse Courses by Category<h1>
 <h3 id="cat_name_to">* * * * *</h3>
 
+<!--  @a, @b, and @c hold arrays of all cats divided into three -->
 
 <div class="all_cats_holder">
 <% i = 0 %>
@@ -16,6 +17,7 @@
     <%end%>
   </div>  
 </div>
+
 <div class="all_cats_holder">
   <div class="all_cats">
   <% @b.each do |f| %>
@@ -45,190 +47,23 @@
 </div>
 
 <!-- begin tabs -->
-
 <div class="tabs-content">
-  <div class="content" id="panel2-1">
-  <h3 style="text-align:center;"><%= @all_cats.find(1).name %></h3>
-   <% this = @all_courses.where(category_id: 1) %>
-   <ol>
-   <% this.each do |course| %>
+ <% @all_cats.each do |i| %>
+  <div class="content" id="panel2-<%=i.id%>">
+    <h3><%= i.name %></h3>
     <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
+       <% cat_courses = @all_courses.where(category_id: i) %>
+        <ol>
+          <% cat_courses.each do |course| %>
+          <li class="browse_list"><a href="/courses/<%= course.id%>">
+          <h4><%= course.title %></h4></a>
+          <p><%= course.description %></p></li>
+          <% end %>
+        </ol>
     </div>
   </div>
   <% end %>
-  </ol>
-
-  <div class="content" id="panel2-2">
-   <% this = @all_courses.where(category_id: 2) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-  </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-3">
-   <% this = @all_courses.where(category_id: 3) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-4">
-   <% this = @all_courses.where(category_id: 4) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-5">
-   <% this = @all_courses.where(category_id: 5) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-6">
-   <% this = @all_courses.where(category_id: 6) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-7">
-   <% this = @all_courses.where(category_id: 7) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-8">
-   <% this = @all_courses.where(category_id: 8) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-9">
-   <% this = @all_courses.where(category_id: 9) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-10">
-   <% this = @all_courses.where(category_id: 10) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-    </ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-11">
-   <% this = @all_courses.where(category_id: 11) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-</ol>
-
-<div class="tabs-content">
-  <div class="content" id="panel2-12">
-   <% this = @all_courses.where(category_id: 12) %>
-   <ol>
-   <% this.each do |course| %>
-    <div class="small-9 small-centered columns">
-      <a href="/courses/<%= course.id%>">
-        <li><h4><%= course.title %></h4>
-        <p><%= course.description %></p></li>
-      </a>
-    </div>
-  </div>
-  <% end %>
-</ol>
-</div>
-</div>
-
-
+<!-- end tabs -->
 
 <style>
 .row_browse {
@@ -290,6 +125,10 @@ display: none;
 float: none;
 }
 
+.browse_list {
+text-align: initial;
+}
+
 </style>
 
 <script>
@@ -297,10 +136,16 @@ float: none;
 $(".cat_holder")
   .mouseover(function() {
     var this_text = $(this).text();
+    console.log(this_text);
   $( "#cat_name_to" ).text(this_text);
     })
   .mouseout(function() {
   $( "#cat_name_to" ).text( "* * * * *" );
+});
+
+$(".cat_holder")
+  .on("click", function() {
+ window.scroll(0, 300);
 });
 
 </script>
