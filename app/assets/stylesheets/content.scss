@@ -1,3 +1,15 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+
 .content-column {
   height: 100%;
   padding: 0 20px 0 5px;
@@ -11,39 +23,41 @@
 }
 
 #content_comment {
-font-weight: bold;
+  font-weight: bold;
 }
 
 #content_title {
-font-weight: bold;
-font-size: 130%;
+  font-weight: bold;
+  font-size: 130%;
 }
 
 #excerpt {
-margin-left: 25px;
-width: 90%;
-color: darkgrey;
+  margin-left: 25px;
+  width: 90%;
+  color: $grey-blue;
 }
 
 .content_button {
-margin-left: 25px;
+  margin-left: 25px;
 }
 
 #content {
-margin-left: 25px;
-padding: 20px;
-width: 90%;
-margin-top: 20px;
-background: rgb(252, 251, 242);
+  margin-left: 25px;
+  padding: 20px;
+  width: 90%;
+  margin-top: 20px;
+  background: rgb(252, 251, 242);
 }
 
 #count_to{
-text-align: center;
+  text-align: center;
+  padding: 50px;
 }
 
 #content_list {
-padding-top: 30px;
+  padding-top: 20px;
 }
+
 
 .show-contents {
   background: white;
@@ -60,3 +74,47 @@ padding-top: 30px;
   overflow: auto;
 
 }
+
+.content-list {
+  list-style: none;
+}
+
+.author {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+#link {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+#link a{
+  color: $grey-blue;
+  font-style:italic;
+}
+
+.count {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+.dot  {
+  padding: 0 10px 0 10px;
+}
+
+footer  {
+  border-bottom: dashed;
+  border-width: 1.5px;
+  border-color: $grey-blue;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+
+}
+
+.content_button {
+  background-color: $button-blue;
+  padding: 5px 32px; 
+}
+
+
