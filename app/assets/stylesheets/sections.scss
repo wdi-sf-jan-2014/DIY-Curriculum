@@ -19,7 +19,6 @@ $grey-blue: #96AEC0;
 }
 
 .content-view {
-  position: relative;
   height: 100%;
 }
 
@@ -33,8 +32,6 @@ $grey-blue: #96AEC0;
 .sidebar  {
   background: white;
   min-height: 100%;
-  
-
 }
 
 .sidebar-title  {
@@ -42,6 +39,9 @@ $grey-blue: #96AEC0;
   background-color: $course-title-green-blue;
 }
 
+row-header  {
+
+}
 
 .sidebar-course-title {
   margin-bottom: -5px;
