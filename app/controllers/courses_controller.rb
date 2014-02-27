@@ -15,14 +15,10 @@ class CoursesController < ApplicationController
   end
 
   # browse all available courses
-  def browse_all
-
-
+  def browse_all    
     @all_courses = Course.all
-    @two = @all_courses.where(category_id: '2')
-
-    all_cats = Category.all 
-    all_cats_alpha = all_cats.sort_by!{ |f| f.name.downcase } 
+    @all_cats = Category.all 
+    all_cats_alpha = @all_cats.sort_by!{ |f| f.name.downcase } 
     cats = all_cats_alpha
     div = cats.length/3
     div_two = div * 2

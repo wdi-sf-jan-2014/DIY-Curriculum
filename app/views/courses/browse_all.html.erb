@@ -44,18 +44,187 @@
   </div> 
 </div>
 
+<!-- begin tabs -->
+
 <div class="tabs-content">
-  <div class="content" id="panel2-2">
-   <% this = @all_courses.where(category_id: 2) %>
+  <div class="content" id="panel2-1">
+  <h3 style="text-align:center;"><%= @all_cats.find(1).name %></h3>
+   <% this = @all_courses.where(category_id: 1) %>
+   <ol>
    <% this.each do |course| %>
     <div class="small-9 small-centered columns">
       <a href="/courses/<%= course.id%>">
-        <h5><%= course.title %></h5>
-        <p><%= course.description %></p>
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
       </a>
     </div>
   </div>
   <% end %>
+  </ol>
+
+  <div class="content" id="panel2-2">
+   <% this = @all_courses.where(category_id: 2) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+  </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-3">
+   <% this = @all_courses.where(category_id: 3) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-4">
+   <% this = @all_courses.where(category_id: 4) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-5">
+   <% this = @all_courses.where(category_id: 5) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-6">
+   <% this = @all_courses.where(category_id: 6) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-7">
+   <% this = @all_courses.where(category_id: 7) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-8">
+   <% this = @all_courses.where(category_id: 8) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-9">
+   <% this = @all_courses.where(category_id: 9) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-10">
+   <% this = @all_courses.where(category_id: 10) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+    </ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-11">
+   <% this = @all_courses.where(category_id: 11) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</ol>
+
+<div class="tabs-content">
+  <div class="content" id="panel2-12">
+   <% this = @all_courses.where(category_id: 12) %>
+   <ol>
+   <% this.each do |course| %>
+    <div class="small-9 small-centered columns">
+      <a href="/courses/<%= course.id%>">
+        <li><h4><%= course.title %></h4>
+        <p><%= course.description %></p></li>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</ol>
 </div>
 </div>
 
@@ -109,6 +278,16 @@ margin-right: 10%;
 
 .all_cats_holder {
 text-align: center;
+}
+
+.tabs-content {
+padding-left: 50px;
+padding-right: 50px;
+}
+
+.tabs-content > .content {
+display: none;
+float: none;
 }
 
 </style>
