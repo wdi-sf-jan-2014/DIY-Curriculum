@@ -1,24 +1,25 @@
-<div class="page-title"> My Courses </div>
+<div class="page-title">
+  <%= current_user.name %>'s Courses 
+</div>
 
-
+<div class="row">
   <div class="small-10 medium-8 large-6 small-centered columns">
-    <div class="row">
 
-      <dl class="tabs" data-tab>
-          <dd class="active"><a href="#created">
-            Created
-          </a></dd>
-          <dd><a href="#enrolled">
-            Enrolled
-          </a></dd>
-        <div class="add-course">
-          <a href="#" data-reveal-id="new-course">New</a>
-          <%= render "new"%>
-        </div>
-      </dl>
+    <dl id="course-tabs" class="tabs" data-tab>
+        <dd class="active"><a href="#created">
+          Created
+        </a></dd>
+        <dd><a href="#enrolled">
+          Enrolled
+        </a></dd>
+      <div class="add-course">
+        <a href="#" data-reveal-id="new-course">New</a>
+        <%= render "new"%>
+      </div>
+    </dl>
 
-    </div>   
   </div>
+</div>
 
 <div class="tabs-content">
   <div class="content active" id="created">
