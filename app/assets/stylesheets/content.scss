@@ -17,7 +17,15 @@ $grey-blue: #96AEC0;
   padding: 0 20px 0 5px;
 }
 
-.content {
+.content-container {
+  background: white;
+  padding: 8px;
+  height: 100%;
+  overflow: auto;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+}
+
+.show-contents {
   background: white;
   padding: 8px;
   height: 100%;
@@ -61,14 +69,6 @@ $grey-blue: #96AEC0;
   padding-top: 20px;
 }
 
-
-.show-contents {
-  background: white;
-  padding: 8px;
-  height: 100%;
-  overflow: auto;
-
-}
 
 .intro-column {
   background: white;
