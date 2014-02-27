@@ -51,10 +51,15 @@ background: rgb(252, 251, 242);
 
 #count_to{
 text-align: center;
+padding: 50px;
 }
 
 #content_list {
 padding-top: 20px;
+}
+
+#count_form{
+  
 }
 
 .show-contents {
@@ -108,6 +113,11 @@ footer  {
   margin-bottom: 50px;
   padding-bottom: 15px;
 
+}
+
+.content_button {
+  background-color: $button-blue;
+  padding: 5px 32px; 
 }
 
 
