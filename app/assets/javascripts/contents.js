@@ -1,8 +1,8 @@
 if($("#addContent").length > 0) {
   $(function(){
     $.ajaxSetup({
-        headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
       }
     });
 
@@ -31,7 +31,7 @@ if($("#addContent").length > 0) {
       // in sections controller
       
 
-    $.post(gon.content_path, {content: newContent}).done(function(data){
+      $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
         console.log(data);
 
         // Append this content
@@ -50,30 +50,37 @@ if($("#addContent").length > 0) {
     $.get(gon.content_path).done(function(data){
       $(data).each(function(index, contentItem){
         contentItem.content_path = gon.content_path;
+        contentItem.edit_content_path = gon.edit_content_path;
         var contentHTML = HandlebarsTemplates.contents(contentItem);
+      
         $("#contents").append(contentHTML);
         $(document).foundation();
+
+        var editContentFormPlease = $("#edit_content_form_"+contentItem.id)
+        
+        console.log(editContentFormPlease);
         $("#edit_content_form_"+contentItem.id).submit(function(){
-        event.preventDefault();
-        var updated_content = {id: contentItem.id};
-        updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
-        updated_content.text = $("#update_content_text_"+contentItem.id).val();
-        $.ajax({
-          url: gon.edit_content_path + updated_content.id+".json",
-          type: "PATCH",
-          data: {content: updated_content}
-        }).done(window.reload);
+
+          event.preventDefault();
+          var updated_content = {id: contentItem.id};
+          updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
+          updated_content.text = $("#update_content_text_"+contentItem.id).val();
+          $.ajax({  
+            url: gon.edit_content_path + updated_content.id+".json",
+            type: "PATCH",
+            data: {content: updated_content}
+          }).done(window.reload);
+        });
+
+
+
       });
-      
-
-
-    });
     });
 
 
 
 
-  });
+});
 } // <-- end of entire function
 
 
@@ -81,12 +88,12 @@ if($("#addContent").length > 0) {
 
 $(".content_button").click(function(){
   $(this).next('#content').toggle('medium');
-    if ($(this).text() === "+") {
-      $(this).text("-");
-    }
-    else 
-      $(this).text("+");
+  if ($(this).text() === "+") {
+    $(this).text("-");
   }
+  else 
+    $(this).text("+");
+}
 );
 
 $( ".author" ).each(function() {
@@ -97,7 +104,7 @@ $( ".author" ).each(function() {
 
 var total = 0;
 $('.count').each(function(){
-   total += parseInt($(this).val());
+ total += parseInt($(this).val());
 });
 
 $( ".count" ).each(function() {

@@ -34,10 +34,19 @@ def update
   @section = Section.find(params[:section_id])
   @content = @section.contents.find(params[:id])
   @content.update_attributes(updated_content)
+  # ReadabilityWorker.perform_async(@content.id)    
   respond_to do |f|
     f.json { render :json => @content}
   end
   # redirect_to edit_course_section_path(@course,@section)
+end
+
+def destroy
+  @course = Course.find(params[:course_id])
+  @section = @course.sections.find(params[:section_id])
+  @content = @section.contents.find(params[:id])
+  @content.delete
+  redirect_to edit_course_section_path(@course, @section)
 end
 
 
