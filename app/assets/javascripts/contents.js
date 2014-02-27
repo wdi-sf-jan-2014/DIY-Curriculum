@@ -63,7 +63,9 @@ if($("#addContent").length > 0) {
       var courseId;
       var sectionId;
       var contentId;
-      
+      var first_substring;
+      var second_substring;
+      var third_substring;
       $(".content a.edit_link").click(function() {
         // display the modal
         $("#edit-content").foundation("reveal", "open");
@@ -84,15 +86,11 @@ if($("#addContent").length > 0) {
           }
         }
 
-          var first_substring = $("#edit_content_form").attr("action").substring(0,9);
-          var second_substring = $("#edit_content_form").attr("action").substring(19,29);
-          var third_substring = $("#edit_content_form").attr("action").substring(40,50);
-
           $("#edit_content_form").submit(function(event){
           event.preventDefault();
 
-          document.getElementById("edit_content_form").action = first_substring + courseId +
-          second_substring + sectionId + third_substring + contentId;
+          document.getElementById("edit_content_form").action = "/courses/" + courseId +
+          "/sections/" + sectionId + "/contents/" + contentId;
 
 
           data = {content: {source_url: $("#source_url").val(), text: $("#source_text").val()}};
@@ -102,7 +100,7 @@ if($("#addContent").length > 0) {
             type: "PATCH",
             data: data
           }).done(function(){
-            var redirect_url = first_substring+courseId+second_substring+sectionId+"/edit";
+            var redirect_url = "/courses/" + courseId + "/sections/" + sectionId +"/edit";
             window.location = redirect_url;
           });
 
@@ -112,20 +110,37 @@ if($("#addContent").length > 0) {
         // populate form with the attributes of the content item
         // that is related to the id of the item that was clicked
       });
+
+      $("#delete_link").click(function(event){
+          event.preventDefault();
+          console.log(event);
+          currentContentItemId = $(this).data("id");
+        
+        for (var i=0; i < contentItems.length; i++) {
+          if (contentItems[i].id === currentContentItemId) {
+            $("#source_url").val(contentItems[i].source_url);
+            $("#source_text").val(contentItems[i].text);
+            courseId = contentItems[i].course_id;
+            sectionId = contentItems[i].section_id;
+            contentId = contentItems[i].id;
+          }
+        }
+
+        data = {content: {id: currentContentItemId}};
+
+        $.ajax({
+          url: "/courses/"+courseId+"/sections/"+sectionId+"/contents/"+contentId+".json",
+          type: "DELETE",
+          data: data
+        }).done(function(){
+            var redirect_url = "/courses/" + courseId + "/sections/" + sectionId +"/edit";
+            window.location = redirect_url;
+          });
+      });
+
+
     });
 
-  //   $("#edit_content_form").submit(function(){
-  //     event.preventDefault();
-  //     var updated_content = {id: contentItem.id};
-  //     updated_content.source_url = $("#update_content_source_url_"+contentItem.id).val();
-  //     updated_content.text = $("#update_content_text_"+contentItem.id).val();
-  //     $.ajax({  
-  //       url: gon.edit_content_path + updated_content.id+".json",
-  //       type: "PATCH",
-  //       data: {content: updated_content}
-  //     }).done(window.reload);
-  //   });
-  // });
 }); // <-- end of entire function
 }
 
@@ -160,12 +175,5 @@ $( ".count" ).each(function() {
 
 $("#count_to").append($("#count_from"));
 
-// end content
-
-// $(function() {  
-//     $( "#sortable" ).sortable({   
-//         placeholder: "ui-sortable-placeholder"   
-//     });  
-// }); 
 
 

@@ -45,7 +45,9 @@ def destroy
   @section = @course.sections.find(params[:section_id])
   @content = @section.contents.find(params[:id])
   @content.delete
-  redirect_to edit_course_section_path(@course, @section)
+  respond_to do |f|
+    f.json { render :json => @content}
+  end
 end
 
 
