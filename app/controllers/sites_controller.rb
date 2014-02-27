@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
   def index
-  @contents = Content.all
+  @contents = Content.limit(3)
   end
 end
