@@ -1,3 +1,15 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+
 .content-column {
   height: 100%;
   padding: 0 20px 0 5px;
@@ -22,7 +34,7 @@ font-size: 130%;
 #excerpt {
 margin-left: 25px;
 width: 90%;
-color: darkgrey;
+color: $grey-blue;
 }
 
 .content_button {
@@ -42,7 +54,7 @@ text-align: center;
 }
 
 #content_list {
-padding-top: 30px;
+padding-top: 20px;
 }
 
 .show-contents {
@@ -60,3 +72,42 @@ padding-top: 30px;
   overflow: auto;
 
 }
+
+.content-list {
+  list-style: none;
+}
+
+.author {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+#link {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+#link a{
+  color: $grey-blue;
+  font-style:italic;
+}
+
+.count {
+  display: inline-block;
+  color: $grey-blue;
+}
+
+.dot  {
+  padding: 0 10px 0 10px;
+}
+
+footer  {
+  border-bottom: dashed;
+  border-width: 1.5px;
+  border-color: $grey-blue;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+
+}
+
+
