@@ -2,10 +2,13 @@
 
 <div class="small-9 columns content-column">
   <div class="content">
-    <a href="#" data-reveal-id="edit-section"><%= @section.title %></a>
-
+    <div class="edit-content-title" >
+      <a href="#" data-reveal-id="edit-section"><%= @section.title %></a>
+    </div>
     <%= render 'edit_section_form' %>
+    <div class="small-6 small-centered columns">
     <div id="addContent">
+    </div>
     </div>
     <div id="contents">
     </div> 
