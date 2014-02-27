@@ -38,7 +38,6 @@ def update
   respond_to do |f|
     f.json { render :json => @content}
   end
-  # redirect_to edit_course_section_path(@course,@section)
 end
 
 def destroy
