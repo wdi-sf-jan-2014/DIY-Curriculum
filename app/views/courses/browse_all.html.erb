@@ -3,11 +3,15 @@
 
 
 <div class="all_cats_holder">
+<% i = 0 %>
   <div class="all_cats">
   <% @a.each do |f| %>
+  <% i += 1 %> 
     <div class= "cat_holder">
-      <div class="cat_image"><%= image_tag(f.img)%></div>
-      <div class="cat_name"><%= f.name %></div>
+      <dl data-tab><dd><a href="#panel2-<%=i%>">
+        <div class="cat_image"><%= image_tag(f.img)%></div>
+        <div class="cat_name"><%= f.name %></div>
+      </a></dd></dl>
     </div>
     <%end%>
   </div>  
@@ -15,61 +19,46 @@
 <div class="all_cats_holder">
   <div class="all_cats">
   <% @b.each do |f| %>
+  <% i += 1 %>
     <div class= "cat_holder">
-      <div class="cat_image"><%= image_tag(f.img)%></div>
-      <div class="cat_name"><%= f.name %></div>
+       <dl data-tab><dd><a href="#panel2-<%=i%>">
+          <div class="cat_image"><%= image_tag(f.img)%></div>
+          <div class="cat_name"><%= f.name %></div>
+        </a></dd></dl>
     </div>
     <%end%>
   </div>  
 </div>
+
 <div class="all_cats_holder">
   <div class="all_cats">
   <% @c.each do |f| %>
-    <div class= "cat_holder">
-      <div class="cat_image"><%= image_tag(f.img)%></div>
-      <div class="cat_name"><%= f.name %></div>
-    </div>
+  <% i += 1 %>
+      <div class= "cat_holder">
+        <dl data-tab><dd><a href="#panel2-<%=i%>">
+          <div class="cat_image"><%= image_tag(f.img)%></div>
+          <div class="cat_name"><%= f.name %></div>
+        </a></dd></dl>
+      </div>
     <%end%>
-  </div>  
+  </div> 
 </div>
 
-<!-- <div class="row_browse">
-  <div class="small-4 columns">
-  <% @a.each do |f| %>
-    <div class= "cat_holder">
-      <div class="cat_image"><%= image_tag(f.img)%></div>
-      <div class="cat_name"><%= f.name %></div>
-    </div>
-    <%end%>
-  </div>
-  <div class="small-4 columns middle-column">
-  <% @b.each do |f| %>
-  <div class= "cat_holder">
-    <div class="cat_image"><%= image_tag(f.img)%></div>
-    <div class="cat_name"><%= f.name %></div>
-  </div>
-  <%end%>
-  </div>
-    <div class="small-4 columns">
-   <% @c.each do |f| %>
-  <div class= "cat_holder">
-    <div class="cat_image"><%= image_tag(f.img)%></div>
-    <div class="cat_name"><%= f.name %></div>
-  </div>
-    <%end%>
-  </div>
-</div> -->
-
-<% @all_courses.each do |course| %>
-  <div class="row">
+<div class="tabs-content">
+  <div class="content" id="panel2-2">
+   <% this = @all_courses.where(category_id: 2) %>
+   <% this.each do |course| %>
     <div class="small-9 small-centered columns">
       <a href="/courses/<%= course.id%>">
-        <h3><%= course.title %></h3>
+        <h5><%= course.title %></h5>
         <p><%= course.description %></p>
       </a>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+</div>
+
 
 
 <style>
