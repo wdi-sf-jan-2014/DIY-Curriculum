@@ -11,6 +11,7 @@ $grey-blue: #96AEC0;
 ///////////////////////////////////
 ////////////////////////////Sidebar
 ///////////////////////////////////
+
 .row {
   margin-left: auto;
   margin-right: auto;
@@ -18,21 +19,20 @@ $grey-blue: #96AEC0;
 }
 
 .content-view {
-  position: relative;
   height: 100%;
 }
 
 .sidebar-column {
   height: 100%;
   padding: 0 5px 0 20px;
+  overflow: auto;
 
 }
 
 .sidebar  {
   background: white;
   min-height: 100%;
-  overflow: auto;
-
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
 }
 
 .sidebar-title  {
@@ -40,6 +40,9 @@ $grey-blue: #96AEC0;
   background-color: $course-title-green-blue;
 }
 
+row-header  {
+
+}
 
 .sidebar-course-title {
   margin-bottom: -5px;
@@ -90,6 +93,7 @@ $grey-blue: #96AEC0;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
   color: $input-blue;
   margin: 24px 12px 24px 32px;
+  width: 200px;
 
 }
 
@@ -112,86 +116,4 @@ $grey-blue: #96AEC0;
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: $input-blue;
     font: inheret;
-}
-
-///////////////////////////////////
-///////////////////////Content edit
-///////////////////////////////////
-
-.content {
-  text-align: center;
-}
-
-.edit-content-title {
-  padding: 20px;
-  text-align: center;
-  font-size: 1.6875rem;
-  color: $link-blue
-}
-
-#addContent input[type="text"]  {
-  border-right: 1px;
-  border-top: 1px;
-  border-left: 1px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
-}
-
-#addContent textarea  {
-  border-right: 1px;
-  border-top: 1px;
-  border-left: 1px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
-}
-
-#addContent textarea:focus  {
-  background-color: white;
-}
-
-#addContent input[type="text"]:focus  {
-  background-color: white;
-}
-
-#test > input.button.small  {
-  background-color: $link-blue;
-}
-
-#content_div {
-  text-align: left;
-
-}
-
-#content_div > div:nth-child(1) {
-  padding: 0 0 25px 0;
-}
-
-#contents > div > div:nth-child(2) {
-  font-weight: 500;
-  margin-top: -20px;
-}
-
-#content_div a {
-  text-align: center;
-}
-
-
-#contents .fi-widget {
-  font-size: 30px;
-  color: $link-blue;
-  padding: 0 5px 0 5px;
-}
-
-#contents .fi-x-circle {
-  font-size: 30px;
-  color: #C1877D;
-  padding: 0 5px 0 5px;
-}
-
-
-.edit-delete-icons  {
-  text-align: right;
-}
-
-#content_div > div:nth-child(3) {
-  padding: 0 0 12px 0;
-  margin-top: -10px;
 }
