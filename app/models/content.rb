@@ -14,4 +14,7 @@ class Content < ActiveRecord::Base
 
   belongs_to :section
   
+  def course_id
+    section.course.id
+  end
 end
