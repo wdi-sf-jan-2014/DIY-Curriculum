@@ -8,20 +8,22 @@ with online resources<br>
 <%= render 'index_content' %>
 </div>
 
-<a href="/courses">
+
 <div id="boxes_holder">
   <div class="box">
-    <a href="/browse"><%= image_tag("file02_128.png")%></a>
+    <% if signed_in? %>
+    <a href="/courses"><%= image_tag("file02_128.png")%></a>
     create
+    <%else%>
+    <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
+    create
+    <%end%>
   </div>
-</a>  
-
-<a href="/browse">
+ 
     <div class="box">
-      <%= image_tag("magnifying-glass_128.png")%>
+      <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
       browse
     </div>
-</a>
 </div>
 
 <style>
