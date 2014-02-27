@@ -1,7 +1,7 @@
 <nav class = "top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-             <h1><a href="#">+</a></h1>
+             <h1><a href="#"><i class="fi-pencil"></i></a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
         </li>
@@ -10,35 +10,42 @@
       <% if signed_in? %>
       <ul class="left">
         <li class="divider"></li>
-        <li><%= link_to "Courses", courses_path%></li>        
+        <li>
+            <%= link_to courses_path do%> 
+                <i class="fi-book-bookmark"></i>
+                <span class="courses-nav">Courses<span>
+            <% end %>    
+        </li> 
       </ul>
       <%end%>
 
     <ul class="right">
+        <li class="browse">
+            <a href="/browse"><i class="fi-magnifying-glass"></i></a>
+        </li>
         <li class="divider"></li>
-    <% if !signed_in? %>    
-    <li class="has-dropdown"><a href="#">Signin</a>
-        <ul class="dropdown">
-        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>  
-            <li><label>email</label></li>
-            <li><%= f.email_field :email, :autofocus => true %></li>
-            <li><label>password</label></li>
-            <li><%= f.password_field :password %></li>
-            <% if devise_mapping.rememberable? -%>
-              <li><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
-            <% end -%>
-            <li><div><%= f.submit "Sign in" %></div></li>
+        <% if !signed_in? %>    
+        <li class="has-dropdown"><a href="#">Signin</a>
+            <ul class="dropdown">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>  
+                <li><label>email</label></li>
+                <li><%= f.email_field :email, :autofocus => true %></li>
+                <li><label>password</label></li>
+                <li><%= f.password_field :password %></li>
+                <% if devise_mapping.rememberable? -%>
+                  <li><%= f.check_box :remember_me %> <%= f.label :remember_me %></li>
+                <% end -%>
+                <li><div><%= f.submit "Sign in" %></div></li>
+            <%end%>
+            </ul>
+        </li>
         <%end%>
-        </ul>
-    </li>
-    <%end%>
-    <% if signed_in? %>
-        <li class="divider"></li>
-        <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
-    <%else%>    
-        <li class="divider"></li>
-        <li><%= link_to "Signup", new_user_registration_path %></li>
-    <%end%>
+        <% if signed_in? %>
+            <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
+        <%else%>    
+            <li class="divider"></li>
+            <li><%= link_to "Signup", new_user_registration_path %></li>
+        <%end%>
     </ul>
     </section>
 </nav>

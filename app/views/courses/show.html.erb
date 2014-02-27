@@ -12,13 +12,16 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
       <h3 class="page-title" ><%= @course.title %><h3>
       <div class="course_cat_img"><%= image_tag(@course.category.img)%></div>
       <p><%= @course.description%><p>
+
     </a>
+      <p><%= @course.description%><p>
     <%= render "edit"%>
 
       <% if @enrolled %>
       <div id="toggles">
         <button id="unenroll">Unenroll</button>
         <button id="enroll" class="hidden">Enroll</button>
+      <% elsif @ownCourse %>
       <% else %>
       <div id="toggles">
         <button id="enroll">Enroll</button>
@@ -30,7 +33,7 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
 
 <div class="row">
   <div class="small-9 small-centered columns">
-    <p>Created by: <%= @user.name %></p>
+    <p>Created by: <%= @author.name %></p>
   </div>
 </div>
   
@@ -41,7 +44,9 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
       <div class="small-4 small columns">
         <h3>Sections<h3>
         <% @course.sections.each do |s| %>
-              <h5><%= s.title %></h5>
+          <a href="/courses/<%= @course.id%>/sections/<%= s.id%>">
+            <h5><%= s.title %></h5>
+          </a>
         <% end %>
       </div>
 

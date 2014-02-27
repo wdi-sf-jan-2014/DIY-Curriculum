@@ -2,10 +2,19 @@
   <div class="sidebar">
 
     <div class="sidebar-title">
-      <h3 class="sidebar-course-title">
-      <div class="course_cat_img"><%= image_tag(@category.img)%></div>
-        <%=@course.title%>
-      </h3>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="sidebar-course-title">
+            <div class="course_cat_img"><%= image_tag(@category.img)%></div>
+            <%=@course.title%>
+          </h3>
+        </div>
+        <div class="small-12 medium-3 column">
+          <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>/edit">
+            <i class="fi-widget"></i>
+          </a>
+        </div>
+      </div>
     </div>
     <ul class="side-nav">
       <% @sections.each do |section| %>
