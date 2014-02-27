@@ -2,27 +2,39 @@
   <div class="sidebar">
 
     <div class="sidebar-title">
-      <h3 class="sidebar-course-title">
-        <%=@course.title%>
-      </h3>
-      <h5 class="sidebar-cagetory-title">
-        <%=@category.name%>
-      </h5>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="sidebar-course-title">
+            <div class="course_cat_img"><%= image_tag(@category.img)%></div>
+            <%=@course.title%>
+          </h3>
+        </div>
+        <div class="small-12 medium-3 column">
+          <% if @section %>
+            <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>">
+               <i class="fi-check"></i>
+            </a>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <ul class="side-nav">
-      <% @sections.each do |section| %>
-      <li >
-        <div class="section">
-          <a href="/courses/<%=@course.id%>/sections/<%=section.id%>/edit">
-            <%= section.title %>
-          </a>
-        <div>
-      </li>
-      <% end %>
+    <ul class="side-nav"> 
       <li>
          <%= render "form"%>
+      </li>
+      <li >
+       <div id="sections"></div>
       </li>
     </ul>
 
   </div>
 </div>
+
+
+<style>
+
+.course_cat_img img{
+width:60px;
+margin-bottom: 10px; 
+}
+</style>

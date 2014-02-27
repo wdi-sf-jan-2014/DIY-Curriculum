@@ -1,58 +1,97 @@
-<h1 id="tag_line">beautifully organize online resources<br>
-to create DIY curricula</h1>
+<h1 id="tag_line">create beautiful DIY lesson plans<br>
+with online resources<br>
+</h1>
 
-<div id="index_graphic">
-<%= image_tag("diy_display_example.png")%>
+<div class="toggle_button">(see example)</div>
+
+<div id="index_partial">
+<%= render 'index_content' %>
 </div>
 
-<hr class="line">
-
-<h3 id="featured">featured curricula:</h3>
 
 <div id="boxes_holder">
   <div class="box">
-    <span class="box_text">intro to<br>chemistry</span>
-    <%= image_tag("lab-flask_128.png")%>
-</div>
-  <div class="box">
-    <span class="box_text">create your<br>first<br>Rails app</span>
-    <%= image_tag("laptop_128.png")%>
-  </div>
-  <div class="box">
-    <span class="box_text">landscape<br>drawing</span>
-    <%= image_tag("pens-pencils_128.png")%>
-  </div>
-</div>
-
-<hr class="line">
-
-<h3 id="add_curriculum">add your own curriculum</h3>
-<div id="add_c_image"><%= image_tag("file02_128.png")%></div>
-
-<hr class="line">
-
-<div class="row">
-  <div class="small-4 columns">
-    <ol class="cat_list">
-    <% @a.each do |f| %>
-    <li> <%= f.name %> </li>
+    <% if signed_in? %>
+    <a href="/courses"><%= image_tag("file02_128.png")%></a>
+    create
+    <%else%>
+    <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
+    create
     <%end%>
-    </ol>
   </div>
-  <div class="small-4 columns middle-column">
-    <ol class="cat_list">
-  <% @b.each do |f| %>
-    <li> <%= f.name %> </li>
-    <%end%>
-    </ol>
-  </div>
-    <div class="small-4 columns">
-    <ol class="cat_list">
-   <% @c.each do |f| %>
-    <li> <%= f.name %> </li>
-    <%end%>
-    </ol>
-  </div>
+ 
+    <div class="box">
+      <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
+      browse
+    </div>
 </div>
 
-<hr class="line">
+<style>
+#boxes_holder > div.partial_button {
+display: inline-block;
+padding: 30px;
+width: 150px;
+height: 150px;
+margin-left: 40px;
+margin-right: 40px;
+background: lightgrey;
+}
+
+.toggle_button{
+text-align: center;
+color: rgb(43, 148, 182);
+font-size: 120%;
+margin-bottom: 50px;
+}
+
+.toggle_button:hover{
+color: lightblue;
+}
+
+#index_partial {
+display: none;
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+background: white;
+padding: 50px;
+margin-bottom: 50px;
+}
+
+.box {
+display: inline-block;
+padding: 30px;
+width: 150px;
+height: 150px;
+margin-left: 40px;
+margin-right: 40px;
+background: lightgrey;
+}
+
+#boxes_holder{
+text-align:center;
+margin-bottom: 40px;
+}
+
+.box:hover{
+background:lightblue;
+}
+
+#tag_line{
+text-align: center;
+margin-top: 30px;
+}
+
+</style>
+
+<script>
+$(".toggle_button").click(function(){
+  $('#index_partial').toggle('medium');
+    if ($(".toggle_button").text() === "(see example)") {
+      $(".toggle_button").text("(close example)");
+    }
+    else 
+      $(".toggle_button").text("(see example)");
+  }
+);
+</script>

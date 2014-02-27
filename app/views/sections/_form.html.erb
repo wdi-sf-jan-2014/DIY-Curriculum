@@ -1,6 +1,7 @@
+<!-- Form to add a Section - in the Edit Sidebar -->
 <div id="addSection">
     <%= form_for :section, url: course_sections_path(format: :json), method: :post do |s| %>
-      <%= s.text_field :title, placeholder: "Section Name" %>
+      <%= s.text_field :title, placeholder: "Type in a new section" %>
       <%= s.submit %>
     <%end%>
 </div>

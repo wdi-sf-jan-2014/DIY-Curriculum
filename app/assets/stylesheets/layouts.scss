@@ -1,0 +1,66 @@
+
+body {
+  background: #f2f2f2;
+  font-weight: 300;
+}
+
+body, html {
+  margin:0;
+  padding:0;
+  height:100%;
+ }
+
+.notice {
+  
+}
+
+.alert  {
+  
+}
+
+.top-bar {
+  background: #fff;
+}
+
+.top-bar ul li a  {
+  color: black;
+}
+
+.top-bar .name h1 a {
+  color: black;
+}
+
+.top-bar-section ul {
+   background: #fff;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #fff;
+}
+
+.title-area li {
+  width: 45px;
+}
+
+.fi-book-bookmark  {
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.fi-magnifying-glass {
+  font-size: 20px;
+ 
+}
+
+body > nav > section > ul.right > li.browse > a{
+    height: 45px;
+}
+
+body > nav > section > ul.left > li:nth-child(2) > a {
+  height: 45px;
+}
+
+.courses-nav  {
+  font-size: 0.8125rem;
+  vertical-align: top;
+}

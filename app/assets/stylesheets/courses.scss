@@ -1,12 +1,17 @@
 .page-title{
   text-align: center;
-  padding: 50px 0 10px 0 ;
+  padding: 40px 0 10px 0 ;
 }
 
 .add-course {
   text-align: right;
+  padding: 16px 0px 17px 0;
 }
 
 a > p {
 color: black;
+}
+
+.hidden {
+  display: none;
 }
