@@ -1,30 +1,44 @@
 <div class="small-9 columns content-column">
   <div class="show-contents">
-  <div id="count_to">
-  </div>
-    <!-- a blank array for pushing each word count number into -->
-    <% array = []%>
-    <ol>
-      <% content = @contents.each do |content| %>
-        <li id="content_list"><div id="content_comment"><%= content.text %></div></li>
-        <div id="content_title"><%= content.res_title %></div>
-        <div class="author"><%= content.res_author %></div> 
-        <div id="link"><a href="<%=content.source_url%>"><%= content.res_domain %></a></div>
-        <div class="count"><%= count_each = content.res_word_count %></div>
-        <div id="excerpt"><%= raw(content.res_excerpt) %></div>
-        <!-- pushing the count into the blank array -->
-        <% array << count_each %>
-        <button class="content_button">+</button>
-        <div id="content", style="display: none"><%= raw(content.res_content) %></div>
-      <% end %>
-    </ol>
-    <!-- the count_from gets appended to count_to -->
-    <div id="count_from">
-        <h3><%=@section.title%></h3>
-        <% total_words = array.sum { |e| e.to_i } %>
-        section word count: <%= total_words %><br>
-        <% wpm = (total_words / 200) %>
-       aprox reading time: <%= wpm %> minutes
+    <div class="row content-header">
+      <div id="count_to"></div>
+      <!-- a blank array for pushing each word count number into -->
+      <% array = []%>
+    </div>
+    <div class="row content-section">
+      <div class="small-11 small-centered columns">
+        <ol class="content-list">
+          <% content = @contents.each do |content| %>
+          <header>
+            <div id="content_title"><%= content.res_title %></div>
+            <% if content.res_author %>
+              <div class="author"><%= content.res_author %><span class="dot">•</span></div> 
+            <% end %>
+            <div id="link"><a href="<%=content.source_url%>"><%= content.res_domain %></a><span class="dot">•</span></div>
+            <div class="count"><%= count_each = content.res_word_count %></div>
+          </header>
+          <section>
+            <li id="content_list"><div id="content_comment"><%= content.text %></div></li>
+            <div id="excerpt"><%= raw(content.res_excerpt) %></div>
+            <!-- pushing the count into the blank array -->
+            <% array << count_each %>
+          </section>
+          <footer>
+            <button class="content_button">+</button>
+            <div id="content", style="display: none"><%= raw(content.res_content) %></div>
+          </footer>
+          <% end %>
+        </ol>
+      </div>
+
+      <!-- the count_from gets appended to count_to -->
+      <div id="count_from">
+          <h3><%=@section.title%></h3>
+          <% total_words = array.sum { |e| e.to_i } %>
+          section word count: <%= total_words %><br>
+          <% wpm = (total_words / 200) %>
+         aprox reading time: <%= wpm %> minutes
+      </div>
     </div>
   </div>
 </div>

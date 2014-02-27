@@ -176,4 +176,9 @@ $( ".count" ).each(function() {
 $("#count_to").append($("#count_from"));
 
 
+// DISPLAY EDIT ONLY WHEN HOVERING
+// $("#contents .content").on("hover", this, function(){
+//   $('.edit-widget').toggle
+// })
+
 

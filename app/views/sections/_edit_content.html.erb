@@ -2,26 +2,39 @@
 
 <div class="small-9 columns content-column">
   <div class="content">
-    <a href="#" data-reveal-id="edit-section"><%= @section.title %></a>
-    <%= link_to "Delete Section", course_section_path, method: :delete %>
+    <div class="edit-content-title" >
+      <a href="#" data-reveal-id="edit-section"><%= @section.title %></a>
+      <%= link_to "Delete Section", course_section_path, method: :delete %>
+
+    </div>
 
     <%= render 'edit_section_form' %>
-    <div id="addContent">
+
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <div id="addContent"></div>
+      </div>
     </div>
-    <div id="edit-content" class="reveal-modal" data-reveal>
-      <form id="edit_content_form" 
-        action="<%= 
-          course_section_content_path(':course_id', ':section_id', ':id', format: :json)
-          %>"
-        method="post">
-        <input id="source_url" name="content[source_url]" placeholder="Resource link" type="text">
-        <textarea id="source_text" name="content[text]" placeholder="How did you use this resource?"></textarea>
-        <input id="update_content_button" class="button large" name="commit" type="submit" value="update">
-      </form>
-      <a class="close-reveal-modal">&#215;</a>
+
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <!-- this is the form that shows up in the modal -->
+        <div id="edit-content" class="reveal-modal" data-reveal>
+          <form id="edit_content_form" 
+            action="<%= 
+              course_section_content_path(':course_id', ':section_id', ':id', format: :json)
+              %>"
+            method="post">
+            <input id="source_url" name="content[source_url]" placeholder="Resource link" type="text">
+            <textarea id="source_text" name="content[text]" placeholder="How did you use this resource?"></textarea>
+            <input id="update_content_button" class="button large" name="commit" type="submit" value="update">
+          </form>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+        <div id="contents"></div> 
+      </div>
     </div>
-    <div id="contents">
-    </div> 
+
   </div>
 </div>
 
