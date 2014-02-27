@@ -18,3 +18,5 @@
 .DSstore
 
 .env
+
+dump.rdb

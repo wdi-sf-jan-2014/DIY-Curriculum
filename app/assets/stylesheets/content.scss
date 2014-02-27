@@ -23,44 +23,41 @@ $grey-blue: #96AEC0;
 }
 
 #content_comment {
-font-weight: bold;
+  font-weight: bold;
 }
 
 #content_title {
-font-weight: bold;
-font-size: 130%;
+  font-weight: bold;
+  font-size: 130%;
 }
 
 #excerpt {
-margin-left: 25px;
-width: 90%;
-color: $grey-blue;
+  margin-left: 25px;
+  width: 90%;
+  color: $grey-blue;
 }
 
 .content_button {
-margin-left: 25px;
+  margin-left: 25px;
 }
 
 #content {
-margin-left: 25px;
-padding: 20px;
-width: 90%;
-margin-top: 20px;
-background: rgb(252, 251, 242);
+  margin-left: 25px;
+  padding: 20px;
+  width: 90%;
+  margin-top: 20px;
+  background: rgb(252, 251, 242);
 }
 
 #count_to{
-text-align: center;
-padding: 50px;
+  text-align: center;
+  padding: 50px;
 }
 
 #content_list {
-padding-top: 20px;
+  padding-top: 20px;
 }
 
-#count_form{
-  
-}
 
 .show-contents {
   background: white;

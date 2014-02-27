@@ -53,6 +53,7 @@ before_filter :authenticate_user!, except: [:index, :show]
     @sections = @course.sections
     course_params = params[:course_id]
     gon.content_path = "/courses/#{course_params}/sections/#{@section.id}/contents.json"
+    gon.edit_content_path = "/courses/#{course_params}/sections/#{@section.id}/contents/"
   end
 
   def update
@@ -63,7 +64,12 @@ before_filter :authenticate_user!, except: [:index, :show]
     redirect_to edit_course_section_path(@course,@section)
   end
 
-  def delete
+  def destroy
+    course = Course.find(params[:course_id])
+    section = course.sections.find(params[:id])
+    section.destroy
+    redirect_to new_course_section_path(course)
+
   end
 
 

@@ -16,7 +16,14 @@ def index
   @section = Section.find(params[:section_id])
   @all_content = @section.contents.all
   respond_to do |f|
-    f.json{ render :json => @all_content}
+    f.json{ render :json => @all_content.as_json(methods: :course_id)}
+  end
+end
+
+def show
+  @content = Content.find(params[:id])
+  respond_to do |f|
+    f.json { render :json => @content}
   end
 end
 
@@ -25,7 +32,21 @@ def update
   updated_content = params.require(:content).permit(:source_url, :text)
   @section = Section.find(params[:section_id])
   @content = @section.contents.find(params[:id])
-  redirect_to edit_course_section_path(@course,@section)
+  @content.update_attributes(updated_content)
+  # ReadabilityWorker.perform_async(@content.id)    
+  respond_to do |f|
+    f.json { render :json => @content}
+  end
+end
+
+def destroy
+  @course = Course.find(params[:course_id])
+  @section = @course.sections.find(params[:section_id])
+  @content = @section.contents.find(params[:id])
+  @content.delete
+  respond_to do |f|
+    f.json { render :json => @content}
+  end
 end
 
 

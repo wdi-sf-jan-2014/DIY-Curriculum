@@ -115,7 +115,7 @@ $grey-blue: #96AEC0;
 }
 
 ///////////////////////////////////
-////////////////////////////Content
+///////////////////////Content edit
 ///////////////////////////////////
 
 .content {
@@ -155,26 +155,43 @@ $grey-blue: #96AEC0;
   background-color: $link-blue;
 }
 
-#contents {
+#content_div {
   text-align: left;
+
+}
+
+#content_div > div:nth-child(1) {
+  padding: 0 0 25px 0;
 }
 
 #contents > div > div:nth-child(2) {
   font-weight: 500;
-  padding: 0 0 10px 0;
   margin-top: -20px;
 }
 
-#contents > div > div:nth-child(3) {
-  padding: 0 0 30px 0;
+#content_div a {
+  text-align: center;
 }
+
 
 #contents .fi-widget {
   font-size: 30px;
   color: $link-blue;
+  padding: 0 5px 0 5px;
 }
 
-.edit-widget  {
+#contents .fi-x-circle {
+  font-size: 30px;
+  color: #C1877D;
+  padding: 0 5px 0 5px;
+}
+
+
+.edit-delete-icons  {
   text-align: right;
-  padding-right: 10px;
+}
+
+#content_div > div:nth-child(3) {
+  padding: 0 0 12px 0;
+  margin-top: -10px;
 }
