@@ -33,7 +33,7 @@ content1 = Content.create(text: "first comment", source_url: "http://www.slate.c
 
 jerome = User.create(name: "Jerome Allouche", email: "jeromeallouche01@gmail.com", password: "jerome123", password_confirmation: "jerome123")
 stephanie = User.create(name: "Stephanie Daffara", email: "ste.daff@gmail.com", password: "stephanie123", password_confirmation: "stephanie123")
-nina = User.create(name: "Nina Pacifico", email: "nina@pacifico.com", password: "nina123", password_confirmation: "nina123")
+nina = User.create(name: "Nina Pacifico", email: "nina@pacifico.com", password: "ninapac123", password_confirmation: "ninapac123")
 yutaka = User.create(name: "Yutaka Houlette", email: "yutaka@houlette.com", password: "yutaka123", password_confirmation: "yutaka123")
 
 
@@ -55,7 +55,7 @@ stephanie_course = Course.create( title: "Painting",
                                         category_id: 1,
                                       )
 
-yutaka_course = Course.create( title: "Intro to Computer Graphic Design",
+yutaka_course = Course.create( title: "Intro to Computer Graphics",
                                         description: "An introduction of graphic design softwares such as Adobe Illustrator and Photoshop.
                                         This class is designed for students with basic computer skills, but no art background needed!",
                                         author_id: yutaka.id,
@@ -76,25 +76,24 @@ jerome_course2 = Course.create( title: "Intro to MacroEconomics",
                                       )
 
 stephanie_course2 = Course.create( title: "How to be a Good teacher",
-                                        description: "This one is self explanatory, nobody likes a bad teacher.
-                                        I'd like to share some sources with you guys on how to become a better teacher",
+                                        description: "Nobody likes a bad teacher!
+                                        Here are some of my sources based on the 6 qualities that make a good teacher.",
                                         author_id: stephanie.id,
                                         category_id: 4,
                                       )
 
 yutaka_course2 = Course.create( title: "A history of the future",
                                         description: "Eventually the future is going to be history, so why not start learning about it now!
-                                        Take a trip with me to learn about all things futurustic!",
+                                        Take a trip with me to learn about all things futurustic! What sort of technology can we expect from the next 100 years",
                                         author_id: yutaka.id,
                                         category_id: 5,
                                         )
 
-# nina_course2 = Course.create( title: "",
-#                                         description: "Eventually the future is going to be history, so why not start learning about it now!
-#                                         Take a trip with me to learn about all things futurustic!",
-#                                         author_id: yutaka.id,
-#                                         category_id: 6,
-#                                         )
+nina_course2 = Course.create( title: "A journey through genres",
+                                        description: "A library of classics for all genres of music! Updated Often!",
+                                        author_id: nina.id,
+                                        category_id: 7,
+                                        )
 # ______________________ = Course.create( title: "_________________",
 #                                         description: "______________________.",
 #                                         author_id: ________.id,
@@ -124,6 +123,56 @@ section29= stephanie_course.sections.create(  title: "Colors"  )
 section30 = yutaka_course.sections.create( title: "Introduction to Graphic Design")
 section31 = yutaka_course.sections.create( title: "Beginner Adobe Photoshop")
 section32 = yutaka_course.sections.create( title: "Beginner Adobe Illustrator")
+
+section33 = nina_course.sections.create( title: "Algebra and Whole Numbers")
+section34 = nina_course.sections.create( title: "Using Decimals")
+section35 = nina_course.sections.create( title: "Number Theory")
+section36 = nina_course.sections.create( title: "Rational Numbers and Fractions")
+section37 = nina_course.sections.create( title: "Basic Operations and Rational Expressions")
+section38 = nina_course.sections.create( title: "Ratios, Proportions, and Percents")
+section39 = nina_course.sections.create( title: "Integers")
+section40 = nina_course.sections.create( title: "Exponents, Square Roots, and the Pythagorean Theorem")
+section41 = nina_course.sections.create( title: "Equations from Geometry")
+
+section41 = jerome_course2.sections.create( title: "PART ONE: BASIC CONCEPTS")
+section42 = jerome_course2.sections.create( title: "PART TWO: MICROECONOMICS: SUPPLY, DEMAND, AND PRODUCT MARKETS")
+section43 = jerome_course2.sections.create( title: "PART THREE: FACTOR MARKETS: LAND, LABOR, CAPITAL, AND INCOME DISTRIBUTION")
+section44 = jerome_course2.sections.create( title: "PART FOUR: APPLIED MICROECONOMICS, INTERNATIONAL TRADE, GOVERNMENT, AND THE ENVIRONMENT")
+section45 = jerome_course2.sections.create( title: "PART FIVE: MACROECONOMICS: THE STUDY OF ECONOMIC GROWTH AND BUSINESS CYCLES")
+section46 = jerome_course2.sections.create( title: "PART SIX: ECONOMIC GROWTH AND MACROECONOMIC POLICY")
+section47 = jerome_course2.sections.create( title: "PART SEVEN: UNEMPLOYMENT, INFLATION, AND ECONOMIC POLICY")
+
+section48 = stephanie_course2.sections.create( title: "Consistency")
+section49 = stephanie_course2.sections.create( title: "Fairness")
+section50 = stephanie_course2.sections.create( title: "A Positive Attitude")
+section51 = stephanie_course2.sections.create( title: "Flexibility")
+section52 = stephanie_course2.sections.create( title: "Sense of Humor")
+section53 = stephanie_course2.sections.create( title: "High Expectations")
+
+section54 = yutaka_course2.sections.create( title: "2020")
+section55 = yutaka_course2.sections.create( title: "2030")
+section56 = yutaka_course2.sections.create( title: "2040")
+section57 = yutaka_course2.sections.create( title: "2050")
+section58 = yutaka_course2.sections.create( title: "2060")
+section59 = yutaka_course2.sections.create( title: "2070")
+section60 = yutaka_course2.sections.create( title: "2080")
+section61 = yutaka_course2.sections.create( title: "2090")
+section62 = yutaka_course2.sections.create( title: "2100")
+
+
+section63 = nina_course2.sections.create( title: "Alternative Music")
+section63 = nina_course2.sections.create( title: "Classical Music")
+section63 = nina_course2.sections.create( title: "Electronic Music")
+section63 = nina_course2.sections.create( title: "Hip Hop / Rap")
+section63 = nina_course2.sections.create( title: "Jazz")
+section63 = nina_course2.sections.create( title: "Pop (Popular music)")
+section63 = nina_course2.sections.create( title: "R&B / Soul")
+section63 = nina_course2.sections.create( title: "Reggae")
+section63 = nina_course2.sections.create( title: "Rock")
+
+
+
+
 
 
 
