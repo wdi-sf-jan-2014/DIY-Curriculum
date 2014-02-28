@@ -6,54 +6,53 @@ if($("#addContent").length > 0) {
       }
     });
 
-    // SHOW new content form
+// ==============  SHOW new content form ==============
     var content_path = {content_path: gon.content_path};
     var contentFormHTML = HandlebarsTemplates.contents_form(content_path);
     $("#addContent").append(contentFormHTML);
 
-    // SHOW contents
-    // ADD content
-    // EDIT content
-    // DELETE content
 
+// ============== ADD content ==============
 
     // listen for submit on #addContent
     $("#addContent form").on("submit", function(event){
       event.preventDefault();
 
+    
       // create newContent using
       // content_source_url and content_text
       // from the content form
-      var newContent = {
-        source_url: $("#content_source_url").val(),
-        text: $("#content_text").val()
-      };
-
-      // log the newContent in console
-      console.log(newContent);
-
-      // Get url path from gon variable
-      // in sections controller
-
-      $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
-        console.log(data);
-
-        // Append this content
-        var contentHTML = HandlebarsTemplates.contents(data);
-        $("#content_source_url").val(""); //empties value
-        $("#content_text").val("");
-        $("#contents").append(contentHTML);
-        $(document).foundation();
+        var newContent = {
+          source_url: $("#content_source_url").val(),
+          text: $("#content_text").val()
+        };
+        postNewContent(newContent);
       });
-    });// <-- end of submit #addContent function
 
-    // starts the edit function
+        // Get url path from gon variable
+        // in sections controller
+      var postNewContent = function(newContent){
+        $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
+          console.log(data);
+
+          // Append this content
+          var contentHTML = HandlebarsTemplates.contents(data);
+          $("#content_source_url").val(""); //empties value
+          $("#content_text").val("");
+          $("#contents").append(contentHTML);
+          $(document).foundation();
+        });
+      };
+    
+
+// ============== SHOW contents ==============
     var contentItems;
     var currentContentItemId;
 
     // Display all content(s) on the page
     // Get url path from gon variable
     // in sections controller
+    
     $.get(gon.content_path).done(function(data){
       contentItems = data;
       $(data).each(function(index, contentItem){
@@ -64,7 +63,7 @@ if($("#addContent").length > 0) {
         $("#contents").append(contentHTML);
 
       });
-
+// ============== EDIT content ==============
       var courseId;
       var sectionId;
       var contentId;
@@ -116,6 +115,8 @@ if($("#addContent").length > 0) {
         // that is related to the id of the item that was clicked
       });
 
+
+// ============== DELETE content ==============
       $("#delete_link").click(function(event){
           event.preventDefault();
           console.log(event);
