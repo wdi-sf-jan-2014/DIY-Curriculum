@@ -36,6 +36,7 @@ body, html {
 $column-gutter: rem-calc(0);
 // $total-columns: 12;
 
+
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
@@ -962,6 +963,7 @@ $tabs-navigation-padding: rem-calc(16);
 // $tabs-content-margin-bottom: rem-calc(24);
 // $tabs-content-padding: $column-gutter/10;
 
+
 // $tabs-vertical-navigation-margin-bottom: 1.25rem;
 
 //
@@ -1189,5 +1191,10 @@ $tabs-navigation-padding: rem-calc(16);
 //
 
 // $include-html-visibility-classes: $include-html-classes;
+
+[class*="column"] + [class*="column"]:last-child {
+  float: left;
+}
+
 
 @import 'foundation';
