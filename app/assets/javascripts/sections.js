@@ -51,20 +51,35 @@ $(function(){
 
 
 
-$('#sections').sortable({
-    axis: 'y',    
-    update: function (event, ui) {
-        var data = $(this).sortable('serialize');
-        console.log(data);
+// $('#sections').sortable({
+//     axis: 'y',    
+//     update: function (event, ui) {
+//         var data = $(this).sortable('serialize');
+//         console.log(data);
 
-        $.ajax({
-            data: data,
-            type: 'GET',
-            dataType: 'json',
-            url: '/reads/sorted',
-            success : function(data) {
-              console.log(data);
-            }
-        });
-    }
+//         $.ajax({
+//             data: data,
+//             type: 'GET',
+//             dataType: 'json',
+//             url: '/reads/sorted',
+//             success : function(data) {
+//               console.log(data);
+//             }
+//         });
+//     }
+// });
+
+/////////// STYLIN'
+$(function(){
+
+  $("#addSection form").on("submit", function()  {
+
+    $(".intro-column").find("img").attr("src", "/assets/add_content-02.png");
+
+
+  });
+
+
+
 });
+
