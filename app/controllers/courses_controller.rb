@@ -75,7 +75,9 @@ class CoursesController < ApplicationController
     render :json => { result: "unenrolled"}
   end
 
-  def delete
+  def destroy
+    Course.find(params[:id]).destroy
+    redirect_to courses_path
   end
 
 end

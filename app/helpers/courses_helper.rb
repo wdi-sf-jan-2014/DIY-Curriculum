@@ -2,8 +2,8 @@ module CoursesHelper
 
 def createdCourses
   @created_courses = Course.where(:author_id => current_user.id)
-
 end
+
 
 def enrolledCourses
   enrollment_ids = Enrollment.where(:user_id => current_user.id)
