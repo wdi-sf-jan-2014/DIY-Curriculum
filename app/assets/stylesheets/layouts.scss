@@ -10,6 +10,7 @@ body, html {
   padding:0;
  }
 
+
 .notice {
   
 }
@@ -25,6 +26,10 @@ body, html {
 
 .top-bar ul li a  {
   color: black;
+}
+
+.logo > a > img {
+  height: 42px;
 }
 
 .top-bar .name h1 a {
@@ -66,6 +71,3 @@ body > nav > section > ul.left > li:nth-child(2) > a {
   vertical-align: top;
 }
 
-.logo > a > img {
-  height: 42px;
-}
