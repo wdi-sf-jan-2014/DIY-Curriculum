@@ -15,7 +15,7 @@ category3 = Category.create(name: "economics", img: "economics.png")
 
 category4 = Category.create(name: "education", img: "education.png")
 category5 = Category.create(name: "history", img: "history.png")
-category6 = Category.create(name: "mathmatics", img: "mathmatics.png")
+category6 = Category.create(name: "mathematics", img: "mathmatics.png")
 
 category7 = Category.create(name: "music", img: "music.png")
 category8 = Category.create(name: "philosophy", img: "philosophy.png")
