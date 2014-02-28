@@ -1,6 +1,11 @@
+<header>
+
+
 <div class="centered-logo">
   <%= image_tag("uschool-04.png")%>
 </div>
+
+</header>
 
 <div class="content">
 
@@ -36,13 +41,12 @@
 
 <style>
 
-body  {
-  margin: 0 auto;
-  background: url("/assets/background.png") center no-repeat;;
+header{
+  height: 100%;
+  background: url(/assets/background.png) center no-repeat; /* Image Credit: Unsplash.me */
   background-size: cover;
-  background-position: fixed;
-  height: 91%;
 }
+
 
 .centered-logo {
   padding-top: 20%;
@@ -54,11 +58,11 @@ body  {
 .centered-logo img {
   border: 5px solid white;
   background: rgba(255, 255, 255, 0.7);
+  position: relative;
+
 }
 
 .content{
-  background: white;
-  margin-top: 25%;
 }
 
 #boxes_holder > div.partial_button {
@@ -99,7 +103,7 @@ width: 150px;
 height: 150px;
 margin-left: 40px;
 margin-right: 40px;
-background: lightgrey;
+background: white;
 }
 
 #boxes_holder{
@@ -108,7 +112,7 @@ margin-bottom: 40px;
 }
 
 .box:hover{
-background:lightblue;
+background:rgba(139, 212, 207, 1);
 }
 
 #tag_line{
