@@ -18,7 +18,6 @@ if($("#addContent").length > 0) {
     $("#addContent form").on("submit", function(event){
       event.preventDefault();
 
-    
       // create newContent using
       // content_source_url and content_text
       // from the content form
@@ -29,20 +28,20 @@ if($("#addContent").length > 0) {
         postNewContent(newContent);
       });
 
-        // Get url path from gon variable
-        // in sections controller
-      var postNewContent = function(newContent){
-        $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
-          console.log(data);
+      // Get url path from gon variable
+      // in sections controller
+    var postNewContent = function(newContent){
+      $.post(gon.content_path, {content: newContent, edit_content_path: gon.edit_content_path}).done(function(data){
+        console.log(data);
 
-          // Append this content
-          var contentHTML = HandlebarsTemplates.contents(data);
-          $("#content_source_url").val(""); //empties value
-          $("#content_text").val("");
-          $("#contents").append(contentHTML);
-          $(document).foundation();
-        });
-      };
+      // Append this content
+      var contentHTML = HandlebarsTemplates.contents(data);
+      $("#content_source_url").val(""); //empties value
+      $("#content_text").val("");
+      $("#contents").append(contentHTML);
+      $(document).foundation();
+      });
+    };
     
 
 // ============== SHOW contents ==============
@@ -52,47 +51,60 @@ if($("#addContent").length > 0) {
     // in sections controller
     var displayAllContent = function() {
       $.get(gon.content_path).done(function(data){
-        var contentItems = data;
         $(data).each(function(index, contentItem){
           contentItem.content_path = gon.content_path;
           contentItem.edit_content_path = gon.edit_content_path;
           var contentHTML = HandlebarsTemplates.contents(contentItem);
           $(document).foundation();
           $("#contents").append(contentHTML);
-
+          
         });
       });
     };
-    displayAllContent();
+    
+displayAllContent();
 
 // ============== EDIT content ==============
-      var currentContentItemId;
-      var courseId;
-      var sectionId;
-      var contentId;
-      var first_substring;
-      var second_substring;
-      var third_substring;
-      $(".content a.edit_link").click(function() {
-        // display the modal
-        $("#edit-content").foundation("reveal", "open");
-        // keep track of the id of the content item that was clicked
-        currentContentItemId = $(this).data("id");
-        console.log(currentContentItemId, contentItems);
+    var courseId;
+    var sectionId;
+    var contentId;
+    var first_substring;
+    var second_substring;
+    var third_substring;
+     
+    
+
+      var listenForClick = function(contentItems) {
+        $(".content a.edit_link").click(function(event){
+          event.preventDefault();
+          console.log("clicked!");
+          // keep track of the id of the content item that was clicked
+          var currentContentItemId = $(this).data("id");
+          console.log(currentContentItemId);
+          // display the modal
+          $("#edit-content").foundation("reveal", "open");
+
 
         for (var i=0; i < contentItems.length; i++) {
           if (contentItems[i].id === currentContentItemId) {
-
 
             $("#source_url").val(contentItems[i].source_url);
             $("#source_text").val(contentItems[i].text);
             courseId = contentItems[i].course_id;
             sectionId = contentItems[i].section_id;
             contentId = contentItems[i].id;
-            
-          }
-        }
+            }
+            }
+       });
+      };
 
+          var getContentItems = function() {
+        $.get(gon.content_path).done(function(data){
+        var contentItems = data;
+        console.log(contentItems);
+        listenForClick(contentItems);
+      });
+      };
           $("#edit_content_form").submit(function(event){
           event.preventDefault();
 
@@ -109,15 +121,16 @@ if($("#addContent").length > 0) {
           }).done(function(){
             var redirect_url = "/courses/" + courseId + "/sections/" + sectionId +"/edit";
             window.location = redirect_url;
+            getContentItems();
+
           });
 
         });
-        
+        getContentItems();
+
         // in the modal set the action to the item being edited
         // populate form with the attributes of the content item
         // that is related to the id of the item that was clicked
-      });
-
 
 // ============== DELETE content ==============
       $("#delete_link").click(function(event){
@@ -147,11 +160,10 @@ if($("#addContent").length > 0) {
           });
       });
 
-
-  });
 }
- // <-- end of entire function
- // end of if #addContent selector
+
+);
+} //end of if TOP if-statement
 
 // begin content 
 
