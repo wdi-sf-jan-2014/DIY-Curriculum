@@ -35,11 +35,15 @@ $grey-blue: #96AEC0;
 
 #content_comment {
   font-weight: bold;
+  font-size: 130%;
 }
 
 #content_title {
+  margin-left: 25px;
   font-weight: bold;
-  font-size: 130%;
+  font-size: 100%;
+  display: inline;
+  padding-right: 10px;
 }
 
 #excerpt {
@@ -57,7 +61,10 @@ $grey-blue: #96AEC0;
   padding: 20px;
   width: 90%;
   margin-top: 20px;
-  background: rgb(252, 251, 242);
+  border: 3px solid;
+  border-color: rgb(252, 251, 242);
+  overflow: auto;
+
 }
 
 #count_to{

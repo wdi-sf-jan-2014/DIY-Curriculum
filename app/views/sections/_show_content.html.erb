@@ -10,15 +10,15 @@
         <ol class="content-list">
           <% content = @contents.each do |content| %>
           <header>
+            <li id="content_list"><div id="content_comment"><%= content.text %></div></li>
+          </header>
+          <section>
             <div id="content_title"><%= content.res_title %></div>
             <% if content.res_author %>
               <div class="author"><%= content.res_author %><span class="dot">•</span></div> 
             <% end %>
             <div id="link"><a href="<%=content.source_url%>"><%= content.res_domain %></a><span class="dot">•</span></div>
             <div class="count"><%= count_each = content.res_word_count %></div>
-          </header>
-          <section>
-            <li id="content_list"><div id="content_comment"><%= content.text %></div></li>
             <div id="excerpt"><%= raw(content.res_excerpt) %></div>
             <!-- pushing the count into the blank array -->
             <% array << count_each %>

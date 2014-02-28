@@ -4,13 +4,13 @@
     <div class="sidebar-title">
       <!-- if I remove this row, the styling doesn't scroll sideways -->
       <div class="row row-header">
-        <div class="small-12 medium-9 columns">
+        <div class="small-12 medium-10 columns">
           <h3 class="sidebar-course-title">
             <div class="course_cat_img"><%= image_tag(@category.img)%></div>
             <%=@course.title%>
           </h3>
         </div>
-        <div class="small-12 medium-3 column">
+        <div class="small-12 medium-2 column">
 
         <% if @current_user == @author %>
           <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>/edit">
