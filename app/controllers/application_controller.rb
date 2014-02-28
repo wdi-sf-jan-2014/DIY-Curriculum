@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  
+  before_filter :set_categories
+  def set_categories
+    @categories = Category.all
+  end
+
+
   protected
 
   def configure_permitted_parameters

@@ -55,6 +55,46 @@ stephanie_course = Course.create( title: "Painting",
                                         category_id: 1,
                                       )
 
+yutaka_course = Course.create( title: "Intro to Computer Graphic Design",
+                                        description: "An introduction of graphic design softwares such as Adobe Illustrator and Photoshop.
+                                        This class is designed for students with basic computer skills, but no art background needed!",
+                                        author_id: yutaka.id,
+                                        category_id: 1,
+                                      )
+
+nina_course = Course.create( title: "Classical French Cooking",
+                                        description: "This course is designed to teach classical french cuisine techniques and recipes",
+                                        author_id: nina.id,
+                                        category_id: 2,
+                                      )
+
+jerome_course2 = Course.create( title: "Intro to MacroEconomics",
+                                        description: "I really like economics, so I thought I would share with you guys how I learned MacroEconomics,
+                                        because all the college classes I've taken didn't teach me anything",
+                                        author_id: jerome.id,
+                                        category_id: 3,
+                                      )
+
+stephanie_course2 = Course.create( title: "How to be a Good teacher",
+                                        description: "This one is self explanatory, nobody likes a bad teacher.
+                                        I'd like to share some sources with you guys on how to become a better teacher",
+                                        author_id: stephanie.id,
+                                        category_id: 4,
+                                      )
+
+yutaka_course2 = Course.create( title: "A history of the future",
+                                        description: "Eventually the future is going to be history, so why not start learning about it now!
+                                        Take a trip with me to learn about all things futurustic!",
+                                        author_id: yutaka.id,
+                                        category_id: 5,
+                                        )
+
+# nina_course2 = Course.create( title: "",
+#                                         description: "Eventually the future is going to be history, so why not start learning about it now!
+#                                         Take a trip with me to learn about all things futurustic!",
+#                                         author_id: yutaka.id,
+#                                         category_id: 6,
+#                                         )
 # ______________________ = Course.create( title: "_________________",
 #                                         description: "______________________.",
 #                                         author_id: ________.id,
@@ -69,21 +109,7 @@ section3 = jerome_course.sections.create(  title: "Debugging"  )
 section4 = jerome_course.sections.create(  title: "Methods & Blocks"  )
 section5 = jerome_course.sections.create(  title: "Blocks, Proc, lambda"  )
 section6 = jerome_course.sections.create(  title: "Rspec Testing"  )
-section7 = jerome_course.sections.create(  title: "Intro to Internet and Web"  )
-section8 = jerome_course.sections.create(  title: "JSON and APIs"  )
-section9 = jerome_course.sections.create(  title: "HTML and CSS"  )
-section10 = jerome_course.sections.create(  title: "Intro To Databases And SQL"  )
-section11 = jerome_course.sections.create(  title: "Rails Controller and REST"  )
-section12 = jerome_course.sections.create(  title: "User authentication and sessions"  )
-section13 = jerome_course.sections.create(  title: "Rails View"  )
-section14 = jerome_course.sections.create(  title: "Exploring the Model"  )
-section15 = jerome_course.sections.create(  title: "JavaScript Intro"  )
-section16 = jerome_course.sections.create(  title: "JavaScript Functions"  )
-section17 = jerome_course.sections.create(  title: "Debugging part 2"  )
-section18 = jerome_course.sections.create(  title: "Action Mailer"  )
-section19 = jerome_course.sections.create(  title: "Rails TDD Intro"  )
-section20= jerome_course.sections.create(  title: "Advanced ActiveRecord and to_json"  )
-section21= jerome_course.sections.create(  title: "JavaScript BDD"  )
+
 
 section22 = stephanie_course.sections.create(  title: "Different paint brushes"  )
 section23 = stephanie_course.sections.create(  title: "Use a canvas"  )
@@ -93,6 +119,14 @@ section26 = stephanie_course.sections.create(  title: "Dripping"  )
 section27 = stephanie_course.sections.create(  title: "Prepare your Canvas"  )
 section28= stephanie_course.sections.create(  title: "Advanced Techniques"  )
 section29= stephanie_course.sections.create(  title: "Colors"  )
+
+
+section30 = yutaka_course.sections.create( title: "Introduction to Graphic Design")
+section31 = yutaka_course.sections.create( title: "Beginner Adobe Photoshop")
+section32 = yutaka_course.sections.create( title: "Beginner Adobe Illustrator")
+
+
+
 
 # ___________= ______________.sections.create(  title: "_______________"  )
 
