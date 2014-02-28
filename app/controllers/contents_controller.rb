@@ -33,7 +33,7 @@ def update
   @section = Section.find(params[:section_id])
   @content = @section.contents.find(params[:id])
   @content.update_attributes(updated_content)
-  # ReadabilityWorker.perform_async(@content.id)    
+  ReadabilityWorker.perform_async(@content.id)    
   respond_to do |f|
     f.json { render :json => @content}
   end

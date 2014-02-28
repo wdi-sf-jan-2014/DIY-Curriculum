@@ -1,11 +1,33 @@
+.max-row-height {
+  max-height: 100%;
+  position: relative;
+}
+
+.row-height {
+  height: 100%;
+}
+
+.min-row-height {
+  min-height: 100%;
+}
+
+.show-container {
+  background: white;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+
+}
+
 .page-title{
-  text-align: center;
   padding: 40px 0 10px 0 ;
 }
 
 .add-course {
   text-align: right;
   padding: 16px 0px 17px 0;
+}
+
+.add-course a {
+  padding: 20px 20px 20px 10px;
 }
 
 a > p {
@@ -16,6 +38,7 @@ color: black;
   display: none;
 }
 
+<<<<<<< HEAD
 
 ////// begin browse_all //////
 
@@ -83,3 +106,8 @@ text-align: initial;
 }
 
 /// end browse_all ///
+=======
+.remove-sideways-scroll {
+  width: 100%
+}
+>>>>>>> e8cdfd2e131408daaacdb88f5c06e9a74afba7b9

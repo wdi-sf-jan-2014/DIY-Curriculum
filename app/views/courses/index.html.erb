@@ -1,54 +1,64 @@
-<div class="page-title"> My Courses </div>
-
-
 <div class="row">
-  <div class="small-10 medium-8 large-6 small-centered columns">
+  <div class="small-10 medium-9 large-8 small-centered columns show-container">
+
+    <div class="page-title">
+      <%= current_user.name %>'s Courses 
+    </div>
+
     <div class="row">
+      <div class="small-12 medium-11 large-10 small-centered columns">
 
-      <dl class="tabs" data-tab>
-          <dd class="active"><a href="#created">
-            Created
-          </a></dd>
-          <dd><a href="#enrolled">
-            Enrolled
-          </a></dd>
-        <div class="add-course">
-          <a href="#" data-reveal-id="new-course">New</a>
-          <%= render "new"%>
-        </div>
-      </dl>
+        <dl id="course-tabs" class="tabs" data-tab>
+            <dd class="active"><a href="#created">
+              Created
+            </a></dd>
+            <dd><a href="#enrolled">
+              Enrolled
+            </a></dd>
+          <div class="add-course">
+            <a href="#" data-reveal-id="new-course">New</a>
+            <%= render "new"%>
+          </div>
+        </dl>
 
-    </div>   
-  </div>
-</div>
-
-<div class="tabs-content">
-  <div class="content active" id="created">
-    <% @created_courses.each do |course| %>
-      <div class="row">
-        <div class="small-10 medium-8 large-6 small-centered columns">
-          <a href="/courses/<%= course.id%>">
-            <h3><%= course.title %></h3>
-            <p><%= course.description %></p>
-          </a>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="content" id="enrolled">
-  <% @enrolled_courses.each do |course| %>
-    <div class="row">
-      <div class="small-10 medium-8 large-6 small-centered columns">
-        <a href="/courses/<%= course.id%>">
-          <h3><%= course.title %></h3>
-          <p><%= course.description %></p>
-        </a>
       </div>
     </div>
-  <% end %>
+
+    <div class="row max-row-height">
+      <div class="small-12 medium-11 large-10 small-centered columns min-row-height">
+
+        <div class="tabs-content row-height">
+          <div class="content active tab-contents min-row-height" id="created">
+            <% @created_courses.each do |course| %>
+              <div class="row min-row-height" id="row-height">
+                <div class="small-12 medium-11 large-10 small-centered columns min-row-height">
+                  <a href="/courses/<%= course.id%>">
+                    <h3><%= course.title %></h3>
+                    <p><%= course.description %></p>
+                  </a>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="content tab-contents" id="enrolled">
+            <% @enrolled_courses.each do |course| %>
+              <div class="row" id="row-height">
+                <div class="small-12 medium-11 large-10 small-centered columns">
+                  <a href="/courses/<%= course.id%>">
+                    <h3><%= course.title %></h3>
+                    <p><%= course.description %></p>
+                  </a>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+     
+    </div>
+    </div>
+
+  </div>
 </div>
-</div>
- 
 
 <!-- -- 
 Created Courses (view @created)
