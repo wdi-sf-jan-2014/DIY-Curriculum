@@ -30,10 +30,16 @@ class CoursesController < ApplicationController
   end
 
   def show
+
+    gon.signed_in = signed_in?
+
+
     allCategories
     @course = Course.find(params[:id])
     @author = User.find(@course.author_id)
-    if current_user.id == @course.author_id 
+    if not signed_in?
+       @enrolled = false
+    elsif current_user.id == @course.author_id 
       @ownCourse = true
     elsif current_user.courses.where(:id => @course.id) == []
       @enrolled = false

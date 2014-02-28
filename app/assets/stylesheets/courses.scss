@@ -1,3 +1,17 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+$green-blue: rgba(112, 176, 170, 1);
+$light-green-blue: rgba(139, 212, 207, 1);
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+
 .max-row-height {
   max-height: 100%;
   position: relative;
@@ -32,12 +46,17 @@
 
 
 .add-course {
-  text-align: right;
+  margin-top: 20px;
   padding: 16px 0px 17px 0;
+  background: $light-green-blue;
+  width: 150px;
+
 }
 
 .add-course a {
-  padding: 20px 20px 20px 10px;
+  padding: 16px 32px 17px 32px;
+  color: white;
+
 }
 
 a > p {

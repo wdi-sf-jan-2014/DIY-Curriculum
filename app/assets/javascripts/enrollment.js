@@ -10,27 +10,33 @@ if($("#enroll").length > 0) {
 
     $('#enroll').on("click", function(){
 
-      $.ajax({
-        url: "/courses/"+idArray+"/enroll"
-      }).done(function(data){
-        console.log(data);
-        });
+      if (gon.signed_in === true) {
 
-      $('#toggles button').toggle();
+        $.ajax({
+          url: "/courses/"+idArray+"/enroll"
+        }).done(function(data){
+          console.log(data);
+          });
 
+        $('#toggles button').toggle();
+
+      } else  {
+        window.location.replace("../users/sign_up");
+      }
     });
 
-    $('#unenroll').on("click", function(){
+      $('#unenroll').on("click", function(){
 
-      $.ajax({
-        url: "/courses/"+idArray+"/unenroll"
-      }).done(function(data){
-        console.log(data);
-        });
+        $.ajax({
+          url: "/courses/"+idArray+"/unenroll"
+        }).done(function(data){
+          console.log(data);
+          });
 
-      $('#toggles button').toggle();
-      
-    });
+        $('#toggles button').toggle();
+        
+      });
+
 
   });
 
