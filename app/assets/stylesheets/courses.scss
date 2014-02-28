@@ -1,3 +1,17 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+$green-blue: rgba(112, 176, 170, 1);
+$light-green-blue: rgba(139, 212, 207, 1);
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+
 .max-row-height {
   max-height: 100%;
   position: relative;
@@ -8,26 +22,41 @@
 }
 
 .min-row-height {
-  min-height: 100%;
+  height: 100%;
 }
 
 .show-container {
   background: white;
   box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 15px
+}
 
+.course-img {
+  width: 50px;
 }
 
 .page-title{
-  padding: 40px 0 10px 0 ;
+  padding: 40px 20px 10px 0px ;
+  text-transform:uppercase;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
 }
 
+
 .add-course {
-  text-align: right;
+  margin-top: 20px;
   padding: 16px 0px 17px 0;
+  background: $light-green-blue;
+  width: 150px;
+
 }
 
 .add-course a {
-  padding: 20px 20px 20px 10px;
+  padding: 16px 32px 17px 32px;
+  color: white;
+
 }
 
 a > p {
@@ -36,6 +65,18 @@ color: black;
 
 .hidden {
   display: none;
+}
+
+
+
+.tabs.vertical  {
+  width: 50%;
+}
+
+.img-column {
+  text-align: center;
+  margin-top: 5px;
+
 }
 
 
@@ -111,6 +152,7 @@ margin-top:50px;
   width: 100%
 }
 
+
 //// start course show ///
 
 #course_heading{
@@ -145,6 +187,4 @@ line-height: 100%;
 #indent_title:hover {
 color: lightblue;
 }
-
-
 
