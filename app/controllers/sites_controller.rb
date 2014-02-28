@@ -3,5 +3,6 @@ class SitesController < ApplicationController
 
   def index
   @contents = Content.limit(3)
+  @index_page = true;
   end
 end

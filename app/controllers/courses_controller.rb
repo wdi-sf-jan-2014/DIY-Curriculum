@@ -39,7 +39,7 @@ class CoursesController < ApplicationController
     @author = User.find(@course.author_id)
 
     if not signed_in?
-       @enrolled = false
+      @enrolled = false
     elsif current_user.id == @course.author_id 
       @ownCourse = true
     elsif current_user.courses.where(:id => @course.id) == []

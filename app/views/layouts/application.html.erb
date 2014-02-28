@@ -22,8 +22,18 @@
   <body>
     <%= render "/layouts/nav" %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+    <div data-alert class="alert-box success radius">
+      <p class="notice"><%= notice %></p>
+      <a href="#" class="close">&times;</a>
+    </div>
+    <% elsif alert %>
+    <div data-alert class="alert-box warning radius">
+      <p class="alert"><%= alert %></p>
+      <a href="#" class="close">&times;</a>
+    </div>
+    <% end %>
+    
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

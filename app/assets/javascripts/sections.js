@@ -57,6 +57,7 @@ $(function(){
 //         var data = $(this).sortable('serialize');
 //         console.log(data);
 
+
 //         $.ajax({
 //             data: data,
 //             type: 'GET',
@@ -68,3 +69,17 @@ $(function(){
 //         });
 //     }
 // });
+
+/////////// STYLIN'
+$(function(){
+
+  $("#addSection form").on("submit", function()  {
+
+    $(".intro-column").find("img").attr("src", "/assets/add_content-02.png");
+
+
+  });
+
+
+
+});

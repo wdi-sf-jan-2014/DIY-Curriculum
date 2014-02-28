@@ -20,6 +20,7 @@ $grey-blue: #96AEC0;
 
 .content-view {
   height: 100%;
+  margin-top: 20px;
 }
 
 .sidebar-column {
@@ -71,12 +72,14 @@ row-header  {
 .fi-widget {
   font-size: 30px;
   text-align: right;
+  padding-left: 15px;
   color: white;
 }
 
 .fi-check {
   font-size: 30px;
   text-align: right;
+  padding-left: 15px;
   color: white;
 }
 

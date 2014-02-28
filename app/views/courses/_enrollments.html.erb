@@ -1,0 +1,9 @@
+<div id="enrollments" class="reveal-modal" data-reveal>
+  <h2> Users Who are enrolled to <%= @course.title %>
+  <div class="each-enrolled">
+    <% @course.users.each do |user| %>
+      <%= user.name %>
+    <% end %>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

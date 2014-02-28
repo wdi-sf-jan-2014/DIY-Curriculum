@@ -1,32 +1,70 @@
-<h1 id="tag_line">create beautiful DIY lesson plans<br>
-with online resources<br>
-</h1>
+<header>
 
-<div class="toggle_button">(see example)</div>
 
-<div id="index_partial">
-<%= render 'index_content' %>
+<div class="centered-logo">
+  <%= image_tag("uschool-04.png")%>
 </div>
 
+</header>
 
-<div id="boxes_holder">
-  <div class="box">
-    <% if signed_in? %>
-    <a href="/courses"><%= image_tag("file02_128.png")%></a>
-    create
-    <%else%>
-    <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
-    create
-    <%end%>
+<div class="content">
+
+  <h1 id="tag_line">create beautiful DIY lesson plans<br>
+  with online resources<br>
+  </h1>
+
+
+  <div class="toggle_button">(see example)</div>
+
+  <div id="index_partial">
+  <%= render 'index_content' %>
   </div>
- 
+
+
+  <div id="boxes_holder">
     <div class="box">
-      <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
-      browse
+      <% if signed_in? %>
+      <a href="/courses"><%= image_tag("file02_128.png")%></a>
+      create
+      <%else%>
+      <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
+      create
+      <%end%>
     </div>
+   
+      <div class="box">
+        <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
+        browse
+      </div>
+  </div>
 </div>
 
 <style>
+
+header{
+  height: 100%;
+  background: url(/assets/background.png) center no-repeat; /* Image Credit: Unsplash.me */
+  background-size: cover;
+}
+
+
+.centered-logo {
+  padding-top: 20%;
+  padding-left: 43%;
+  padding-right: 43%;
+}
+
+
+.centered-logo img {
+  border: 5px solid white;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+
+}
+
+.content{
+}
+
 #boxes_holder > div.partial_button {
 display: inline-block;
 padding: 30px;
@@ -65,7 +103,7 @@ width: 150px;
 height: 150px;
 margin-left: 40px;
 margin-right: 40px;
-background: lightgrey;
+background: white;
 }
 
 #boxes_holder{
@@ -74,7 +112,7 @@ margin-bottom: 40px;
 }
 
 .box:hover{
-background:lightblue;
+background:rgba(139, 212, 207, 1);
 }
 
 #tag_line{

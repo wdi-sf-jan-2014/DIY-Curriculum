@@ -19,6 +19,15 @@
         </li> 
       </ul>
       <%end%>
+    <% if not @index_page %>
+    <ul class="center">
+        <div class="small-5 small-centered columns">
+        <li class="logo">
+            <a href="/"><%= image_tag("uschool-04.png")%></a>
+        </li>
+        </div>
+    </ul>
+    <% end %>
 
     <ul class="right">
         <li class="browse">

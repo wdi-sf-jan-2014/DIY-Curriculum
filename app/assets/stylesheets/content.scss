@@ -35,17 +35,25 @@ $grey-blue: #96AEC0;
 
 #content_comment {
   font-weight: bold;
+  font-size: 130%;
 }
 
 #content_title {
+  margin-left: 25px;
   font-weight: bold;
-  font-size: 130%;
+  font-size: 100%;
+  display: inline;
+  padding-right: 10px;
 }
 
 #excerpt {
   margin-left: 25px;
   width: 90%;
   color: $grey-blue;
+}
+
+#add-course {
+  float: left;
 }
 
 .content_button {
@@ -57,7 +65,10 @@ $grey-blue: #96AEC0;
   padding: 20px;
   width: 90%;
   margin-top: 20px;
-  background: rgb(252, 251, 242);
+  border: 3px solid;
+  border-color: rgb(252, 251, 242);
+  overflow: auto;
+
 }
 
 #count_to{
@@ -157,9 +168,6 @@ footer  {
   background-color: white;
 }
 
-#test > input.button.small  {
-  background-color: $link-blue;
-}
 
 #content_div {
   text-align: left;
@@ -190,6 +198,12 @@ footer  {
   font-size: 30px;
   color: #C1877D;
   padding: 0 5px 0 5px;
+}
+
+.edit-content-title .fi-x-circle {
+  font-size: 30px;
+  color: #C1877D;
+  padding: 0px 5px 0 5px;
 }
 
 

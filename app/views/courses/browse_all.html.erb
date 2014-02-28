@@ -47,11 +47,12 @@
 </div>
 
 <!-- begin tabs -->
+<div class="small-4 small-centered columns show-container">
 <div class="tabs-content">
  <% @all_cats.each do |i| %>
   <div class="content" id="panel2-<%=i.id%>">
     <h3 class="tab_browse_title"><%= i.name %></h3>
-    <div class="small-9 small-centered columns">
+    <div class="small-9 small-centered columns show-container">
        <% cat_courses = @all_courses.where(category_id: i) %>
         <ol>
           <% cat_courses.each do |course| %>
@@ -63,6 +64,8 @@
     </div>
   </div>
   <% end %>
+</div>
+</div>
 
 <style>
 
