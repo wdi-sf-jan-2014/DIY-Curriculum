@@ -1,6 +1,4 @@
 Diyc::Application.routes.draw do
-require ‘sidekiq/web’
-mount Sidekiq::Web, at: ‘/sidekiq’
   root to: "sites#index"
 
   devise_for :users
