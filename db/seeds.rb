@@ -92,7 +92,7 @@ yutaka_course2 = Course.create( title: "A history of the future",
 nina_course2 = Course.create( title: "A journey through genres",
                                         description: "A library of classics for all genres of music! Updated Often!",
                                         author_id: nina.id,
-                                        category_id: 6,
+                                        category_id: 7,
                                         )
 # ______________________ = Course.create( title: "_________________",
 #                                         description: "______________________.",
