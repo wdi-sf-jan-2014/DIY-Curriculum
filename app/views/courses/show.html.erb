@@ -49,14 +49,15 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
       </div>
 
       <div class="small-5 small columns">
-        <h3>Course at a Glance</h3>
-        <h4>Category: <%= @course.category.name %></h4> 
-        <h4># of Sections: <%= @course.sections.count %></h4>
+        <h4>Course at a Glance</h4>
+        <h5>Category: <%= @course.category.name %></h5> 
+        <h5># of Sections: <%= @course.sections.count %></h5>
       </div>
     </div>
 
     <div class="row">
       <div class="small-9 columns">
+        <%= link_to "Delete Course", course_path, method: :delete %>
       ---------------------------</br>
       Needs to add reviews
       </div>

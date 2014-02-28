@@ -15,12 +15,11 @@ class CoursesController < ApplicationController
   end
 
   # browse all available courses
-  def browse_all
-    allCategories
+  def browse_all    
     @all_courses = Course.all
-    all_cats = Category.all 
-    @all_cats_alpha = all_cats.sort_by!{ |f| f.name.downcase } 
-    cats = @all_cats_alpha
+    @all_cats = Category.all 
+    all_cats_alpha = @all_cats.sort_by!{ |f| f.name.downcase } 
+    cats = all_cats_alpha
     div = cats.length/3
     div_two = div * 2
     div_three = div * 3
@@ -82,7 +81,9 @@ class CoursesController < ApplicationController
     render :json => { result: "unenrolled"}
   end
 
-  def delete
+  def destroy
+    Course.find(params[:id]).destroy
+    redirect_to courses_path
   end
 
 end
