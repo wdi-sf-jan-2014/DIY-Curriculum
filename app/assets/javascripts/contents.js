@@ -46,24 +46,27 @@ if($("#addContent").length > 0) {
     
 
 // ============== SHOW contents ==============
-    var contentItems;
-    var currentContentItemId;
-
+    
     // Display all content(s) on the page
     // Get url path from gon variable
     // in sections controller
-    
-    $.get(gon.content_path).done(function(data){
-      contentItems = data;
-      $(data).each(function(index, contentItem){
-        contentItem.content_path = gon.content_path;
-        contentItem.edit_content_path = gon.edit_content_path;
-        var contentHTML = HandlebarsTemplates.contents(contentItem);
-        $(document).foundation();
-        $("#contents").append(contentHTML);
+    var displayAllContent = function() {
+      $.get(gon.content_path).done(function(data){
+        var contentItems = data;
+        $(data).each(function(index, contentItem){
+          contentItem.content_path = gon.content_path;
+          contentItem.edit_content_path = gon.edit_content_path;
+          var contentHTML = HandlebarsTemplates.contents(contentItem);
+          $(document).foundation();
+          $("#contents").append(contentHTML);
 
+        });
       });
+    };
+    displayAllContent();
+
 // ============== EDIT content ==============
+      var currentContentItemId;
       var courseId;
       var sectionId;
       var contentId;
@@ -145,10 +148,10 @@ if($("#addContent").length > 0) {
       });
 
 
-    });
-
-}); // <-- end of entire function
-} // end of if #addContent selector
+  });
+}
+ // <-- end of entire function
+ // end of if #addContent selector
 
 // begin content 
 
