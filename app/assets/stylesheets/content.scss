@@ -52,6 +52,10 @@ $grey-blue: #96AEC0;
   color: $grey-blue;
 }
 
+#add-course {
+  float: left;
+}
+
 .content_button {
   margin-left: 25px;
 }
@@ -164,9 +168,6 @@ footer  {
   background-color: white;
 }
 
-#test > input.button.small  {
-  background-color: $link-blue;
-}
 
 #content_div {
   text-align: left;

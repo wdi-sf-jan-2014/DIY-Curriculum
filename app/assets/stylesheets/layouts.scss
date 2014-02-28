@@ -11,13 +11,13 @@ body, html {
  }
 
 .alert-box.success {
-background-color: rgba(112, 176, 169, 1);
-border-color: #3a945b;
-color: white;
-width: 50%;
-margin: 0 auto;
-padding: 5px 5px 5px 5px;
-height: 36px;
+  background-color: rgba(112, 176, 169, 1);
+  border-color: #3a945b;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px 5px 5px 5px;
+  height: 36px;
 }
 
 .alert-box.warning  {
@@ -41,6 +41,18 @@ height: 36px;
 
 .logo > a > img {
   height: 42px;
+}
+
+
+.logo {
+  display: table; 
+  padding-left: 35%
+}
+
+.logo {
+  @media only screen { padding-left: 15% }
+  @media only screen and (min-width: 40.063em) {  padding-left: 19% }
+  @media only screen and (min-width: 64.063em) { padding-left: 35% }
 }
 
 .top-bar .name h1 a {
@@ -81,17 +93,6 @@ body > nav > section > ul.left > li:nth-child(2) > a {
   font-size: 0.8125rem;
   vertical-align: top;
 
-}
-
-.logo {
-  display: table; 
-  padding-left: 35%
-}
-
-.logo {
-  @media only screen { padding-left: 15% }
-  @media only screen and (min-width: 40.063em) {  padding-left: 19% }
-  @media only screen and (min-width: 64.063em) { padding-left: 35% }
 }
 
 .top-bar-section .logo a:not(.button):hover  {

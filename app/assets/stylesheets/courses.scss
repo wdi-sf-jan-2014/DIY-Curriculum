@@ -8,9 +8,19 @@ $button-blue: #72D5DD;
 $grey-blue: #96AEC0;
 $green-blue: rgba(112, 176, 170, 1);
 $light-green-blue: rgba(139, 212, 207, 1);
+
+
 ///////////////////////////////////
+//////////////////////COURSES INDEX
 ///////////////////////////////////
-///////////////////////////////////
+
+.button {
+  background-color: #8bd4cf;
+}
+
+.button:hover {
+  background-color: $button-blue;
+}
 
 .max-row-height {
   max-height: 100%;
@@ -49,14 +59,11 @@ $light-green-blue: rgba(139, 212, 207, 1);
   margin-top: 20px;
   padding: 16px 0px 17px 0;
   background: $light-green-blue;
-  width: 150px;
-
 }
 
 .add-course a {
-  padding: 16px 32px 17px 32px;
+  padding: 16px 32px 17px 44px;
   color: white;
-
 }
 
 a > p {
@@ -67,20 +74,19 @@ color: black;
   display: none;
 }
 
-
-
 .tabs.vertical  {
-  width: 50%;
+  width: 100%;
 }
 
 .img-column {
   text-align: center;
   margin-top: 5px;
-
 }
 
 
-////// begin browse_all //////
+///////////////////////////////////
+/////////////////////////BROWSE-ALL
+///////////////////////////////////
 
 .row_browse {
 width: 80%;
@@ -146,14 +152,10 @@ margin-top:50px;
 }
 
 
-/// end browse_all ///
 
-.remove-sideways-scroll {
-  width: 100%
-}
-
-
-//// start course show ///
+///////////////////////////////////
+////////////////////////COURSE SHOW
+///////////////////////////////////
 
 #course_heading{
 color: rgb(43, 148, 182);
@@ -161,10 +163,6 @@ text-align:center;
 }
 
 #course_heading2{
-text-align:center;
-}
-
-#course_description{
 text-align:center;
 }
 
@@ -188,3 +186,6 @@ line-height: 100%;
 color: lightblue;
 }
 
+#created > div:nth-child(1) > a > div.small-10.columns > p  {
+  color: $link-blue;
+}
