@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Actionmailer for Heroku
+gem 'mandrill_mailer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
