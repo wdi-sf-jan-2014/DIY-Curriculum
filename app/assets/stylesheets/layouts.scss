@@ -69,5 +69,21 @@ body > nav > section > ul.left > li:nth-child(2) > a {
 .courses-nav  {
   font-size: 0.8125rem;
   vertical-align: top;
+
+}
+
+.logo {
+  display: table; 
+  padding-left: 35%
+}
+
+.logo {
+  @media only screen { padding-left: 15% }
+  @media only screen and (min-width: 40.063em) {  padding-left: 19% }
+  @media only screen and (min-width: 64.063em) { padding-left: 35% }
+}
+
+.top-bar-section .logo a:not(.button):hover  {
+  background: #fff;
 }
 
