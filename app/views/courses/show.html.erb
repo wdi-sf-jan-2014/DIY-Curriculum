@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-9 small-centered columns">
+  <div class="small-6 small-centered columns blocks">
     <br><br>
       <div class="course_cat_img"><%= image_tag(@course.category.img)%></div>
 
@@ -13,19 +13,19 @@
       <p id="course_description"><%= @course.description%><p>
       <%= render "edit"%>
 
-      <div class="small-9 small-centered columns">
+      <div class="small-12 small-centered columns">
         <p id="course_by">By: <%= @author.name %></p>
       </div>
 
       <% if @enrolled %>
       <div id="toggles">
-        <button id="unenroll">Unenroll</button>
-        <button id="enroll" class="hidden">Enroll</button>
+        <button class="button" id="unenroll">Unenroll</button>
+        <button id="enroll" class="hidden button">Enroll</button>
       <% elsif @ownCourse %>
       <% else %>
       <div id="toggles">
-        <button id="enroll">Enroll</button>
-        <button id="unenroll" class="hidden">Unenroll</button>
+        <button class="button" id="enroll">Enroll</button>
+        <button id="unenroll" class="hidden button">Unenroll</button>
       </div>
       <% end %>
   </div>
@@ -33,27 +33,36 @@
 
   
 <div class="row">
-  <div class="small-9 small-centered columns">
+  <div class="small-6 small-centered columns">
 
     <div class="row">    
-      <div class="small-4 small columns">
+      <div class="small-5 small columns top-margin">
+        <div class="row card-title">  
         <h4>Sections<h4>
-        <% @course.sections.each do |s| %>
-          <a href="/courses/<%= @course.id%>/sections/<%= s.id%>">
-            <p id="indent_title"><%= s.title %></p>
-          </a>
-        <% end %>
+        </div>
+        <div class="row blocks">
+          <% @course.sections.each do |s| %>
+            <a href="/courses/<%= @course.id%>/sections/<%= s.id%>">
+              <p id="indent_title"><%= s.title %></p>
+            </a>
+          <% end %>
+        </div>
       </div>
 
-      <div class="small-5 small columns">
-        <h4>Course at a Glance</h4>
-        <p class="glance">Category: <%= @course.category.name %></p> 
-        <p class="glance"><%= @course.sections.count %> Sections</p>
-        <a href="#" data-reveal-id="enrollments">
-          <p class="glance"><%= @course.users.count %> Enrollments</p>
-        </a>
-        <%= render "enrollments"%>
-        <p class="glance"><div id="count_to"></div></p>
+      <div class="small-5 small columns top-margin">
+        <div class="row card-title">
+          <h4>Course at a Glance</h4>
+        </div>
+
+        <div class="row blocks">
+          <p class="glance">Category: <%= @course.category.name %></p> 
+          <p class="glance"><%= @course.sections.count %> Sections</p>
+          <a href="#" data-reveal-id="enrollments">
+            <p class="glance"><%= @course.users.count %> Enrollments</p>
+          </a>
+          <%= render "enrollments"%>
+          <p class="glance"><div id="count_to"></div></p>
+        </div>
 
   </div>
 </div>
@@ -76,13 +85,11 @@ color:grey;
 line-height: 100%;
 }
 
-.row .row {
+.blocks {
 background: white;
-padding-left: 70px;
-padding-right: 70px;
-padding-top: 40px;
-padding-bottom: 20px;
-margin-bottom: 50px;
+padding: 10px 70px 20px 70px;
+margin-top: 50px;
+box-shadow: rgba(0,0,0,.08) 0 1px 5px;
 }
 
 
