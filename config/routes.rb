@@ -1,6 +1,8 @@
 Diyc::Application.routes.draw do
   root to: "sites#index"
 
+  get "/courses/:course_id/sections/:section_id/sorted", to: "sections#sorted" 
+
   devise_for :users
   
   get "/courses/:id/enroll", to: "courses#enroll"
