@@ -76,7 +76,6 @@ before_filter :authenticate_user!, except: [:index, :show]
   end
 
 
-
   def destroy
     course = Course.find(params[:course_id])
     section = course.sections.find(params[:id])
