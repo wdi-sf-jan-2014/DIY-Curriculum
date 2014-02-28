@@ -1,32 +1,66 @@
-<h1 id="tag_line">create beautiful DIY lesson plans<br>
-with online resources<br>
-</h1>
-
-<div class="toggle_button">(see example)</div>
-
-<div id="index_partial">
-<%= render 'index_content' %>
+<div class="centered-logo">
+  <%= image_tag("uschool-04.png")%>
 </div>
 
+<div class="content">
 
-<div id="boxes_holder">
-  <div class="box">
-    <% if signed_in? %>
-    <a href="/courses"><%= image_tag("file02_128.png")%></a>
-    create
-    <%else%>
-    <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
-    create
-    <%end%>
+  <h1 id="tag_line">create beautiful DIY lesson plans<br>
+  with online resources<br>
+  </h1>
+
+
+  <div class="toggle_button">(see example)</div>
+
+  <div id="index_partial">
+  <%= render 'index_content' %>
   </div>
- 
+
+
+  <div id="boxes_holder">
     <div class="box">
-      <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
-      browse
+      <% if signed_in? %>
+      <a href="/courses"><%= image_tag("file02_128.png")%></a>
+      create
+      <%else%>
+      <a href="/users/sign_in"><%= image_tag("file02_128.png")%></a>
+      create
+      <%end%>
     </div>
+   
+      <div class="box">
+        <a href="/browse"><%= image_tag("magnifying-glass_128.png")%></a>
+        browse
+      </div>
+  </div>
 </div>
 
 <style>
+
+body  {
+  margin: 0 auto;
+  background: url("/assets/background.png") center no-repeat;;
+  background-size: cover;
+  background-position: fixed;
+  height: 91%;
+}
+
+.centered-logo {
+  padding-top: 20%;
+  padding-left: 43%;
+  padding-right: 43%;
+}
+
+
+.centered-logo img {
+  border: 5px solid white;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.content{
+  background: white;
+  margin-top: 25%;
+}
+
 #boxes_holder > div.partial_button {
 display: inline-block;
 padding: 30px;
