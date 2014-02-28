@@ -35,7 +35,9 @@ class CoursesController < ApplicationController
 
     allCategories
     @course = Course.find(params[:id])
+    @current_user = current_user
     @author = User.find(@course.author_id)
+
     if not signed_in?
        @enrolled = false
     elsif current_user.id == @course.author_id 
