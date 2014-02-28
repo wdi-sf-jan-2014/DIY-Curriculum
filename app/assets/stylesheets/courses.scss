@@ -16,24 +16,14 @@ $light-green-blue: rgba(139, 212, 207, 1);
 
 .button {
   background-color: #8bd4cf;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+
 }
 
 .button:hover {
   background-color: $button-blue;
 }
 
-.max-row-height {
-  max-height: 100%;
-  position: relative;
-}
-
-.row-height {
-  height: 100%;
-}
-
-.min-row-height {
-  height: 100%;
-}
 
 .show-container {
   background: white;
@@ -58,11 +48,10 @@ $light-green-blue: rgba(139, 212, 207, 1);
 .add-course {
   margin-top: 20px;
   padding: 16px 0px 17px 0;
-  background: $light-green-blue;
 }
 
 .add-course a {
-  padding: 16px 32px 17px 44px;
+  padding: 16px 32px 17px 32px;
   color: white;
 }
 
@@ -70,9 +59,6 @@ a > p {
 color: black;
 }
 
-.hidden {
-  display: none;
-}
 
 .tabs.vertical  {
   width: 100%;
@@ -83,6 +69,9 @@ color: black;
   margin-top: 5px;
 }
 
+#enrolled {
+  width: 100%;
+}
 
 ///////////////////////////////////
 /////////////////////////BROWSE-ALL
@@ -188,4 +177,8 @@ color: lightblue;
 
 #created > div:nth-child(1) > a > div.small-10.columns > p  {
   color: $link-blue;
+}
+
+.each-enrolled  {
+  border-top: 1px dashed;
 }

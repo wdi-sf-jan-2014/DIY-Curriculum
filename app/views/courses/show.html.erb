@@ -1,11 +1,3 @@
-<!-- This is the Courses Homepage
-
- -course title (edit)
- -course description (edit)
- -Sections (click to go to view sections)
-
-Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
-
 <div class="row">
   <div class="small-9 small-centered columns">
     <br><br>
@@ -19,7 +11,7 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
         <% end %>
 
       <p id="course_description"><%= @course.description%><p>
-    <%= render "edit"%>
+      <%= render "edit"%>
 
       <div class="small-9 small-centered columns">
         <p id="course_by">By: <%= @author.name %></p>
@@ -56,7 +48,11 @@ Course at a Glance [reviews//views//enrollments//upvotes//hours per section] -->
       <div class="small-5 small columns">
         <h4>Course at a Glance</h4>
         <p class="glance">Category: <%= @course.category.name %></p> 
-        <p class="glance"># of Sections: <%= @course.sections.count %></p>
+        <p class="glance"><%= @course.sections.count %> Sections</p>
+        <a href="#" data-reveal-id="enrollments">
+          <p class="glance"><%= @course.users.count %> Enrollments</p>
+        </a>
+        <%= render "enrollments"%>
 
   </div>
 </div>
