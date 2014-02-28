@@ -103,27 +103,27 @@ yutaka_course2 = Course.create( title: "A history of the future",
 
 
 ###################Sections Creation###########################
-section1 = jerome_course.sections.create(  title: "The Command Line"  )
-section2 = jerome_course.sections.create(  title: "File IO, arrays, hashes"  )
-section3 = jerome_course.sections.create(  title: "Debugging"  )
-section4 = jerome_course.sections.create(  title: "Methods & Blocks"  )
-section5 = jerome_course.sections.create(  title: "Blocks, Proc, lambda"  )
-section6 = jerome_course.sections.create(  title: "Rspec Testing"  )
+# section1 = jerome_course.sections.create(  title: "The Command Line"  )
+# section2 = jerome_course.sections.create(  title: "File IO, arrays, hashes"  )
+# section3 = jerome_course.sections.create(  title: "Debugging"  )
+# section4 = jerome_course.sections.create(  title: "Methods & Blocks"  )
+# section5 = jerome_course.sections.create(  title: "Blocks, Proc, lambda"  )
+# section6 = jerome_course.sections.create(  title: "Rspec Testing"  )
 
 
-section22 = stephanie_course.sections.create(  title: "Different paint brushes"  )
-section23 = stephanie_course.sections.create(  title: "Use a canvas"  )
-section24 = stephanie_course.sections.create(  title: "Oil vs Acrylics"  )
-section25 = stephanie_course.sections.create(  title: "Naked people"  )
-section26 = stephanie_course.sections.create(  title: "Dripping"  )
-section27 = stephanie_course.sections.create(  title: "Prepare your Canvas"  )
-section28= stephanie_course.sections.create(  title: "Advanced Techniques"  )
-section29= stephanie_course.sections.create(  title: "Colors"  )
+# section22 = stephanie_course.sections.create(  title: "Different paint brushes"  )
+# section23 = stephanie_course.sections.create(  title: "Use a canvas"  )
+# section24 = stephanie_course.sections.create(  title: "Oil vs Acrylics"  )
+# section25 = stephanie_course.sections.create(  title: "Naked people"  )
+# section26 = stephanie_course.sections.create(  title: "Dripping"  )
+# section27 = stephanie_course.sections.create(  title: "Prepare your Canvas"  )
+# section28= stephanie_course.sections.create(  title: "Advanced Techniques"  )
+# section29= stephanie_course.sections.create(  title: "Colors"  )
 
 
-section30 = yutaka_course.sections.create( title: "Introduction to Graphic Design")
-section31 = yutaka_course.sections.create( title: "Beginner Adobe Photoshop")
-section32 = yutaka_course.sections.create( title: "Beginner Adobe Illustrator")
+# section30 = yutaka_course.sections.create( title: "Introduction to Graphic Design")
+# section31 = yutaka_course.sections.create( title: "Beginner Adobe Photoshop")
+# section32 = yutaka_course.sections.create( title: "Beginner Adobe Illustrator")
 
 
 

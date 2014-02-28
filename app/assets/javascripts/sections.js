@@ -51,20 +51,20 @@ $(function(){
 
 
 
-$('#sections').sortable({
-    axis: 'y',    
-    update: function (event, ui) {
-        var data = $(this).sortable('serialize');
-        console.log(data);
+// $('#sections').sortable({
+//     axis: 'y',    
+//     update: function (event, ui) {
+//         var data = $(this).sortable('serialize');
+//         console.log(data);
 
-        $.ajax({
-            data: data,
-            type: 'GET',
-            dataType: 'json',
-            url: '/reads/sorted',
-            success : function(data) {
-              console.log(data);
-            }
-        });
-    }
-});
+//         $.ajax({
+//             data: data,
+//             type: 'GET',
+//             dataType: 'json',
+//             url: '/reads/sorted',
+//             success : function(data) {
+//               console.log(data);
+//             }
+//         });
+//     }
+// });
