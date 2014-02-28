@@ -11,8 +11,7 @@
 #
 
 class Section < ActiveRecord::Base
-
+acts_as_list
   belongs_to :course
   has_many :contents
-
 end
