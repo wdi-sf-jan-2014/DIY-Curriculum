@@ -40,6 +40,7 @@ if($("#addContent").length > 0) {
       $("#content_text").val("");
       $("#contents").append(contentHTML);
       $(document).foundation();
+      getContentItems();
       });
     };
     
