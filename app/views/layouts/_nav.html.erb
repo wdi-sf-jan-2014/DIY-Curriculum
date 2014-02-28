@@ -25,15 +25,7 @@
         </li>
         <li class="divider"></li>
         <% if !signed_in? %>    
-        <li class="has-dropdown"><a href="#">Sign in</a>
-            <ul class="dropdown">
-            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>  
-                <li><%= f.email_field :email, :autofocus => true, :placeholder => "Email" %></li>
-                <li><%= f.password_field :password, :placeholder => "Password" %></li>           
-                <li><%= f.submit "Sign in", :id => "drop_submit" %></li>
-            <%end%>
-            </ul>
-        </li>
+        <li><%= link_to "Sign In", user_session_path %></li>
         <%end%>
         <% if signed_in? %>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
