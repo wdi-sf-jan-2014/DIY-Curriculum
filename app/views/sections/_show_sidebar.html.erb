@@ -11,9 +11,13 @@
           </h3>
         </div>
         <div class="small-12 medium-3 column">
+
+        <% if @current_user == @author %>
           <a href="/courses/<%=@course.id%>/sections/<%=@section.id%>/edit">
             <i class="fi-widget"></i>
           </a>
+        <% end %> 
+
         </div>
       </div>
     </div>
