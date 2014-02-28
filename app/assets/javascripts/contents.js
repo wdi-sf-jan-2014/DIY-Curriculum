@@ -72,15 +72,16 @@ displayAllContent();
     var first_substring;
     var second_substring;
     var third_substring;
+    var currentContentItemId;
      
     
 
-      var listenForClick = function(contentItems) {
-        $(".content a.edit_link").click(function(event){
+      var listenForEditClick = function(contentItems) {
+        $("#contents").on("click", "a.edit_link", function(event){
           event.preventDefault();
           console.log("clicked!");
           // keep track of the id of the content item that was clicked
-          var currentContentItemId = $(this).data("id");
+          currentContentItemId = $(this).data("id");
           console.log(currentContentItemId);
           // display the modal
           $("#edit-content").foundation("reveal", "open");
@@ -99,13 +100,6 @@ displayAllContent();
        });
       };
 
-          var getContentItems = function() {
-        $.get(gon.content_path).done(function(data){
-        var contentItems = data;
-        console.log(contentItems);
-        listenForClick(contentItems);
-      });
-      };
           $("#edit_content_form").submit(function(event){
           event.preventDefault();
 
@@ -123,21 +117,21 @@ displayAllContent();
             var redirect_url = "/courses/" + courseId + "/sections/" + sectionId +"/edit";
             window.location = redirect_url;
             getContentItems();
-
           });
 
         });
-        getContentItems();
 
         // in the modal set the action to the item being edited
         // populate form with the attributes of the content item
         // that is related to the id of the item that was clicked
 
 // ============== DELETE content ==============
-      $("#delete_link").click(function(event){
-          event.preventDefault();
-          console.log(event);
-          currentContentItemId = $(this).data("id");
+    var listenForDelete = function (contentItems) {
+      console.log("Delete it..DO IT!!!");
+      $("#contents").on("click", "#delete_link", function(event){
+        event.preventDefault();
+     
+        currentContentItemId = $(this).data("id");
         
         for (var i=0; i < contentItems.length; i++) {
           if (contentItems[i].id === currentContentItemId) {
@@ -148,7 +142,6 @@ displayAllContent();
             contentId = contentItems[i].id;
           }
         }
-
         data = {content: {id: currentContentItemId}};
 
         $.ajax({
@@ -158,8 +151,22 @@ displayAllContent();
         }).done(function(){
             var redirect_url = "/courses/" + courseId + "/sections/" + sectionId +"/edit";
             window.location = redirect_url;
+            getContentItems();
           });
       });
+    };
+
+
+        var getContentItems = function() {
+          console.log("Waiting for you...");
+          $.get(gon.content_path).done(function(data){
+            var contentItems = data;
+            console.log(contentItems);
+            listenForEditClick(contentItems);
+            listenForDelete(contentItems);
+          });
+        };
+        getContentItems();
 
 }
 
