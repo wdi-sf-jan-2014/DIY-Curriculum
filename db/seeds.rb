@@ -149,15 +149,28 @@ section51 = stephanie_course2.sections.create( title: "Flexibility")
 section52 = stephanie_course2.sections.create( title: "Sense of Humor")
 section53 = stephanie_course2.sections.create( title: "High Expectations")
 
-section54 = yutake_course2.sections.create( title: "2020")
-section55 = yutake_course2.sections.create( title: "2030")
-section56 = yutake_course2.sections.create( title: "2040")
-section57 = yutake_course2.sections.create( title: "2050")
-section58 = yutake_course2.sections.create( title: "2060")
-section59 = yutake_course2.sections.create( title: "2070")
-section60 = yutake_course2.sections.create( title: "2080")
-section70 = yutake_course2.sections.create( title: "2090")
-section80 = yutake_course2.sections.create( title: "2100")
+section54 = yutaka_course2.sections.create( title: "2020")
+section55 = yutaka_course2.sections.create( title: "2030")
+section56 = yutaka_course2.sections.create( title: "2040")
+section57 = yutaka_course2.sections.create( title: "2050")
+section58 = yutaka_course2.sections.create( title: "2060")
+section59 = yutaka_course2.sections.create( title: "2070")
+section60 = yutaka_course2.sections.create( title: "2080")
+section61 = yutaka_course2.sections.create( title: "2090")
+section62 = yutaka_course2.sections.create( title: "2100")
+
+
+section63 = nina_course2.sections.create( title: "Alternative Music")
+section63 = nina_course2.sections.create( title: "Classical Music")
+section63 = nina_course2.sections.create( title: "Electronic Music")
+section63 = nina_course2.sections.create( title: "Hip Hop / Rap")
+section63 = nina_course2.sections.create( title: "Jazz")
+section63 = nina_course2.sections.create( title: "Pop (Popular music)")
+section63 = nina_course2.sections.create( title: "R&B / Soul")
+section63 = nina_course2.sections.create( title: "Reggae")
+section63 = nina_course2.sections.create( title: "Rock")
+
+
 
 
 
