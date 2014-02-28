@@ -17,6 +17,10 @@ before_filter :authenticate_user!, except: [:index, :show]
 
   def show
     @course = Course.find(params[:course_id])
+
+    @current_user = current_user
+    @author = User.find(@course.author_id)
+
     @category = Category.find(@course.category_id)
     @sections = @course.sections
     @section = Section.find(params[:id])
@@ -46,8 +50,16 @@ before_filter :authenticate_user!, except: [:index, :show]
     # redirect_to course_sections_path(course)
   end
 
-  def edit
+  def edit    
     @course = Course.find(params[:course_id])
+
+    @current_user = current_user
+    @author = User.find(@course.author_id)
+
+    if @author != @current_user
+      redirect_to browse_path
+    end
+
     @category = Category.find(@course.category_id)
     @section = Section.find(params[:id])
     @sections = @course.sections
