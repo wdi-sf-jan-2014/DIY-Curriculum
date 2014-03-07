@@ -1,0 +1,75 @@
+<nav class = "top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+             <h1><a href="#" data-reveal-id="new-course"><i class="fi-pencil"></i></a></h1>
+             <%= render "courses/new"%>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        </li>
+    </ul>
+    <section class="top-bar-section">
+      <% if signed_in? %>
+      <ul class="left">
+        <li class="divider"></li>
+        <li>
+            <%= link_to courses_path do%> 
+                <i class="fi-book-bookmark"></i>
+                <span class="courses-nav">Courses<span>
+            <% end %>    
+        </li> 
+      </ul>
+      <%end%>
+    <% if not @index_page %>
+    <ul class="center">
+        <div class="small-5 small-centered columns">
+        <li class="logo">
+            <a href="/"><%= image_tag("uschool-04.png")%></a>
+        </li>
+        </div>
+    </ul>
+    <% end %>
+
+    <ul class="right">
+        <li class="browse">
+            <a href="/browse"><i class="fi-magnifying-glass"></i></a>
+        </li>
+        <li class="divider"></li>
+        <% if !signed_in? %>    
+        <li><%= link_to "Sign In", user_session_path %></li>
+        <%end%>
+        <% if signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <%else%>    
+            <li class="divider"></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <%end%>
+    </ul>
+    </section>
+</nav>
+
+<style>
+
+.dropdown{
+line-height: 80%;
+
+}
+
+#drop_submit{
+border: none;
+background: lightblue;
+padding: 10px;
+font-size: 60%;
+color: grey;
+}
+
+.top-bar-section .dropdown li {
+padding:20px;
+background: white;
+width:190%;
+}
+
+.top-bar input, .top-bar{
+font-size: 80%;
+}
+
+</style>

@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 
+# Actionmailer for Heroku
+# gem 'mandrill_mailer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'typhoeus'
+
+# with jquery UI, makes DOM elements sortable
+gem "acts_as_list"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -59,4 +66,9 @@ gem 'handlebars_assets'
 
 # to deploy correctly to heroku
 gem 'rails_12factor', group: :production
+
+gem 'foundation-rails'
+
+# to allow path variables for forms
+gem "gon", "~> 5.0.4"
 

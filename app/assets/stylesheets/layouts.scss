@@ -1,0 +1,101 @@
+
+body {
+  background: #f2f2f2;
+  font-weight: 300;
+  height:92%;
+}
+
+body, html {
+  margin:0;
+  padding:0;
+ }
+
+.alert-box.success {
+  background-color: rgba(112, 176, 169, 1);
+  border-color: #3a945b;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px 5px 5px 5px;
+  height: 36px;
+}
+
+.alert-box.warning  {
+  background-color:  #F44C03;
+  border-color: cc2e06;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px 5px 5px 5px;
+  height: 36px;
+}
+
+.top-bar {
+  background: #fff;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+}
+
+.top-bar ul li a  {
+  color: black;
+}
+
+.logo > a > img {
+  height: 42px;
+}
+
+
+.logo {
+  display: table; 
+  padding-left: 35%
+}
+
+.logo {
+  @media only screen { padding-left: 15% }
+  @media only screen and (min-width: 40.063em) {  padding-left: 19% }
+  @media only screen and (min-width: 64.063em) { padding-left: 35% }
+}
+
+.top-bar .name h1 a {
+  color: black;
+}
+
+.top-bar-section ul {
+   background: #fff;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #fff;
+}
+
+.title-area li {
+  width: 45px;
+}
+
+.fi-book-bookmark  {
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.fi-magnifying-glass {
+  font-size: 20px;
+
+}
+
+body > nav > section > ul.right > li.browse > a{
+    height: 45px;
+}
+
+body > nav > section > ul.left > li:nth-child(2) > a {
+  height: 45px;
+}
+
+.courses-nav  {
+  font-size: 0.8125rem;
+  vertical-align: top;
+
+}
+
+.top-bar-section .logo a:not(.button):hover  {
+  background: #fff;
+}
+

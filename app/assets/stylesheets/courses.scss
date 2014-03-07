@@ -1,0 +1,201 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+$green-blue: rgba(112, 176, 170, 1);
+$light-green-blue: rgba(139, 212, 207, 1);
+
+
+///////////////////////////////////
+//////////////////////COURSES INDEX
+///////////////////////////////////
+
+.button {
+  background-color: #8bd4cf;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+
+}
+
+.button:hover {
+  background-color: $button-blue;
+}
+
+
+.show-container {
+  background: white;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+  padding: 20px 10px 20px 10px;
+  margin-bottom: 15px
+}
+
+.course-img {
+  width: 50px;
+}
+
+.page-title{
+  padding: 40px 20px 10px 0px ;
+  text-transform:uppercase;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+
+.add-course {
+  margin-top: 20px;
+  padding: 16px 0px 17px 0;
+}
+
+.add-course a {
+  padding: 16px 32px 17px 32px;
+  color: white;
+}
+
+a > p {
+color: black;
+}
+
+
+.tabs.vertical  {
+  width: 100%;
+}
+
+.img-column {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#enrolled {
+  width: 100%;
+}
+
+///////////////////////////////////
+/////////////////////////BROWSE-ALL
+///////////////////////////////////
+
+.row_browse {
+width: 80%;
+margin-left: auto;
+margin-right: auto; 
+max-width: initial; 
+}
+
+#cat_name_to{
+margin-top: -10px;
+margin-bottom: 25px;
+}
+
+.all_cats > div{
+margin: 5px 5px 0 5px;
+}
+
+.cat_image img {
+width:90px;
+background: lightgrey;
+margin-bottom: 5px;
+padding:10px;
+}
+
+.cat_image img:hover{
+background:lightblue;
+}
+
+.cat_name{
+display: none;
+}
+
+.all_cats {
+text-align: center;
+display: inline-flex;
+margin-left: 10%;
+margin-right: 10%;
+}
+
+.all_cats_holder {
+text-align: center;
+}
+
+.browse_list {
+text-align: initial;
+}
+
+#course_title{
+color: rgb(43, 148, 182);
+}
+
+#course_title:hover{
+color: $button-blue;
+}
+
+#browse_title {
+text-align: center;
+margin-top:50px;
+}
+
+.tab_browse_title{
+margin-top:50px;
+}
+
+
+
+///////////////////////////////////
+////////////////////////COURSE SHOW
+///////////////////////////////////
+
+#course_heading{
+color: rgb(43, 148, 182);
+text-align:center;
+}
+
+#course_heading2{
+text-align:center;
+}
+
+#course_heading:hover{
+color:lightblue;
+text-align:center;
+}
+
+#course_by{
+margin-top: -10px;
+font-style: italic;
+}
+
+#indent_title {
+color: rgb(43, 148, 182);
+line-height: 100%;
+}
+
+#indent_title:hover {
+color: lightblue;
+}
+
+#created > div:nth-child(1) > a > div.small-10.columns > p  {
+  color: $link-blue;
+}
+
+.each-enrolled  {
+  border-top: 1px dashed;
+}
+
+.card-title {
+  background-color: $light-green-blue;
+  padding: 10px 70px 20px 70px;
+  color: white;
+}
+
+.top-margin {
+  margin-top: 50px;
+}
+
+#count_to{
+  padding: 0px;
+}
+
+.hidden {
+  display: none;
+}

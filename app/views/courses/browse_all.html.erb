@@ -1,0 +1,114 @@
+<h2 id="browse_title">Browse Courses by Category<h2>
+<h3 id="cat_name_to">* * * * *</h3>
+
+<!--  @a, @b, and @c hold arrays of all cats divided into three -->
+
+<div class="all_cats_holder">
+<% i = 0 %>
+  <div class="all_cats">
+  <% @a.each do |f| %>
+  <% i += 1 %> 
+    <div class= "cat_holder">
+      <dl data-tab><dd><a href="#panel2-<%=i%>">
+        <div class="cat_image"><%= image_tag(f.img)%></div>
+        <div class="cat_name"><%= f.name %></div>
+      </a></dd></dl>
+    </div>
+    <%end%>
+  </div>  
+</div>
+
+<div class="all_cats_holder">
+  <div class="all_cats">
+  <% @b.each do |f| %>
+  <% i += 1 %>
+    <div class= "cat_holder">
+       <dl data-tab><dd><a href="#panel2-<%=i%>">
+          <div class="cat_image"><%= image_tag(f.img)%></div>
+          <div class="cat_name"><%= f.name %></div>
+        </a></dd></dl>
+    </div>
+    <%end%>
+  </div>  
+</div>
+
+<div class="all_cats_holder">
+  <div class="all_cats">
+  <% @c.each do |f| %>
+  <% i += 1 %>
+      <div class= "cat_holder">
+        <dl data-tab><dd><a href="#panel2-<%=i%>">
+          <div class="cat_image"><%= image_tag(f.img)%></div>
+          <div class="cat_name"><%= f.name %></div>
+        </a></dd></dl>
+      </div>
+    <%end%>
+  </div> 
+</div>
+
+<!-- begin tabs -->
+<div class="small-4 small-centered columns show-container">
+<div class="tabs-content">
+ <% @all_cats.each do |i| %>
+  <div class="content" id="panel2-<%=i.id%>">
+    <h3 class="tab_browse_title"><%= i.name %></h3>
+    <div class="small-9 small-centered columns show-container">
+       <% cat_courses = @all_courses.where(category_id: i) %>
+        <ol>
+          <% cat_courses.each do |course| %>
+          <li class="browse_list"><a href="/courses/<%= course.id%>">
+          <h4 id="course_title"><%= course.title %></h4></a>
+          <p><%= course.description %></p></li>
+          <% end %>
+        </ol>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
+<style>
+
+body > div.tabs-content {
+background: white;
+}
+
+.tabs-content {
+padding-left: 50px;
+padding-right: 50px;
+}
+
+.tabs-content > .content {
+display: none;
+float: none;
+}
+
+.large-8 columns,
+.small-9 small-centered columns,
+.cat_image, 
+#cat_name_to{
+text-align: center;
+}
+
+</style>
+
+
+
+
+
+<script>
+$(".cat_holder")
+  .mouseover(function() {
+    var this_text = $(this).text();
+    console.log(this_text);
+  $( "#cat_name_to" ).text(this_text);
+    })
+  .mouseout(function() {
+  $( "#cat_name_to" ).text( "* * * * *" );
+});
+
+$(".cat_holder")
+  .on("click", function() {
+ window.scroll(0, 300);
+});
+</script>

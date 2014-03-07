@@ -1,0 +1,35 @@
+<script>
+function validateForm()
+{
+    var inputs = [];
+    inputs[0] = document.getElementById("course_title");
+    inputs[1] = document.getElementById("course_description");
+
+    for ( i =0; i < inputs.length; i++) {
+      if (inputs[i].value === "" || inputs[i].value === null ){
+        inputs[i].value = "Fill me in!";
+        inputs[i].style.color = "red";
+        return false;
+      };
+      if (inputs[i].value !== "" || inputs[i].value !== null ){
+        inputs[i].style.color = "black";
+      };
+    };
+  var input_cat = document.getElementById("course_category_id")
+
+  if (input_cat.value === "" || input_cat.value == null ){
+      input_cat.value = 10;
+      return false;
+    };
+  };
+</script>
+<div id="new-course" class="reveal-modal" data-reveal>
+  <%= form_for :course, url: courses_path, :html => { :onsubmit => "return validateForm()" } do |c| %>
+
+    <%= c.text_field :title, placeholder: "Course title" %>
+    <%= c.text_area :description, placeholder: "what is this course about?" %>
+    <%= c.select :category_id, options_from_collection_for_select(@categories, "id", "name"), prompt: "Categories" %>
+    <%= c.submit "create", class: "button large" %>
+  <% end %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

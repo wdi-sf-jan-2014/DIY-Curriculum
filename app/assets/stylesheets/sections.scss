@@ -1,0 +1,122 @@
+///////////////////////////////////
+///////////////////Global Variables
+///////////////////////////////////
+$input-blue: #96AEC0;
+$course-title-green-blue: #72D5DD;
+$link-blue: #347DAC;
+$button-blue: #72D5DD;
+$grey-blue: #96AEC0;
+
+
+///////////////////////////////////
+////////////////////////////Sidebar
+///////////////////////////////////
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.content-view {
+  height: 100%;
+  margin-top: 20px;
+}
+
+.sidebar-column {
+  height: 100%;
+  padding: 0 5px 0 20px;
+  overflow: auto;
+
+}
+
+.sidebar  {
+  background: white;
+  min-height: 100%;
+  box-shadow: rgba(0,0,0,.08) 0 1px 5px;
+}
+
+.sidebar-title  {
+  padding: 16px 0px 16px 32px;
+  background-color: $course-title-green-blue;
+}
+
+row-header  {
+
+}
+
+.sidebar-course-title {
+  margin-bottom: -5px;
+}
+
+.section {
+  border-top: .07rem solid;
+  border-color: lightGray;
+
+}
+
+.section a {
+  padding: 24px 12px 24px 32px;
+  font-size: 1.5em;
+
+}
+
+.side-nav li a {
+  color: black
+}
+
+.side-nav {
+  padding-top: 0;
+}
+
+.fi-widget {
+  font-size: 30px;
+  text-align: right;
+  padding-left: 15px;
+  color: white;
+}
+
+.fi-check {
+  font-size: 30px;
+  text-align: right;
+  padding-left: 15px;
+  color: white;
+}
+
+.center-padding {
+  padding: 50px 100px 50px 100px;
+}
+
+#addSection input[type="submit"] {
+  display: none;
+}
+
+#addSection input[type="text"]  {
+  border: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0);
+  color: $input-blue;
+  margin: 24px 12px 24px 32px;
+  width: 200px;
+
+}
+
+#addSection input[type="text"]:focus  {
+  background-color: white;
+  }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $input-blue;
+    font: inheret;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $input-blue;
+    font: inheret;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $input-blue;
+    font: inheret;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $input-blue;
+    font: inheret;
+}
